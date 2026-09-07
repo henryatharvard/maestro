@@ -87,6 +87,26 @@ most worth someone's time:
 
 Take them. They are worth more to the field than to any one person.
 
+## Link previews
+
+`index.html` and the three survey pages carry a full Open Graph + Twitter card set, so links
+unfurl properly in iMessage, WhatsApp, Signal, Slack, Discord, LinkedIn and X.
+
+- **Card image:** `assets/og-cover.png` — 1200×630, 62 KB (comfortably under WhatsApp's limit).
+- **Source:** `assets/og-image.html`. Icons come from `assets/icon.html`.
+- **Regenerate:** `./build-og.sh` (needs `npm i playwright` and ImageMagick).
+
+Two things to know. `og:image` **must be an absolute URL** — scrapers do not resolve relative
+paths — so it is hard-coded to `https://henryatharvard.github.io/maestro/`; change it in
+`index.html` and `assets/doc.template.html` if the site ever moves. And the shipped PNG was
+rendered without network access, so it uses Charter rather than Newsreader; re-running
+`./build-og.sh` on a machine that can reach Google Fonts produces the card in the real faces.
+
+**Previews are cached hard.** After the first share, iMessage and WhatsApp will keep serving the
+old card. To force a refresh: share `...maestro/?v=2`, or clear the cache — Facebook's
+[sharing debugger](https://developers.facebook.com/tools/debug/) re-scrapes for most platforms,
+and [opengraph.xyz](https://www.opengraph.xyz/) is a quick way to see what a scraper sees.
+
 ## Building the site
 
 The site is plain HTML with no build step for the landing page. The document pages are rendered

@@ -4,6 +4,8 @@ subtitle: "Organizing 463 works (1957–2026) around the composer's loop: Compos
 author: "Henry Tan · Maestro"
 date: "2026-09-07"
 bibliography: references.bib
+description: "Forty-nine nodes and ten coding dimensions for placing any music-AI system inside a composer's workflow — and for seeing exactly where the field is thin."
+canonical: "https://henryatharvard.github.io/maestro/survey/taxonomy.html"
 ---
 
 # 1. Purpose and organizing principle

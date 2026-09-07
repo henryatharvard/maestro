@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Maestro — social card source</title>
+<!--
+  Source artboard for assets/og-cover.png (1200×630).
+  Regenerate with:  ./build-og.sh
+  On a machine with network access the Google Fonts link below loads the real faces
+  (Newsreader / Archivo / IBM Plex Mono); otherwise it falls back to Charter / Helvetica /
+  DejaVu Sans Mono, which is what the shipped PNG was rendered with.
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+  :root {
+    --paper:#F2F3EF; --ink:#14161A; --ink-2:#545962; --ink-3:#838892;
+    --rule:#CDD1CA; --annot:#A5352B;
+    --f-display:"Newsreader","Bitstream Charter","Charter",Georgia,serif;
+    --f-body:"Archivo","TeX Gyre Heros","Helvetica Neue",Arial,sans-serif;
+    --f-mono:"IBM Plex Mono","DejaVu Sans Mono",Menlo,monospace;
+  }
+  * { box-sizing:border-box; margin:0; }
+  html,body { width:1200px; height:630px; }
+  body { background:var(--paper); color:var(--ink); font-family:var(--f-body);
+         -webkit-font-smoothing:antialiased; overflow:hidden; }
+  .card { width:1200px; height:630px; padding:62px 72px 0; display:flex; flex-direction:column; position:relative; }
+  .eyebrow { font-family:var(--f-mono); font-size:17px; letter-spacing:.19em; text-transform:uppercase;
+             color:var(--ink-3); }
+  h1 { font-family:var(--f-display); font-weight:500; font-size:106px; line-height:1;
+       letter-spacing:-.022em; margin:14px 0 12px; }
+  .thesis { font-family:var(--f-display); font-style:italic; font-weight:400; font-size:38px;
+            line-height:1.26; color:var(--ink); white-space:nowrap; }
+  .figure { position:absolute; left:0; right:0; bottom:92px; }
+  .figure svg { display:block; width:1200px; height:auto; }
+  .foot { position:absolute; left:72px; right:72px; bottom:40px; display:flex;
+          justify-content:space-between; align-items:baseline;
+          font-family:var(--f-mono); font-size:18px; color:var(--ink-3); white-space:nowrap; gap:24px;
+          border-top:1px solid var(--rule); padding-top:16px; }
+  .foot b { color:var(--ink-2); font-weight:500; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="eyebrow">Open research · Human-centered AI for composition</div>
+  <h1>Maestro</h1>
+  <div class="thesis">The composer stays at the centre.<br>The machine compiles.</div>
+
+  <div class="figure">
+    <svg viewBox="0 0 1200 190" aria-hidden="true">
+      <g stroke="#CDD1CA" stroke-width="1.4">
+        <line x1="72" y1="30" x2="1128" y2="30"/>
+        <line x1="72" y1="48" x2="1128" y2="48"/>
+        <line x1="72" y1="66" x2="1128" y2="66"/>
+        <line x1="72" y1="84" x2="1128" y2="84"/>
+        <line x1="72" y1="102" x2="1128" y2="102"/>
+      </g>
+      <line x1="72" y1="30" x2="72" y2="102" stroke="#14161A" stroke-width="3.2"/>
+      <path d="M215 84 C 350 44, 400 44, 480 66 S 660 84, 740 48 S 930 32, 1000 58"
+            fill="none" stroke="#838892" stroke-width="2" stroke-dasharray="1.5 7" stroke-linecap="round"/>
+
+      <g>
+        <ellipse cx="215" cy="84" rx="14" ry="10.5" transform="rotate(-18 215 84)" fill="#14161A"/>
+        <line x1="228" y1="82" x2="228" y2="22" stroke="#14161A" stroke-width="2.6"/>
+        <text x="215" y="148" text-anchor="middle" font-family="Newsreader, Charter, Georgia, serif"
+              font-size="30" fill="#14161A">Compose</text>
+      </g>
+      <g>
+        <ellipse cx="480" cy="66" rx="14" ry="10.5" transform="rotate(-18 480 66)" fill="#A5352B"/>
+        <line x1="493" y1="64" x2="493" y2="4" stroke="#A5352B" stroke-width="2.6"/>
+        <text x="480" y="148" text-anchor="middle" font-family="Newsreader, Charter, Georgia, serif"
+              font-size="30" fill="#A5352B">Annotate</text>
+      </g>
+      <g>
+        <ellipse cx="740" cy="48" rx="14" ry="10.5" transform="rotate(-18 740 48)" fill="#14161A"/>
+        <line x1="753" y1="46" x2="753" y2="0" stroke="#14161A" stroke-width="2.6"/>
+        <text x="740" y="148" text-anchor="middle" font-family="Newsreader, Charter, Georgia, serif"
+              font-size="30" fill="#14161A">Compile</text>
+      </g>
+      <g>
+        <ellipse cx="1000" cy="58" rx="14" ry="10.5" transform="rotate(-18 1000 58)" fill="none"
+                 stroke="#14161A" stroke-width="3.2"/>
+        <line x1="1013" y1="56" x2="1013" y2="8" stroke="#14161A" stroke-width="2.6"/>
+        <text x="1000" y="148" text-anchor="middle" font-family="Newsreader, Charter, Georgia, serif"
+              font-size="30" fill="#14161A">Edit</text>
+      </g>
+
+      <g>
+        <circle cx="1088" cy="57" r="4.2" fill="#14161A"/>
+        <circle cx="1088" cy="75" r="4.2" fill="#14161A"/>
+        <line x1="1102" y1="30" x2="1102" y2="102" stroke="#14161A" stroke-width="2"/>
+        <line x1="1112" y1="30" x2="1112" y2="102" stroke="#14161A" stroke-width="6.5"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="foot">
+    <span><b>463 works surveyed</b> · 1957–2026 · 12 open directions</span>
+    <span>henryatharvard.github.io/maestro</span>
+  </div>
+</div>
+</body>
+</html>
