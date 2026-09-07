@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title$ — Maestro</title>
+$if(description)$<meta name="description" content="$description$">$endif$
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' x='4' font-size='24'>♩</text></svg>">
+<style>
+  .doc-wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter) 6rem; }
+  .doc-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+             flex-wrap: wrap; padding: 1.5rem 0 2.5rem; }
+  .doc-top a.wordmark { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .18em;
+                        text-transform: uppercase; color: var(--ink); text-decoration: none; }
+  .doc-top nav { font-size: .85rem; display: flex; gap: 1.3rem; }
+  .doc-top nav a { color: var(--ink-2); text-decoration: none; }
+  .doc-top nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
+
+  .doc-head { border-bottom: 1px solid var(--rule); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+  .doc-head h1.title { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05; margin: 0 0 .5rem; }
+  .doc-head p.subtitle { font-family: var(--f-display); font-style: italic; font-size: 1.15rem;
+                         color: var(--ink-2); margin: 0 0 1rem; max-width: 62ch; }
+  .doc-head .doc-meta { font-family: var(--f-mono); font-size: .74rem; color: var(--ink-3);
+                        letter-spacing: .04em; }
+  .doc-body { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+  @media (min-width: 1000px) { .doc-body { grid-template-columns: 15rem 1fr; gap: 0 4rem; align-items: start; } }
+
+  nav#TOC { font-size: .84rem; line-height: 1.45; }
+  @media (min-width: 1000px) { nav#TOC { position: sticky; top: 1.5rem; max-height: calc(100vh - 3rem);
+                                          overflow-y: auto; padding-right: .5rem; } }
+  nav#TOC > ul { list-style: none; padding: 0; margin: 0; }
+  nav#TOC ul ul { list-style: none; padding-left: .85rem; margin: .25rem 0; }
+  nav#TOC li { margin: 0 0 .3rem; }
+  nav#TOC a { color: var(--ink-2); text-decoration: none; display: block; }
+  nav#TOC a:hover { color: var(--annot); }
+  nav#TOC ul ul a { color: var(--ink-3); font-size: .96em; }
+  .toc-label { font-family: var(--f-mono); font-size: .7rem; text-transform: uppercase;
+               letter-spacing: .12em; color: var(--ink-3); margin: 0 0 .9rem; }
+
+  main h1 { font-size: clamp(1.7rem, 3.6vw, 2.2rem); margin: 3.2rem 0 .8rem; padding-top: .6rem;
+            border-top: 1px solid var(--rule); }
+  main h2 { font-size: 1.5rem; margin: 2.6rem 0 .7rem; }
+  main h3 { font-size: 1.12rem; font-family: var(--f-body); font-weight: 600; letter-spacing: 0;
+            margin: 2rem 0 .5rem; }
+  main > h1:first-child { border-top: 0; margin-top: 0; }
+  main p, main li { max-width: var(--measure); }
+  .csl-bib-body { font-size: .9rem; }
+  .csl-entry { margin-bottom: .85em; padding-left: 1.4em; text-indent: -1.4em; max-width: 78ch; }
+  a.citation, .citation a { text-decoration-color: var(--rule); }
+  #refs { margin-top: 1rem; }
+  .footnotes { font-size: .88rem; color: var(--ink-2); border-top: 1px solid var(--rule); margin-top: 3rem; }
+  .doc-foot { border-top: 1px solid var(--rule); margin-top: 4rem; padding-top: 1.5rem;
+              font-size: .82rem; color: var(--ink-3); }
+  .doc-foot a { color: var(--ink-2); }
+</style>
+</head>
+<body>
+<div class="doc-wrap">
+  <div class="doc-top">
+    <a class="wordmark" href="../">Maestro</a>
+    <nav>
+      <a href="../">Home</a>
+      <a href="literature-review.html">Review</a>
+      <a href="taxonomy.html">Taxonomy</a>
+      <a href="annotated-bibliography.html">Bibliography</a>
+      <a href="references.bib">references.bib</a>
+      <a href="https://github.com/henryatharvard/maestro">GitHub</a>
+    </nav>
+  </div>
+
+  <div class="doc-head">
+    <h1 class="title">$title$</h1>
+    $if(subtitle)$<p class="subtitle">$subtitle$</p>$endif$
+    <div class="doc-meta">$if(author)$$for(author)$$author$$sep$ · $endfor$ · $endif$$if(date)$$date$$endif$</div>
+  </div>
+
+  $if(abstract)$
+  <div style="max-width:72ch; border-left:2px solid var(--annot); padding-left:1.2rem; margin-bottom:3rem; color:var(--ink-2); font-size:.97rem;">
+    $abstract$
+  </div>
+  $endif$
+
+  <div class="doc-body">
+    $if(toc)$
+    <nav id="TOC" role="doc-toc">
+      <p class="toc-label">Contents</p>
+      $table-of-contents$
+    </nav>
+    $else$<div></div>$endif$
+    <main>
+      $body$
+    </main>
+  </div>
+
+  <div class="doc-foot">
+    Part of <a href="../">Maestro</a> · Henry Tan, Harvard University ·
+    text licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ·
+    <a href="https://github.com/henryatharvard/maestro">source</a>
+  </div>
+</div>
+</body>
+</html>

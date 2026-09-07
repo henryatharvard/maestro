@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maestro</title>
+<meta name="description" content="An open research program on human-centered AI for music composition. A survey of 463 works, a taxonomy organized by the composer's working loop, and twelve open research directions.">
+<meta property="og:title" content="Maestro">
+<meta property="og:description" content="Human-centered AI for music composition: a survey of 463 works, a taxonomy built around the composer's loop, and twelve open directions.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='25' x='4' font-size='24'>♩</text></svg>">
+<style>
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* the analyst's margin: node codes sit outside the reading column, as marginalia */
+  .rail { display: grid; grid-template-columns: 1fr; gap: 0; }
+  @media (min-width: 1080px) {
+    .rail { grid-template-columns: 5.5rem 1fr; gap: 0 2.5rem; }
+  }
+  .rail > .mark { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .06em;
+                  color: var(--ink-3); padding-top: .55rem; }
+  @media (max-width: 1079px) { .rail > .mark { padding-top: 0; margin-bottom: .35rem; } }
+
+  section { padding: clamp(3rem, 6vw, 4.75rem) 0; }
+  section + section { border-top: 1px solid var(--rule-soft); }
+
+  /* ---- masthead ---- */
+  header.top { padding: 1.5rem 0 0; }
+  .topbar { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .topbar nav { display: flex; gap: 1.4rem; font-size: .85rem; }
+  .topbar nav a { color: var(--ink-2); text-decoration: none; }
+  .topbar nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: .2em; }
+  .wordmark { font-family: var(--f-mono); font-size: .78rem; letter-spacing: .18em;
+              text-transform: uppercase; color: var(--ink); text-decoration: none; }
+
+  .hero { padding: clamp(3rem, 7vw, 5rem) 0 clamp(2rem, 4vw, 3rem); }
+  .hero h1 { margin-bottom: .35rem; }
+  .thesis { font-family: var(--f-display); font-style: italic; font-weight: 400;
+            font-size: clamp(1.35rem, 3.2vw, 1.95rem); line-height: 1.3; color: var(--ink);
+            max-width: 24ch; margin: 0 0 1.6rem; text-wrap: balance; }
+  .lede { font-size: 1.06rem; color: var(--ink-2); max-width: 62ch; }
+  .byline { font-family: var(--f-mono); font-size: .74rem; letter-spacing: .05em;
+            color: var(--ink-3); margin-top: 2rem; }
+  .byline a { color: var(--ink-2); }
+
+  /* ---- the loop figure ---- */
+  figure.loop { margin: 2.5rem 0 0; }
+  .loop svg { display: block; width: 100%; height: auto; }
+  figcaption { font-size: .82rem; color: var(--ink-3); margin-top: .9rem; max-width: 58ch; }
+  figcaption em { font-family: var(--f-display); }
+
+  /* ---- findings ---- */
+  .findings { display: grid; gap: 2.2rem; margin-top: 2rem; }
+  @media (min-width: 760px) { .findings { grid-template-columns: repeat(2, 1fr); gap: 2.6rem 3rem; } }
+  .finding h3 { font-family: var(--f-body); font-size: 1rem; font-weight: 600; letter-spacing: 0;
+                margin-bottom: .4rem; }
+  .finding p { font-size: .95rem; color: var(--ink-2); margin: 0; max-width: 46ch; }
+  .finding .ev { display: block; margin-top: .6rem; font-family: var(--f-mono); font-size: .74rem;
+                 color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+  /* ---- documents ---- */
+  .docs { margin-top: 1.5rem; border-top: 1px solid var(--rule); }
+  .doc { display: grid; grid-template-columns: 1fr; gap: .25rem 2rem; padding: 1.35rem 0;
+         border-bottom: 1px solid var(--rule-soft); align-items: baseline; }
+  @media (min-width: 720px) { .doc { grid-template-columns: 15rem 1fr auto; } }
+  .doc h3 { margin: 0; font-size: 1.08rem; }
+  .doc h3 a { text-decoration: none; }
+  .doc h3 a:hover { text-decoration: underline; text-underline-offset: .2em; }
+  .doc p { margin: 0; font-size: .93rem; color: var(--ink-2); max-width: 52ch; }
+  .doc .meta { font-family: var(--f-mono); font-size: .72rem; color: var(--ink-3);
+               font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* ---- magnitude chart: works per stage ---- */
+  .chart { margin-top: 1.6rem; max-width: 640px; }
+  .row { display: grid; grid-template-columns: 8.5rem 1fr 2.6rem; align-items: center;
+         gap: .85rem; padding: .3rem 0; }
+  .row .name { font-size: .88rem; color: var(--ink); }
+  .row .name .c { font-family: var(--f-mono); font-size: .72rem; color: var(--ink-3); margin-right: .45em; }
+  .track { height: 11px; background: var(--rule-soft); }
+  .bar { height: 100%; background: var(--blue); border-radius: 0 3px 3px 0; }
+  .row .n { font-family: var(--f-mono); font-size: .8rem; text-align: right;
+            font-variant-numeric: tabular-nums; color: var(--ink-2); }
+  .row.is-thin .bar { background: var(--annot); }
+  .row.is-thin .name { color: var(--annot); }
+  .chartkey { display: flex; gap: 1.6rem; flex-wrap: wrap; margin-top: 1.1rem;
+              font-size: .76rem; color: var(--ink-3); }
+  .chartkey span { display: inline-flex; align-items: center; gap: .45rem; }
+  .swatch { width: 11px; height: 11px; flex: none; }
+
+  /* ---- gaps: the annotation layer ---- */
+  .gaps { margin-top: 1.6rem; }
+  .gap { padding: 1.5rem 0; border-bottom: 1px solid var(--rule-soft); }
+  .gap:first-child { border-top: 1px solid var(--rule); }
+  .gap .hd { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; margin-bottom: .45rem; }
+  .gap .id { font-family: var(--f-mono); font-size: .78rem; color: var(--annot); font-weight: 500; }
+  .gap h3 { margin: 0; font-family: var(--f-body); font-size: 1.02rem; font-weight: 600; letter-spacing: 0; }
+  .gap .node { font-family: var(--f-mono); font-size: .71rem; color: var(--ink-3);
+               border: 1px solid var(--rule); padding: .1rem .4rem; }
+  .gap p { margin: 0; font-size: .95rem; color: var(--ink-2); }
+  .gap .prior { display: block; margin-top: .55rem; font-size: .84rem; color: var(--ink-3); }
+  details.more { margin-top: 1.6rem; }
+  details.more summary { cursor: pointer; font-size: .9rem; color: var(--blue); }
+  details.more[open] summary { margin-bottom: .9rem; }
+  details.more ol { font-size: .93rem; color: var(--ink-2); }
+
+  .cols { display: grid; gap: 2rem; }
+  @media (min-width: 820px) { .cols { grid-template-columns: repeat(2, 1fr); gap: 2rem 3rem; } }
+
+  footer { border-top: 1px solid var(--rule); padding: 2.5rem 0 4rem; font-size: .84rem; color: var(--ink-3); }
+  footer a { color: var(--ink-2); }
+  footer .fr { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="topbar">
+      <a class="wordmark" href="./">Maestro</a>
+      <nav>
+        <a href="#argument">Argument</a>
+        <a href="#survey">Survey</a>
+        <a href="#map">Map</a>
+        <a href="#directions">Open directions</a>
+        <a href="https://github.com/henryatharvard/maestro">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Open research program · est. 2026</p>
+    <h1>Maestro</h1>
+    <p class="thesis">The composer stays at the centre. The machine compiles.</p>
+    <p class="lede">
+      Most music AI now takes a sentence and returns a finished master. That is the wrong
+      shape for someone who actually writes music. Maestro studies the opposite arrangement —
+      the composer authors and marks up the material, and the model <em>compiles</em> a fuller
+      realization under those marks, over and over, at the granularity of a bar or a part.
+      This site publishes the research openly as it develops. It begins with a survey of
+      where the field actually stands.
+    </p>
+    <p class="byline">
+      Henry Tan · Harvard University ·
+      <a href="https://github.com/henryatharvard/maestro">github.com/henryatharvard/maestro</a>
+    </p>
+
+    <figure class="loop">
+      <svg viewBox="0 0 940 300" role="img" aria-labelledby="looptitle loopdesc">
+        <title id="looptitle">The composer's loop</title>
+        <desc id="loopdesc">Four stages — compose, annotate, compile, edit — drawn as notes on a
+          musical staff, closed by a repeat sign that returns to the beginning.</desc>
+        <g stroke="var(--rule)" stroke-width="1">
+          <line x1="60" y1="96"  x2="880" y2="96"/>
+          <line x1="60" y1="110" x2="880" y2="110"/>
+          <line x1="60" y1="124" x2="880" y2="124"/>
+          <line x1="60" y1="138" x2="880" y2="138"/>
+          <line x1="60" y1="152" x2="880" y2="152"/>
+        </g>
+        <line x1="60" y1="96" x2="60" y2="152" stroke="var(--ink)" stroke-width="2.5"/>
+
+        <!-- connective slur through the four stages -->
+        <path d="M150 138 C 250 108, 300 108, 370 124 S 520 138, 590 110 S 740 98, 800 117"
+              fill="none" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="1 5"
+              stroke-linecap="round"/>
+
+        <!-- stage 1 · compose -->
+        <g>
+          <text x="150" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12"
+                fill="var(--ink-3)" letter-spacing="1">S1</text>
+          <ellipse cx="150" cy="138" rx="11" ry="8" transform="rotate(-18 150 138)" fill="var(--ink)"/>
+          <line x1="160" y1="136" x2="160" y2="88" stroke="var(--ink)" stroke-width="2"/>
+          <text x="150" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
+                font-size="20" fill="var(--ink)">Compose</text>
+          <text x="150" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
+                fill="var(--ink-3)">play · hum · sketch</text>
+        </g>
+        <!-- stage 2 · annotate (the red pencil) -->
+        <g>
+          <text x="370" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12"
+                fill="var(--annot)" letter-spacing="1">S2</text>
+          <ellipse cx="370" cy="124" rx="11" ry="8" transform="rotate(-18 370 124)" fill="var(--annot)"/>
+          <line x1="380" y1="122" x2="380" y2="74" stroke="var(--annot)" stroke-width="2"/>
+          <text x="370" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
+                font-size="20" fill="var(--annot)">Annotate</text>
+          <text x="370" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
+                fill="var(--ink-3)">mark up the score</text>
+        </g>
+        <!-- stage 3 · compile -->
+        <g>
+          <text x="590" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12"
+                fill="var(--ink-3)" letter-spacing="1">S3</text>
+          <ellipse cx="590" cy="110" rx="11" ry="8" transform="rotate(-18 590 110)" fill="var(--ink)"/>
+          <line x1="600" y1="108" x2="600" y2="62" stroke="var(--ink)" stroke-width="2"/>
+          <text x="590" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
+                font-size="20" fill="var(--ink)">Compile</text>
+          <text x="590" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
+                fill="var(--ink-3)">fill what is unwritten</text>
+        </g>
+        <!-- stage 4 · edit -->
+        <g>
+          <text x="800" y="48" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12"
+                fill="var(--ink-3)" letter-spacing="1">S4</text>
+          <ellipse cx="800" cy="117" rx="11" ry="8" transform="rotate(-18 800 117)" fill="none"
+                   stroke="var(--ink)" stroke-width="2.5"/>
+          <line x1="810" y1="115" x2="810" y2="67" stroke="var(--ink)" stroke-width="2"/>
+          <text x="800" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
+                font-size="20" fill="var(--ink)">Edit</text>
+          <text x="800" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
+                fill="var(--ink-3)">by hand, always</text>
+        </g>
+
+        <!-- repeat barline: the loop's return, in its own notation -->
+        <g>
+          <circle cx="857" cy="117" r="3.2" fill="var(--ink)"/>
+          <circle cx="857" cy="131" r="3.2" fill="var(--ink)"/>
+          <line x1="868" y1="96" x2="868" y2="152" stroke="var(--ink)" stroke-width="1.5"/>
+          <line x1="876" y1="96" x2="876" y2="152" stroke="var(--ink)" stroke-width="5"/>
+        </g>
+        <path d="M872 168 V 250 Q 872 268 852 268 H 80 Q 60 268 60 250 V 178"
+              fill="none" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <path d="M54 190 L60 174 L66 190" fill="none" stroke="var(--ink-3)" stroke-width="1.5"
+              stroke-linejoin="round" stroke-linecap="round"/>
+      </svg>
+      <figcaption>
+        The loop the research is organized around. The return is drawn as it would be in a score —
+        a <em>repeat sign</em>. Each pass is small: a bar, a part, a phrase. Nothing here starts
+        from a blank prompt.
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section id="argument">
+  <div class="rail">
+    <div class="mark">§ 1</div>
+    <div>
+      <h2>Why not text-to-song</h2>
+      <p>
+        A prompt is a narrow channel for musical intent, and the output arrives as an opaque
+        mixdown with nothing to grab hold of. That is not a taste objection — it is what
+        professionals report when they are handed these tools, and it is what the market keeps
+        conceding by bolting editing features onto architectures that were never designed to
+        iterate.
+      </p>
+
+      <div class="findings">
+        <div class="finding">
+          <h3>Infilling, not generation, is the primitive</h3>
+          <p>
+            Filling a masked region while everything the composer wrote stays a hard constraint.
+            Nine years of work has made this mature, and the one deployment with public telemetry
+            shows musicians accepting span-level suggestions inside a notation editor at scale.
+          </p>
+          <span class="ev">318,000 suggestions · 74,000 accepted · ~23% · Hookpad Aria</span>
+        </div>
+        <div class="finding">
+          <h3>The interface moves control as much as the model does</h3>
+          <p>
+            In the two controlled studies that varied model and interface independently, steering
+            tools raised a composer's sense of control and ownership even with the model held
+            fixed. Better models and better interfaces turn out to be complementary, not
+            substitutes.
+          </p>
+          <span class="ev">controllability 5.9 vs 3.5 / 7 · N=21 · Cococo, CHI 2020</span>
+        </div>
+        <div class="finding">
+          <h3>Every input that works lands in notation</h3>
+          <p>
+            Humming becomes MIDI, a drawn contour becomes a melody, an image becomes chords. The
+            symbolic layer is what gives a human something to correct. Systems that map a loose
+            gesture straight to audio are impressive and uncorrectable.
+          </p>
+          <span class="ev">S1.1–S1.5 · 47 works surveyed</span>
+        </div>
+        <div class="finding">
+          <h3>The annotation layer is empty</h3>
+          <p>
+            Score annotation has standards. Analysis models can propose labels. Generators have
+            converged on a control vocabulary that reads like a list of things a composer would
+            write on a page. Nobody has connected them. This is the opening.
+          </p>
+          <span class="ev">S2.4 · 4 of 463 works · none of them music</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="survey">
+  <div class="rail">
+    <div class="mark">§ 2</div>
+    <div>
+      <h2>The survey</h2>
+      <p>
+        A systematic read of the field as it stood in September 2026 — 463 annotated entries
+        spanning 1957 to 2026, gathered across eight research clusters and organized not by
+        model architecture but by where each contribution sits in a composer's working day.
+        Every entry carries a verification level; every figure quoted in the review traces back
+        to a primary source that was actually fetched.
+      </p>
+
+      <div class="docs">
+        <div class="doc">
+          <h3><a href="survey/literature-review.html">Literature review</a></h3>
+          <p>Thirteen sections following the loop, from the algorithmic-composition lineage
+             through to law and economics, closing with the research agenda.</p>
+          <div class="meta">43,900 words · 398 works cited</div>
+        </div>
+        <div class="doc">
+          <h3><a href="survey/taxonomy.html">Taxonomy</a></h3>
+          <p>Forty-nine nodes and ten coding dimensions. Any system — paper or product — can be
+             placed on the same grid, which is what makes the gaps visible.</p>
+          <div class="meta">49 nodes · 10 dimensions</div>
+        </div>
+        <div class="doc">
+          <h3><a href="survey/annotated-bibliography.html">Annotated bibliography</a></h3>
+          <p>Every work with what it does, what evidence backs it, and how it was verified.
+             Organized by taxonomy node rather than alphabetically.</p>
+          <div class="meta">394 records</div>
+        </div>
+        <div class="doc">
+          <h3><a href="survey/references.bib">references.bib</a></h3>
+          <p>BibTeX for everything above. Every key resolves; the whole file renders through
+             pandoc citeproc without a warning.</p>
+          <div class="meta">398 entries · BibTeX</div>
+        </div>
+      </div>
+
+      <p style="margin-top:1.6rem; font-size:.9rem; color:var(--ink-3); max-width:58ch;">
+        Working material — the eight raw research clusters, the per-entry node assignments, and
+        the two quality-assurance passes that produced 56 corrections — is in the
+        <a href="https://github.com/henryatharvard/maestro">repository</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="map">
+  <div class="rail">
+    <div class="mark">§ 3</div>
+    <div>
+      <h2>Where the field has spent its effort</h2>
+      <p>
+        Sorting 463 works by stage shows the imbalance plainly. Compiling music is heavily
+        studied. Marking up music, and hearing back from the machine about what it did, are
+        barely studied at all — and those are the two stages a composer spends most of their
+        time in.
+      </p>
+
+      <div class="chart">
+        <div class="row"><div class="name"><span class="c">F</span>Foundations</div>
+          <div class="track"><div class="bar" style="width:35.2%"></div></div><div class="n">44</div></div>
+        <div class="row"><div class="name"><span class="c">S1</span>Compose</div>
+          <div class="track"><div class="bar" style="width:37.6%"></div></div><div class="n">47</div></div>
+        <div class="row is-thin"><div class="name"><span class="c">S2</span>Annotate</div>
+          <div class="track"><div class="bar" style="width:21.6%"></div></div><div class="n">27</div></div>
+        <div class="row"><div class="name"><span class="c">S3</span>Compile</div>
+          <div class="track"><div class="bar" style="width:100%"></div></div><div class="n">125</div></div>
+        <div class="row is-thin"><div class="name"><span class="c">S4</span>Edit</div>
+          <div class="track"><div class="bar" style="width:20%"></div></div><div class="n">25</div></div>
+        <div class="row"><div class="name"><span class="c">S5</span>Play</div>
+          <div class="track"><div class="bar" style="width:17.6%"></div></div><div class="n">22</div></div>
+        <div class="row"><div class="name"><span class="c">E</span>Evidence</div>
+          <div class="track"><div class="bar" style="width:49.6%"></div></div><div class="n">62</div></div>
+        <div class="row"><div class="name"><span class="c">B</span>Substrate</div>
+          <div class="track"><div class="bar" style="width:51.2%"></div></div><div class="n">64</div></div>
+        <div class="row"><div class="name"><span class="c">C</span>Context</div>
+          <div class="track"><div class="bar" style="width:37.6%"></div></div><div class="n">47</div></div>
+        <div class="chartkey">
+          <span><i class="swatch" style="background:var(--blue)"></i> works surveyed, by stage</span>
+          <span><i class="swatch" style="background:var(--annot)"></i> the two stages the loop depends on</span>
+        </div>
+      </div>
+
+      <p style="margin-top:1.8rem;">
+        Inside those stages the shortfall is sharper still. Multimodal annotation as instruction
+        has four entries and none of them is about music. Symbolic editing and proofreading has
+        two. Machine-to-human feedback — the model explaining what it just did — also has two,
+        across a corpus of 463.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="directions">
+  <div class="rail">
+    <div class="mark">§ 4</div>
+    <div>
+      <h2>Open directions</h2>
+      <p>
+        Twelve gaps were derived by intersecting the thin nodes of the taxonomy with what a
+        composer-centered system actually requires. Each names the nearest prior art, so none of
+        them starts from nothing. They are published here because they are worth more to the
+        field than to any one person — take them.
+      </p>
+
+      <div class="gaps">
+        <div class="gap">
+          <div class="hd"><span class="id">G1</span><h3>Annotations as a compilable instruction set</h3>
+            <span class="node">S2.4</span></div>
+          <p>Every part exists and none are assembled. MEI and Dezrann give typed, musical-time-anchored
+             annotation records. EuterPen lets composers put ink, images and audio on and between staves.
+             ExpressEdit shows how to parse “language plus a sketch on the artifact” into typed references
+             with per-modality resolvers — for video. Nobody has built the music equivalent.</p>
+          <span class="prior">Nearest prior art: ExpressEdit (IUI 2024) · Dezrann · MEI · DirectGPT · Libretto</span>
+        </div>
+        <div class="gap">
+          <div class="hd"><span class="id">G2</span><h3>A lossless bridge between a text IR and engraved notation</h3>
+            <span class="node">S3.1 · B1</span></div>
+          <p>No verified system generates MusicXML or MEI natively. Generation lives in MIDI tokens, ABC or
+             piano-roll tensors; MetaScore converts scores <em>out</em> rather than in. A round-trip that
+             loses nothing a composer cares about is both the first engineering task and an open problem.</p>
+          <span class="prior">Nearest prior art: MuPT's SMT-ABC · NotaGen · Verovio · MusicXML 4.0</span>
+        </div>
+        <div class="gap">
+          <div class="hd"><span class="id">G5</span><h3>A return channel: the compiler's build log</h3>
+            <span class="node">S4.4</span></div>
+          <p>A survey of 92 co-creative systems found machine-to-human communication almost entirely
+             absent. The compiler framing answers this directly: state which annotation produced which
+             material, which constraints bound, which were relaxed, and where the model was least sure.</p>
+          <span class="prior">Nearest prior art: RefinPaint's critic · ReaLJam's committed-vs-tentative display · Cococo</span>
+        </div>
+        <div class="gap">
+          <div class="hd"><span class="id">G6</span><h3>Versioning with musical semantics</h3>
+            <span class="node">S4.5</span></div>
+          <p>Score diffing exists and notation editors keep edit history, but branch and merge that
+             understand music do not. There is a second motive beyond convenience: a provenance log of
+             human authorship is exactly the record that current copyright doctrine makes valuable.</p>
+          <span class="prior">Nearest prior art: Foscarin et al.'s tree-edit-distance diff · Luminate · mei-friend</span>
+        </div>
+        <div class="gap">
+          <div class="hd"><span class="id">G7</span><h3>Composer-controllable audio rendering</h3>
+            <span class="node">S3.8</span></div>
+          <p>Rendering a compiled score to audio under human control is thin and research-grade. No
+             commercial full-song system accepts MIDI or chords as a generation condition. Inference-time
+             optimization looks like the general mechanism: it turns any differentiable musical feature
+             into a constraint on a frozen model without retraining.</p>
+          <span class="prior">Nearest prior art: JASCO · Music ControlNet · MuseControlLite · DITTO · MIDI-DDSP</span>
+        </div>
+        <div class="gap">
+          <div class="hd"><span class="id">G10</span><h3>Evaluating the loop, not the artefact</h3>
+            <span class="node">E1 · E4</span></div>
+          <p>Distributional audio metrics correlate weakly with human preference. The instruments that
+             suit a co-creative tool already exist — creativity support indices, ownership and control
+             items, paired listener tests, suggestion-acceptance telemetry — but longitudinal studies in
+             real practice remain rare.</p>
+          <span class="prior">Nearest prior art: Creativity Support Index · Karimi et al. · Hookpad Aria telemetry</span>
+        </div>
+      </div>
+
+      <details class="more">
+        <summary>The remaining six directions</summary>
+        <ol>
+          <li><strong>G3 — Notation-editor-native assistance.</strong> The DAW side is well served; the
+              notation side has two deployments in the entire corpus, and Dorico, Sibelius and MuseScore
+              ship nothing generative.</li>
+          <li><strong>G4 — Multimodal editing on a score.</strong> Sketch-conditioned generation exists in
+              isolation; language plus sketch plus hum plus example, applied to notation, does not.</li>
+          <li><strong>G8 — Interactive correction for loose input.</strong> Humming transcription leaves
+              roughly one note in three wrong at the state of the art, so disambiguation is a design
+              requirement, not a nicety.</li>
+          <li><strong>G9 — Editable structural skeletons.</strong> Deep generators still differ strikingly
+              from human music in repetition and hierarchy; explicit, human-editable form is the remedy.</li>
+          <li><strong>G11 — Orchestration without over-trusting the orchestrator.</strong> Every benchmark
+              probing musical reasoning in language models reports weakness. Use them as glue around
+              deterministic analysers, not as the analyser.</li>
+          <li><strong>G12 — Licence-clean symbolic training data at scale.</strong> The clean corpora are
+              real but small; the convenient ones are not shippable. Assembling and documenting one is
+              unglamorous work with outsized value to an open project.</li>
+        </ol>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="use">
+  <div class="rail">
+    <div class="mark">§ 5</div>
+    <div>
+      <h2>Use it, argue with it</h2>
+      <div class="cols">
+        <div>
+          <h3>What this is for</h3>
+          <p style="font-size:.95rem; color:var(--ink-2);">
+            The survey is meant to save other people the six months it took to assemble. Cite it,
+            fork it, lift the taxonomy, disagree with the gap list in public. Corrections are the
+            most valuable contribution — the repository has an issue template for one, and every
+            claim in the review is traceable to a source note so a correction can be checked.
+          </p>
+        </div>
+        <div>
+          <h3>What comes next</h3>
+          <p style="font-size:.95rem; color:var(--ink-2);">
+            The near work is unglamorous and blocks everything else: the notation round-trip
+            (G2), an annotation data model that reuses an existing standard rather than inventing
+            one, and a licence-clean corpus. After that, the annotation compiler itself — with
+            the build log as the thing that distinguishes it.
+          </p>
+        </div>
+      </div>
+      <p style="margin-top:1.6rem; font-size:.95rem;">
+        The writing is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+        and the code Apache 2.0. Citation metadata is in
+        <a href="https://github.com/henryatharvard/maestro/blob/main/CITATION.cff"><code>CITATION.cff</code></a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fr">
+    <div>Maestro · Henry Tan · Harvard University</div>
+    <div>Survey compiled September 2026 · <a href="https://github.com/henryatharvard/maestro">Repository</a></div>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

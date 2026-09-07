@@ -1,0 +1,672 @@
+% Cluster 06 — multimodal input, annotation, version control, music-as-code
+% BibKeys match /home/claude/research/notes/06-multimodal-annotation-code.md
+
+%% ---------------- A. Humming / voice ----------------
+
+@inproceedings{ghias1995qbh,
+  author    = {Ghias, Asif and Logan, Jonathan and Chamberlin, David and Smith, Brian C.},
+  title     = {Query by Humming: Musical Information Retrieval in an Audio Database},
+  booktitle = {Proceedings of the Third ACM International Conference on Multimedia (MULTIMEDIA '95)},
+  year      = {1995},
+  publisher = {ACM},
+  doi       = {10.1145/217279.215273},
+  url       = {https://www.cs.cornell.edu/zeno/papers/humming/humming.html}
+}
+
+@misc{frank2020humtosearch,
+  author       = {Frank, Christian},
+  title        = {The Machine Learning Behind Hum to Search},
+  howpublished = {\url{https://research.google/blog/the-machine-learning-behind-hum-to-search/}},
+  year         = {2020},
+  month        = nov,
+  note         = {Google Research Blog. Accessed 2026-09}
+}
+
+@inproceedings{hawthorne2018onsets,
+  author    = {Hawthorne, Curtis and Elsen, Erich and Song, Jialin and Roberts, Adam and Simon, Ian and Raffel, Colin and Engel, Jesse and Oore, Sageev and Eck, Douglas},
+  title     = {Onsets and Frames: Dual-Objective Piano Transcription},
+  booktitle = {Proceedings of the 19th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2018},
+  eprint    = {1710.11153},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/1710.11153}
+}
+
+@inproceedings{gardner2022mt3,
+  author    = {Gardner, Josh and Simon, Ian and Manilow, Ethan and Hawthorne, Curtis and Engel, Jesse},
+  title     = {{MT3}: Multi-Task Multitrack Music Transcription},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  eprint    = {2111.03017},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2111.03017}
+}
+
+@inproceedings{bittner2022basicpitch,
+  author    = {Bittner, Rachel M. and Bosch, Juan Jos{\'e} and Rubinstein, David and Meseguer-Brocal, Gabriel and Ewert, Sebastian},
+  title     = {A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation},
+  booktitle = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year      = {2022},
+  url       = {https://github.com/spotify/basic-pitch}
+}
+
+@inproceedings{donahue2022sheetsage,
+  author    = {Donahue, Chris and Thickstun, John and Liang, Percy},
+  title     = {Melody Transcription via Generative Pre-training},
+  booktitle = {Proceedings of the 23rd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2022},
+  eprint    = {2212.01884},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2212.01884}
+}
+
+@article{donahue2023singsong,
+  author  = {Donahue, Chris and Caillon, Antoine and Roberts, Adam and Manilow, Ethan and Esling, Philippe and Agostinelli, Andrea and Verzetti, Mauro and Simon, Ian and Pietquin, Olivier and Zeghidour, Neil and Engel, Jesse},
+  title   = {{SingSong}: Generating Musical Accompaniments from Singing},
+  journal = {arXiv preprint},
+  year    = {2023},
+  eprint  = {2301.12662},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2301.12662}
+}
+
+@inproceedings{liu2023humtrans,
+  author    = {Liu, Shansong and Li, Xu and Li, Dian and Shan, Ying},
+  title     = {{HumTrans}: A Novel Open-Source Dataset for Humming Melody Transcription and Beyond},
+  booktitle = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year      = {2024},
+  eprint    = {2309.09623},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2309.09623},
+  note      = {arXiv version Sept./Oct. 2023}
+}
+
+@article{gupta2024dynhumtrans,
+  author  = {Gupta, Shubham and Gomez-Sarmiento, Isaac Neri and Mezdari, Faez Amjed and Ravanelli, Mirco and Subakan, Cem},
+  title   = {Dynamic {HumTrans}: Humming Transcription Using {CNNs} and Dynamic Programming},
+  journal = {arXiv preprint},
+  year    = {2024},
+  eprint  = {2410.05455},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2410.05455},
+  note    = {Also published as Springer LNCS chapter, doi:10.1007/978-3-031-71602-7\_23}
+}
+
+@inproceedings{cartwright2015vocalsketch,
+  author    = {Cartwright, Mark and Pardo, Bryan},
+  title     = {{VocalSketch}: Vocally Imitating Audio Concepts},
+  booktitle = {Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems (CHI '15)},
+  year      = {2015},
+  publisher = {ACM},
+  doi       = {10.1145/2702123.2702387},
+  url       = {https://interactiveaudiolab.github.io/assets/papers/cartwright_pardo_chi2015.pdf}
+}
+
+@misc{vochlea2021dubler,
+  author       = {{Vochlea Music}},
+  title        = {Dubler 2: Voice-to-{MIDI} Controller},
+  howpublished = {\url{https://vochlea.com/products/dubler2}},
+  year         = {2021},
+  note         = {Product; see also Sound On Sound review, Nov. 2021, \url{https://www.soundonsound.com/reviews/vochlea-dubler-2}; and Jam Origin MIDI Guitar, \url{https://www.jamorigin.com/}. Accessed 2026-09}
+}
+
+@misc{doremir2014scorecloud,
+  author       = {{Doremir Music Research AB} and {Klangio GmbH}},
+  title        = {{ScoreCloud} and {Sing2Notes}: sing-to-notation products},
+  howpublished = {\url{https://scorecloud.com/} and \url{https://klang.io/sing2notes/}},
+  year         = {2014},
+  note         = {ScoreCloud (formerly ScoreCleaner, 2011) and Sing2Notes (2021). Accessed 2026-09}
+}
+
+@article{elkins2025dawzy,
+  author  = {Elkins, Aaron C. and Blankenship, Sawyer and Singh, Sanchit and Amadasun, Uyiosa Philip and Kieback, Adrian and Chadha, Aman},
+  title   = {{DAWZY}: A New Addition to {AI} powered ``Human in the Loop'' Music Co-creation},
+  journal = {arXiv preprint},
+  year    = {2025},
+  eprint  = {2512.03289},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2512.03289}
+}
+
+%% ---------------- B. Sketch / pen ----------------
+
+@misc{xenakis1977upic,
+  author       = {Xenakis, Iannis and Saint-Jean, Patrick},
+  title        = {{UPIC} (Unit{\'e} Polyagogique Informatique du {CEMAMu})},
+  howpublished = {\url{https://www.iannis-xenakis.org/en/dictionary-upic/}},
+  year         = {1977},
+  note         = {Graphical sound synthesis system, CEMAMu, Paris. Open-source successor: IanniX (GPL-3), \url{https://www.iannix.org}; see Scordato, ``From UPIC to IanniX'', eContact! 19.3 (2017). Accessed 2026-09}
+}
+
+@article{farbood2004hyperscore,
+  author  = {Farbood, Morwaread M. and Pasztor, Egon and Jennings, Kevin},
+  title   = {Hyperscore: A Graphical Sketchpad for Novice Composers},
+  journal = {IEEE Computer Graphics and Applications},
+  volume  = {24},
+  number  = {1},
+  pages   = {50--54},
+  year    = {2004},
+  doi     = {10.1109/MCG.2004.1255809},
+  url     = {https://dl.acm.org/doi/abs/10.1109/MCG.2004.1255809}
+}
+
+@inproceedings{coughlan2006interaction,
+  author    = {Coughlan, Tim and Johnson, Peter},
+  title     = {Interaction in Creative Tasks: Ideation, Representation and Evaluation in Composition},
+  booktitle = {Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '06)},
+  year      = {2006},
+  publisher = {ACM},
+  url       = {https://oro.open.ac.uk/43523}
+}
+
+@inproceedings{garcia2012paper,
+  author    = {Garcia, J{\'e}r{\'e}mie and Tsandilas, Theophanis and Agon, Carlos and Mackay, Wendy E.},
+  title     = {Interactive Paper Substrates to Support Musical Creation},
+  booktitle = {Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '12)},
+  year      = {2012},
+  publisher = {ACM},
+  doi       = {10.1145/2207676.2208316},
+  url       = {https://dl.acm.org/doi/10.1145/2207676.2208316},
+  note      = {See also PaperComposer (IHM 2014, doi:10.1145/2670444.2670450) and InkSplorer (NIME 2011)}
+}
+
+@misc{hearn2015staffpad,
+  author       = {Hearn, David William},
+  title        = {{StaffPad}: pen-based music handwriting and composition app},
+  howpublished = {\url{https://www.staffpad.net/}},
+  year         = {2015},
+  note         = {Windows/Surface 2015; iPad 2020. Review: Scoring Notes, \url{https://www.scoringnotes.com/reviews/staffpad-for-ipad/}. Accessed 2026-09}
+}
+
+@inproceedings{cavez2024challenges,
+  author    = {Cavez, Vincent and Letondal, Catherine and Pietriga, Emmanuel and Appert, Caroline},
+  title     = {Challenges of Music Score Writing and the Potentials of Interactive Surfaces},
+  booktitle = {Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (CHI '24)},
+  year      = {2024},
+  publisher = {ACM},
+  doi       = {10.1145/3613904.3642079},
+  url       = {https://dl.acm.org/doi/10.1145/3613904.3642079}
+}
+
+@inproceedings{cavez2025euterpen,
+  author    = {Cavez, Vincent and Letondal, Catherine and Appert, Caroline and Pietriga, Emmanuel},
+  title     = {{EuterPen}: Unleashing Creative Expression in Music Score Writing},
+  booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25)},
+  year      = {2025},
+  publisher = {ACM},
+  doi       = {10.1145/3706598.3713488},
+  url       = {https://dl.acm.org/doi/10.1145/3706598.3713488}
+}
+
+@inproceedings{fu2026tactus,
+  author    = {Fu, Xintian and Cavez, Vincent},
+  title     = {Opportunities to Support Musicians' Score-based Practice with Context-Specific Annotations on Tablet},
+  booktitle = {Extended Abstracts of the 2026 CHI Conference on Human Factors in Computing Systems (CHI EA '26)},
+  year      = {2026},
+  publisher = {ACM},
+  doi       = {10.1145/3772363.3798332},
+  url       = {https://www.vincentcavez.com/pdf/Tactus.pdf}
+}
+
+@inproceedings{chen2020sketchnet,
+  author    = {Chen, Ke and Wang, Cheng-i and Berg-Kirkpatrick, Taylor and Dubnov, Shlomo},
+  title     = {Music {SketchNet}: Controllable Music Generation via Factorized Representations of Pitch and Rhythm},
+  booktitle = {Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2020},
+  eprint    = {2008.01291},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2008.01291}
+}
+
+@inproceedings{namgyal2022mididraw,
+  author    = {Namgyal, Tashi and Santos-Rodriguez, Raul and Flach, Peter},
+  title     = {{MIDI-Draw}: Sketching to Control Melody Generation},
+  booktitle = {Late-Breaking/Demo Session, 23rd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2022},
+  eprint    = {2305.11605},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2305.11605}
+}
+
+@article{liang2024drawlody,
+  author  = {Liang, Qihao and Wang, Ye},
+  title   = {Drawlody: Sketch-Based Melody Creation with Enhanced Usability and Interpretability},
+  journal = {IEEE Transactions on Multimedia},
+  year    = {2024},
+  url     = {https://smcnus.comp.nus.edu.sg/archive/pdf/2024/2024_Drawlody__IEEE_TMM_Finalised.pdf},
+  note    = {Accepted 2023}
+}
+
+@inproceedings{riosvila2024smt,
+  author    = {R{\'i}os-Vila, Antonio and Calvo-Zaragoza, Jorge and Paquet, Thierry},
+  title     = {Sheet Music Transformer: End-To-End Optical Music Recognition Beyond Monophonic Transcription},
+  booktitle = {Document Analysis and Recognition -- ICDAR 2024},
+  series    = {LNCS},
+  year      = {2024},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-031-70552-6_2},
+  eprint    = {2402.07596},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2402.07596},
+  note      = {See also SMT++ (arXiv:2405.12105); oemer \url{https://github.com/BreezeWhite/oemer}; Audiveris \url{https://github.com/Audiveris/audiveris}}
+}
+
+%% ---------------- C. Image / video → music ----------------
+
+@article{zhang2022vis2mus,
+  author  = {Zhang, Runbang and Zhang, Yixiao and Shao, Kai and Shan, Ying and Xia, Gus},
+  title   = {{Vis2Mus}: Exploring Multimodal Representation Mapping for Controllable Music Generation},
+  journal = {arXiv preprint},
+  year    = {2022},
+  eprint  = {2211.05543},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2211.05543}
+}
+
+@inproceedings{chowdhury2024melfusion,
+  author    = {Chowdhury, Sanjoy and Nag, Sayan and Joseph, K J and Srinivasan, Balaji Vasan and Manocha, Dinesh},
+  title     = {{MeLFusion}: Synthesizing Music from Image and Language Cues using Diffusion Models},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2024},
+  eprint    = {2406.04673},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2406.04673}
+}
+
+@inproceedings{rinaldi2024art2mus,
+  author    = {Rinaldi, Ivan and Fanelli, Nicola and Castellano, Giovanna and Vessio, Gennaro},
+  title     = {{Art2Mus}: Bridging Visual Arts and Music through Cross-Modal Generation},
+  booktitle = {Computer Vision -- ECCV 2024 Workshops (AI for Visual Arts)},
+  year      = {2024},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-031-92808-6_11},
+  eprint    = {2410.04906},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2410.04906},
+  note      = {Extended version with Mendula, Lev{\'e}, Testi: arXiv:2602.17599 (Feb. 2026)}
+}
+
+@inproceedings{kim2025amuse,
+  author    = {Kim, Yewon and Lee, Sung-Ju and Donahue, Chris},
+  title     = {Amuse: Human-{AI} Collaborative Songwriting with Multimodal Inspirations},
+  booktitle = {Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (CHI '25)},
+  year      = {2025},
+  publisher = {ACM},
+  doi       = {10.1145/3706598.3713818},
+  eprint    = {2412.18940},
+  archivePrefix = {arXiv},
+  url       = {https://nmsl.kaist.ac.kr/pdf/CHI25_Amuse.pdf}
+}
+
+@inproceedings{su2024v2meow,
+  author    = {Su, Kun and Li, Judith Yue and Huang, Qingqing and Kuzmin, Dima and Lee, Joonseok and Donahue, Chris and Sha, Fei and Jansen, Aren and Wang, Yu and Verzetti, Mauro and Denk, Timo},
+  title     = {{V2Meow}: Meowing to the Visual Beat via Video-to-Music Generation},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {38},
+  year      = {2024},
+  eprint    = {2305.06594},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2305.06594}
+}
+
+@article{kang2024video2music,
+  author  = {Kang, Jaeyong and Poria, Soujanya and Herremans, Dorien},
+  title   = {{Video2Music}: Suitable Music Generation from Videos using an Affective Multimodal Transformer Model},
+  journal = {Expert Systems with Applications},
+  volume  = {249},
+  year    = {2024},
+  doi     = {10.1016/j.eswa.2024.123640},
+  eprint  = {2311.00968},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2311.00968}
+}
+
+@inproceedings{tian2025vidmuse,
+  author    = {Tian, Zeyue and Liu, Zhaoyang and Yuan, Ruibin and Pan, Jiahao and Liu, Qifeng and Tan, Xu and Chen, Qifeng and Xue, Wei and Guo, Yike},
+  title     = {{VidMuse}: A Simple Video-to-Music Generation Framework with Long-Short-Term Modeling},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2025},
+  eprint    = {2406.04321},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2406.04321}
+}
+
+@article{liu2024mumullama,
+  author  = {Liu, Shansong and Hussain, Atin Sakkeer and Wu, Qilong and Sun, Chenshuo and Shan, Ying},
+  title   = {{MuMu-LLaMA}: Multi-modal Music Understanding and Generation via Large Language Models},
+  journal = {arXiv preprint},
+  year    = {2024},
+  eprint  = {2412.06660},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2412.06660},
+  note    = {Earlier version: Hussain, Liu, Sun, Shan, ``M$^2$UGen'', arXiv:2311.11255 (2023)}
+}
+
+@article{li2024muvi,
+  author  = {Li, Ruiqi and Zheng, Siqi and Cheng, Xize and Zhang, Ziang and Ji, Shengpeng and Zhao, Zhou},
+  title   = {{MuVi}: Video-to-Music Generation with Semantic Alignment and Rhythmic Synchronization},
+  journal = {arXiv preprint},
+  year    = {2024},
+  eprint  = {2410.12957},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2410.12957},
+  note    = {See also VidMusician, Li et al., arXiv:2412.06296 (2024)}
+}
+
+%% ---------------- D. Annotation tools & encodings ----------------
+
+@inproceedings{cannam2010sonicvisualiser,
+  author    = {Cannam, Chris and Landone, Christian and Sandler, Mark},
+  title     = {Sonic Visualiser: An Open Source Application for Viewing, Analysing, and Annotating Music Audio Files},
+  booktitle = {Proceedings of the 18th ACM International Conference on Multimedia (MM '10)},
+  year      = {2010},
+  publisher = {ACM},
+  doi       = {10.1145/1873951.1874248},
+  url       = {https://www.sonicvisualiser.org/sv2010.pdf}
+}
+
+@inproceedings{giraud2018dezrann,
+  author    = {Giraud, Mathieu and Groult, Richard and Leguy, Emmanuel},
+  title     = {Dezrann, a Web Framework to Share Music Analysis},
+  booktitle = {Proceedings of the International Conference on Technologies for Music Notation and Representation (TENOR '18)},
+  year      = {2018},
+  url       = {https://www.tenor-conference.org/proceedings/2018/14_Giraud_tenor18.pdf},
+  note      = {Platform update: Ballester, Bacot, Bigo, Borsan et al., ``Interacting with Annotated and Synchronized Music Corpora on the Dezrann Web Platform'', TISMIR 2025, doi:10.5334/tismir.212}
+}
+
+@inproceedings{pugin2014verovio,
+  author    = {Pugin, Laurent and Zitellini, Rodolfo and Roland, Perry},
+  title     = {Verovio: A Library for Engraving {MEI} Music Notation into {SVG}},
+  booktitle = {Proceedings of the 15th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2014},
+  url       = {https://archives.ismir.net/ismir2014/paper/000221.pdf},
+  note      = {MEI: Music Encoding Initiative, \url{https://music-encoding.org/}}
+}
+
+@misc{goebl2023meifriend,
+  author       = {Goebl, Werner and Weigl, David M.},
+  title        = {mei-friend: An Interactive Web-based Editor for Digital Music Encodings},
+  howpublished = {\url{https://mei-friend.mdw.ac.at/}},
+  year         = {2023},
+  note         = {mdw -- University of Music and Performing Arts Vienna; code \url{https://github.com/mei-friend/mei-friend}. Accessed 2026-09}
+}
+
+@misc{w3c2021musicxml40,
+  author       = {{W3C Music Notation Community Group}},
+  title        = {{MusicXML} Version 4.0 (Final Community Group Specification) and {MNX} (draft)},
+  howpublished = {\url{https://www.w3.org/2021/06/musicxml40/}},
+  year         = {2021},
+  month        = jun,
+  note         = {MNX specification in progress at \url{https://mnx.formats.music}; working-group minutes through Aug. 2026 at \url{https://www.w3.org/community/music-notation/}. Accessed 2026-09}
+}
+
+@misc{walshaw2011abc,
+  author       = {Walshaw, Chris},
+  title        = {The {ABC} Music Standard 2.1},
+  howpublished = {\url{https://abcnotation.com/wiki/abc:standard:v2.1}},
+  year         = {2011},
+  month        = dec,
+  note         = {abcjs renderer by Paul Rosen: \url{https://github.com/paulrosen/abcjs}. Accessed 2026-09}
+}
+
+@misc{huron1995humdrum,
+  author       = {Huron, David},
+  title        = {The Humdrum Toolkit: Reference Manual and User's Guide (**kern representation)},
+  howpublished = {\url{https://www.humdrum.org/}},
+  year         = {1995},
+  note         = {Verovio Humdrum Viewer / humlib by Craig Sapp. Accessed 2026-09}
+}
+
+@misc{cheppudira2010vexflow,
+  author       = {Cheppudira, Mohit Muthanna},
+  title        = {{VexFlow}: A JavaScript library for rendering music notation},
+  howpublished = {\url{https://github.com/0xfe/vexflow}},
+  year         = {2010},
+  note         = {See also OpenSheetMusicDisplay (Phonicscore), \url{https://github.com/opensheetmusicdisplay/opensheetmusicdisplay}; alphaTab, \url{https://www.alphatab.net}. Accessed 2026-09}
+}
+
+@misc{newzik2026readers,
+  author       = {{Newzik SAS} and {forScore LLC}},
+  title        = {Newzik and forScore: digital sheet-music readers with annotation and shared-annotation features},
+  howpublished = {\url{https://newzik.com/en/} and \url{https://forscore.co/}},
+  year         = {2026},
+  note         = {Accessed 2026-09}
+}
+
+@article{gotham2023wheninrome,
+  author  = {Gotham, Mark and Micchi, Gianluca and N{\'a}poles L{\'o}pez, N{\'e}stor and Sailor, Malcolm},
+  title   = {When in Rome: A Meta-corpus of Functional Harmony},
+  journal = {Transactions of the International Society for Music Information Retrieval},
+  volume  = {6},
+  number  = {1},
+  year    = {2023},
+  doi     = {10.5334/tismir.165},
+  url     = {https://transactions.ismir.net/articles/10.5334/tismir.165}
+}
+
+@article{neuwirth2018abc,
+  author  = {Neuwirth, Markus and Harasim, Daniel and Moss, Fabian C. and Rohrmeier, Martin},
+  title   = {The Annotated Beethoven Corpus ({ABC}): A Dataset of Harmonic Analyses of All Beethoven String Quartets},
+  journal = {Frontiers in Digital Humanities},
+  volume  = {5},
+  pages   = {16},
+  year    = {2018},
+  doi     = {10.3389/fdigh.2018.00016},
+  url     = {https://github.com/DCMLab/ABC}
+}
+
+%% ---------------- E. Editing paradigms ----------------
+
+@article{shneiderman1983direct,
+  author  = {Shneiderman, Ben},
+  title   = {Direct Manipulation: A Step Beyond Programming Languages},
+  journal = {IEEE Computer},
+  volume  = {16},
+  number  = {8},
+  pages   = {57--69},
+  year    = {1983},
+  doi     = {10.1109/MC.1983.1654471}
+}
+
+@inproceedings{masson2024directgpt,
+  author    = {Masson, Damien and Malacria, Sylvain and Casiez, G{\'e}ry and Vogel, Daniel},
+  title     = {{DirectGPT}: A Direct Manipulation Interface to Interact with Large Language Models},
+  booktitle = {Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (CHI '24)},
+  year      = {2024},
+  publisher = {ACM},
+  eprint    = {2310.03691},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2310.03691}
+}
+
+@inproceedings{tilekbay2024expressedit,
+  author    = {Tilekbay, Bekzat and Yang, Saelyne and Lewkowicz, Michal and Suryapranata, Alex and Kim, Juho},
+  title     = {{ExpressEdit}: Video Editing with Natural Language and Sketching},
+  booktitle = {Proceedings of the 29th International Conference on Intelligent User Interfaces (IUI '24)},
+  year      = {2024},
+  publisher = {ACM},
+  doi       = {10.1145/3640543.3645164},
+  eprint    = {2403.17693},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2403.17693}
+}
+
+@inproceedings{brooks2023instructpix2pix,
+  author    = {Brooks, Tim and Holynski, Aleksander and Efros, Alexei A.},
+  title     = {{InstructPix2Pix}: Learning to Follow Image Editing Instructions},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2023},
+  eprint    = {2211.09800},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2211.09800}
+}
+
+@inproceedings{igarashi1999teddy,
+  author    = {Igarashi, Takeo and Matsuoka, Satoshi and Tanaka, Hidehiko},
+  title     = {Teddy: A Sketching Interface for {3D} Freeform Design},
+  booktitle = {Proceedings of SIGGRAPH 99},
+  year      = {1999},
+  publisher = {ACM},
+  doi       = {10.1145/311535.311602},
+  url       = {https://www-ui.is.s.u-tokyo.ac.jp/~takeo/teddy/teddy.htm}
+}
+
+@book{cypher1993wwid,
+  editor    = {Cypher, Allen},
+  title     = {Watch What I Do: Programming by Demonstration},
+  publisher = {MIT Press},
+  year      = {1993},
+  url       = {https://acypher.com/wwid/}
+}
+
+@article{omar2019hazel,
+  author  = {Omar, Cyrus and Voysey, Ian and Chugh, Ravi and Hammer, Matthew A.},
+  title   = {Live Functional Programming with Typed Holes},
+  journal = {Proceedings of the ACM on Programming Languages (PACMPL), POPL},
+  volume  = {3},
+  year    = {2019},
+  doi     = {10.1145/3290327},
+  eprint  = {1805.00155},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/1805.00155},
+  note    = {Related: Tanimoto, ``A Perspective on the Evolution of Live Programming'', LIVE 2013; JetBrains MPS projectional editing, \url{https://www.jetbrains.com/mps/concepts/}}
+}
+
+%% ---------------- F. Version control / history ----------------
+
+@inproceedings{foscarin2019diff,
+  author    = {Foscarin, Francesco and Jacquemard, Florent and Fournier-S'niehotta, Rapha{\"e}l},
+  title     = {A Diff Procedure for Music Score Files},
+  booktitle = {Proceedings of the 6th International Conference on Digital Libraries for Musicology (DLfM '19)},
+  year      = {2019},
+  publisher = {ACM},
+  doi       = {10.1145/3358664.3358671},
+  url       = {https://doi.org/10.1145/3358664.3358671}
+}
+
+@misc{flat2026history,
+  author       = {{Tutteo Ltd (Flat.io)}},
+  title        = {Flat.io: Score version history and collaborative editing},
+  howpublished = {\url{https://help.flat.io/en/music-notation-software/history/}},
+  year         = {2026},
+  note         = {Accessed 2026-09. Splice Studio and Blend.io cited as discontinued DAW-project versioning precedents (unverified)}
+}
+
+@inproceedings{grossman2010chronicle,
+  author    = {Grossman, Tovi and Matejka, Justin and Fitzmaurice, George},
+  title     = {Chronicle: Capture, Exploration, and Playback of Document Workflow Histories},
+  booktitle = {Proceedings of the 23rd Annual ACM Symposium on User Interface Software and Technology (UIST '10)},
+  year      = {2010},
+  publisher = {ACM},
+  url       = {https://www.research.autodesk.com/publications/chronicle-capture-exploration-and-playback-of-document-workflow-histories/}
+}
+
+@inproceedings{suh2024luminate,
+  author    = {Suh, Sangho and Chen, Meng and Min, Bryan and Li, Toby Jia-Jun and Xia, Haijun},
+  title     = {Luminate: Structured Generation and Exploration of Design Space with Large Language Models for Human-{AI} Co-Creation},
+  booktitle = {Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems (CHI '24)},
+  year      = {2024},
+  publisher = {ACM},
+  doi       = {10.1145/3613904.3642400},
+  eprint    = {2310.12953},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2310.12953},
+  note      = {Precedent: Terry, Mynatt, Nakakoji, Yamamoto, ``Variation in Element and Action'' (Parallel Paths), CHI 2004}
+}
+
+%% ---------------- G. Music as code ----------------
+
+@inproceedings{nienhuys2003lilypond,
+  author    = {Nienhuys, Han-Wen and Nieuwenhuizen, Jan},
+  title     = {{LilyPond}, a System for Automated Music Engraving},
+  booktitle = {Proceedings of the XIV Colloquium on Musical Informatics (CIM)},
+  year      = {2003},
+  url       = {https://lilypond.org/}
+}
+
+@article{wang2015chuck,
+  author  = {Wang, Ge and Cook, Perry R. and Salazar, Spencer},
+  title   = {{ChucK}: A Strongly Timed Computer Music Language},
+  journal = {Computer Music Journal},
+  volume  = {39},
+  number  = {4},
+  pages   = {10--29},
+  year    = {2015},
+  doi     = {10.1162/COMJ_a_00324},
+  url     = {https://chuck.stanford.edu/},
+  note    = {Companion systems: Csound (Vercoe, 1985/86) \url{https://csound.com/}; SuperCollider (McCartney, 1996) \url{https://supercollider.github.io/}; Pure Data (Puckette, 1996) \url{https://puredata.info/}; Faust (GRAME) \url{https://faust.grame.fr/}}
+}
+
+@inproceedings{mclean2014tidal,
+  author    = {McLean, Alex},
+  title     = {Making Programming Languages to Dance to: Live Coding with Tidal},
+  booktitle = {Proceedings of the 2nd ACM SIGPLAN International Workshop on Functional Art, Music, Modeling \& Design (FARM '14)},
+  year      = {2014},
+  publisher = {ACM},
+  doi       = {10.1145/2633638.2633647},
+  url       = {https://tidalcycles.org/},
+  note      = {Related: Roos \& McLean, ``Strudel: Live Coding Patterns on the Web'', ICLC 2023, \url{https://strudel.cc}; Aaron \& Blackwell, ``From Sonic Pi to Overtone'', FARM 2013, \url{https://sonic-pi.net/}; Roberts \& Kuchera-Morin, Gibber, ICMC 2012; Kirkbride, FoxDot, ICLC 2016}
+}
+
+@article{assayag1999openmusic,
+  author  = {Assayag, G{\'e}rard and Rueda, Camilo and Laurson, Mikael and Agon, Carlos and Delerue, Olivier},
+  title   = {Computer-Assisted Composition at {IRCAM}: From {PatchWork} to {OpenMusic}},
+  journal = {Computer Music Journal},
+  volume  = {23},
+  number  = {3},
+  pages   = {59--72},
+  year    = {1999},
+  doi     = {10.1162/014892699559896},
+  url     = {https://github.com/openmusic-project/openmusic},
+  note    = {Related: Agostini \& Ghisi, ``A Max Library for Musical Notation and Computer-Aided Composition'' (bach), CMJ 39(2), 2015, \url{https://www.bachproject.net/}; Laurson, Kuuskankare, Norilo, PWGL, CMJ 33(4), 2009}
+}
+
+@inproceedings{cuthbert2010music21,
+  author    = {Cuthbert, Michael Scott and Ariza, Christopher},
+  title     = {music21: A Toolkit for Computer-Aided Musicology and Symbolic Music Data},
+  booktitle = {Proceedings of the 11th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2010},
+  url       = {https://github.com/cuthbertLab/music21},
+  note      = {Related: Hudak \& Quick, \emph{The Haskell School of Music}, Cambridge UP 2018 (Euterpea, \url{https://www.euterpea.com/}); Yarwood, Alda, \url{https://github.com/alda-lang/alda}}
+}
+
+@book{nierhaus2009algorithmic,
+  author    = {Nierhaus, Gerhard},
+  title     = {Algorithmic Composition: Paradigms of Automated Music Generation},
+  publisher = {Springer},
+  address   = {Vienna},
+  year      = {2009},
+  doi       = {10.1007/978-3-211-75540-2},
+  url       = {https://link.springer.com/book/10.1007/978-3-211-75540-2},
+  note      = {Related scholarship: Dannenberg, ``Music Representation Issues, Techniques, and Systems'', CMJ 17(3), 1993; Magnusson, \emph{Sonic Writing}, Bloomsbury 2019; Roads, \emph{The Computer Music Tutorial}, MIT Press 1996/2023}
+}
+
+@inproceedings{yuan2024chatmusician,
+  author    = {Yuan, Ruibin and Lin, Hanfeng and Wang, Yi and Tian, Zeyue and Wu, Shangda and others},
+  title     = {{ChatMusician}: Understanding and Generating Music Intrinsically with {LLM}},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
+  year      = {2024},
+  eprint    = {2402.16153},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2402.16153}
+}
+
+@article{wu2025midillm,
+  author  = {Wu, Shih-Lun and Kim, Yoon and Huang, Cheng-Zhi Anna},
+  title   = {{MIDI-LLM}: Adapting Large Language Models for Text-to-{MIDI} Music Generation},
+  journal = {arXiv preprint},
+  year    = {2025},
+  eprint  = {2511.03942},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2511.03942}
+}
+
+@article{xu2026libretto,
+  author  = {Xu, Yichen},
+  title   = {Libretto: Giving {LLM} Agents a Sense of Musical Structure},
+  journal = {arXiv preprint},
+  year    = {2026},
+  eprint  = {2606.22708},
+  archivePrefix = {arXiv},
+  url     = {https://arxiv.org/abs/2606.22708}
+}

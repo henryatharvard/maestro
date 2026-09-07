@@ -1,0 +1,640 @@
+% Cluster 03 — Symbolic music models: representations, generation, infilling, editing, control
+% Generated 2026-09. Venues marked "unverified" in the notes are given as reported.
+
+% ---------- A. Representations, tokenizers, datasets, surveys ----------
+
+@inproceedings{huang2018musictransformer,
+  title     = {Music Transformer: Generating Music with Long-Term Structure},
+  author    = {Huang, Cheng-Zhi Anna and Vaswani, Ashish and Uszkoreit, Jakob and Shazeer, Noam and Simon, Ian and Hawthorne, Curtis and Dai, Andrew M. and Hoffman, Matthew D. and Dinculescu, Monica and Eck, Douglas},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2019},
+  eprint    = {1809.04281},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/1809.04281}
+}
+
+@inproceedings{huang2020popmusictransformer,
+  title     = {Pop Music Transformer: Beat-based Modeling and Generation of Expressive Pop Piano Compositions},
+  author    = {Huang, Yu-Siang and Yang, Yi-Hsuan},
+  booktitle = {Proceedings of the 28th ACM International Conference on Multimedia (MM '20)},
+  year      = {2020},
+  doi       = {10.1145/3394171.3413671},
+  eprint    = {2002.00212},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2002.00212}
+}
+
+@inproceedings{hsiao2021compoundword,
+  title     = {Compound Word Transformer: Learning to Compose Full-Song Music over Dynamic Directed Hypergraphs},
+  author    = {Hsiao, Wen-Yi and Liu, Jen-Yu and Yeh, Yin-Cheng and Yang, Yi-Hsuan},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year      = {2021},
+  eprint    = {2101.02402},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2101.02402}
+}
+
+@inproceedings{zeng2021musicbert,
+  title     = {MusicBERT: Symbolic Music Understanding with Large-Scale Pre-Training},
+  author    = {Zeng, Mingliang and Tan, Xu and Wang, Rui and Ju, Zeqian and Qin, Tao and Liu, Tie-Yan},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021},
+  year      = {2021},
+  eprint    = {2106.05630},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2106.05630}
+}
+
+@article{chou2021midibert,
+  title     = {BERT-like Pre-training for Symbolic Piano Music Classification Tasks},
+  author    = {Chou, Yi-Hui and Chen, I-Chun and Chang, Chin-Jui and Ching, Joann and Yang, Yi-Hsuan},
+  journal   = {Journal of Creative Music Systems},
+  year      = {2024},
+  note      = {arXiv preprint 2021 (MidiBERT-Piano)},
+  eprint    = {2107.05223},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2107.05223}
+}
+
+@inproceedings{sturm2016folkrnn,
+  title     = {Music Transcription Modelling and Composition Using Deep Learning},
+  author    = {Sturm, Bob L. and Santos, Jo{\~a}o Felipe and Ben-Tal, Oded and Korshunova, Iryna},
+  booktitle = {Proceedings of the 1st Conference on Computer Simulation of Musical Creativity (CSMC)},
+  year      = {2016},
+  eprint    = {1604.08723},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/1604.08723}
+}
+
+@inproceedings{fradet2021miditok,
+  title     = {MidiTok: A Python Package for MIDI File Tokenization},
+  author    = {Fradet, Nathan and Briot, Jean-Pierre and Chhel, Fabien and El Fallah Seghrouchni, Amal and Gutowski, Nicolas},
+  booktitle = {Extended Abstracts for the Late-Breaking Demo Session of the 22nd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2021},
+  url       = {https://archives.ismir.net/ismir2021/latebreaking/000005.pdf},
+  note      = {Library: \url{https://github.com/Natooz/MidiTok}; extended version arXiv:2310.17202 (2023)}
+}
+
+@inproceedings{bradshaw2025ariamidi,
+  title     = {Aria-MIDI: A Dataset of Piano MIDI Files for Symbolic Music Modeling},
+  author    = {Bradshaw, Louis and Colton, Simon},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2025},
+  eprint    = {2504.15071},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2504.15071}
+}
+
+@inproceedings{bradshaw2025aria,
+  title     = {Scaling Self-Supervised Representation Learning for Symbolic Piano Performance},
+  author    = {Bradshaw, Louis and Fan, Honglu and Spangher, Alexander and Biderman, Stella and Colton, Simon},
+  booktitle = {Proceedings of the 26th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2025},
+  eprint    = {2506.23869},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2506.23869}
+}
+
+@article{le2025nlpsurvey,
+  title     = {Natural Language Processing Methods for Symbolic Music Generation and Information Retrieval: A Survey},
+  author    = {Le, Dinh-Viet-Toan and Bigo, Louis and Keller, Mikaela and Herremans, Dorien},
+  journal   = {ACM Computing Surveys},
+  year      = {2025},
+  doi       = {10.1145/3714457},
+  eprint    = {2402.17467},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2402.17467}
+}
+
+@article{ji2023survey,
+  title     = {A Survey on Deep Learning for Symbolic Music Generation: Representations, Algorithms, Evaluations, and Challenges},
+  author    = {Ji, Shulei and Yang, Xinyu and Luo, Jing},
+  journal   = {ACM Computing Surveys},
+  year      = {2023},
+  doi       = {10.1145/3597493},
+  url       = {https://dl.acm.org/doi/10.1145/3597493},
+  note      = {Earlier arXiv survey: 2011.06801 (2020)}
+}
+
+% ---------- B. Infilling / inpainting / editing ----------
+
+@inproceedings{hadjeres2017deepbach,
+  title     = {DeepBach: a Steerable Model for Bach Chorales Generation},
+  author    = {Hadjeres, Ga{\"e}tan and Pachet, Fran{\c{c}}ois and Nielsen, Frank},
+  booktitle = {Proceedings of the 34th International Conference on Machine Learning (ICML)},
+  year      = {2017},
+  eprint    = {1612.01010},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/1612.01010}
+}
+
+@inproceedings{huang2017coconet,
+  title     = {Counterpoint by Convolution},
+  author    = {Huang, Cheng-Zhi Anna and Cooijmans, Tim and Roberts, Adam and Courville, Aaron and Eck, Douglas},
+  booktitle = {Proceedings of the 18th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2017},
+  eprint    = {1903.07227},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/1903.07227}
+}
+
+@inproceedings{pati2019inpaintnet,
+  title     = {Learning to Traverse Latent Spaces for Musical Score Inpainting},
+  author    = {Pati, Ashis and Lerch, Alexander and Hadjeres, Ga{\"e}tan},
+  booktitle = {Proceedings of the 20th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2019},
+  eprint    = {1907.01164},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/1907.01164}
+}
+
+@inproceedings{chen2020sketchnet,
+  title     = {Music SketchNet: Controllable Music Generation via Factorized Representations of Pitch and Rhythm},
+  author    = {Chen, Ke and Wang, Cheng-i and Berg-Kirkpatrick, Taylor and Dubnov, Shlomo},
+  booktitle = {Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2020},
+  eprint    = {2008.01291},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2008.01291}
+}
+
+@misc{ens2020mmm,
+  title     = {MMM: Exploring Conditional Multi-Track Music Generation with the Transformer},
+  author    = {Ens, Jeff and Pasquier, Philippe},
+  year      = {2020},
+  eprint    = {2008.06048},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2008.06048}
+}
+
+@inproceedings{chang2021xlnet,
+  title     = {Variable-Length Music Score Infilling via XLNet and Musically Specialized Positional Encoding},
+  author    = {Chang, Chin-Jui and Lee, Chun-Yi and Yang, Yi-Hsuan},
+  booktitle = {Proceedings of the 22nd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2021},
+  eprint    = {2108.05064},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2108.05064}
+}
+
+@inproceedings{guo2022musiac,
+  title     = {MusIAC: An Extensible Generative Framework for Music Infilling Applications with Multi-level Control},
+  author    = {Guo, Rui and Simpson, Ivor and Kiefer, Chris and Magnusson, Thor and Herremans, Dorien},
+  booktitle = {Artificial Intelligence in Music, Sound, Art and Design (EvoMUSART)},
+  year      = {2022},
+  eprint    = {2202.05528},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2202.05528}
+}
+
+@article{thickstun2023anticipatory,
+  title     = {Anticipatory Music Transformer},
+  author    = {Thickstun, John and Hall, David and Donahue, Chris and Liang, Percy},
+  journal   = {Transactions on Machine Learning Research (TMLR)},
+  year      = {2024},
+  note      = {arXiv preprint June 2023},
+  eprint    = {2306.08620},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2306.08620}
+}
+
+@inproceedings{malandro2023composersassistant,
+  title     = {Composer's Assistant: An Interactive Transformer for Multi-Track MIDI Infilling},
+  author    = {Malandro, Martin E.},
+  booktitle = {Proceedings of the 24th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2023},
+  eprint    = {2301.12525},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2301.12525}
+}
+
+@inproceedings{malandro2024composersassistant2,
+  title     = {Composer's Assistant 2: Interactive Multi-Track MIDI Infilling with Fine-Grained User Control},
+  author    = {Malandro, Martin E.},
+  booktitle = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2024},
+  eprint    = {2407.14700},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2407.14700}
+}
+
+@misc{pasquier2025midigpt,
+  title     = {MIDI-GPT: A Controllable Generative Model for Computer-Assisted Multitrack Music Composition},
+  author    = {Pasquier, Philippe and Ens, Jeff and Fradet, Nathan and Triana, Paul and Rizzotti, Davide and Rolland, Jean-Baptiste and Safi, Maryam},
+  year      = {2025},
+  eprint    = {2501.17011},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2501.17011},
+  note      = {Reported as AAAI 2025; venue unverified}
+}
+
+@misc{zhouzheng2025midirwkv,
+  title     = {Adaptable Symbolic Music Infilling with MIDI-RWKV},
+  author    = {Zhou-Zheng, Christian and Pasquier, Philippe},
+  year      = {2025},
+  eprint    = {2506.13001},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2506.13001},
+  note      = {v1 title: Personalizable Long-Context Symbolic Music Infilling with MIDI-RWKV}
+}
+
+@inproceedings{min2023polyffusion,
+  title     = {Polyffusion: A Diffusion Model for Polyphonic Score Generation with Internal and External Controls},
+  author    = {Min, Lejun and Jiang, Junyan and Xia, Gus and Zhao, Jingwei},
+  booktitle = {Proceedings of the 24th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2023},
+  eprint    = {2307.10304},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2307.10304}
+}
+
+@misc{lv2023getmusic,
+  title     = {GETMusic: Generating Any Music Tracks with a Unified Representation and Diffusion Framework},
+  author    = {Lv, Ang and Tan, Xu and Lu, Peiling and Ye, Wei and Zhang, Shikun and Bian, Jiang and Yan, Rui},
+  year      = {2023},
+  eprint    = {2305.10841},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2305.10841}
+}
+
+@misc{zhang2025groove,
+  title     = {Not that Groove: Zero-Shot Symbolic Music Editing},
+  author    = {Zhang, Li},
+  year      = {2025},
+  eprint    = {2505.08203},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2505.08203},
+  note      = {v2 (2026) retitled: Zero-Shot Symbolic Music Editing as a Reasoning Task for Large Language Models}
+}
+
+% ---------- C. Controllable / text- and attribute-conditioned generation ----------
+
+@inproceedings{yu2022museformer,
+  title     = {Museformer: Transformer with Fine- and Coarse-Grained Attention for Music Generation},
+  author    = {Yu, Botao and Lu, Peiling and Wang, Rui and Hu, Wei and Tan, Xu and Ye, Wei and Zhang, Shikun and Qin, Tao and Liu, Tie-Yan},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2022},
+  eprint    = {2210.10349},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2210.10349}
+}
+
+@inproceedings{vonrutte2023figaro,
+  title     = {FIGARO: Generating Symbolic Music with Fine-Grained Artistic Control},
+  author    = {von R{\"u}tte, Dimitri and Biggio, Luca and Kilcher, Yannic and Hofmann, Thomas},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023},
+  eprint    = {2201.10936},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2201.10936}
+}
+
+@misc{lu2023musecoco,
+  title     = {MuseCoco: Generating Symbolic Music from Text},
+  author    = {Lu, Peiling and Xu, Xin and Kang, Chenfei and Yu, Botao and Xing, Chengyi and Tan, Xu and Bian, Jiang},
+  year      = {2023},
+  eprint    = {2306.00110},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2306.00110}
+}
+
+@article{wu2023musemorphose,
+  title     = {MuseMorphose: Full-Song and Fine-Grained Piano Music Style Transfer with One Transformer VAE},
+  author    = {Wu, Shih-Lun and Yang, Yi-Hsuan},
+  journal   = {IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+  volume    = {31},
+  year      = {2023},
+  eprint    = {2105.04090},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2105.04090}
+}
+
+@inproceedings{tan2020fadernets,
+  title     = {Music FaderNets: Controllable Music Generation Based on High-Level Features via Low-Level Feature Modelling},
+  author    = {Tan, Hao Hao and Herremans, Dorien},
+  booktitle = {Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2020},
+  eprint    = {2007.15474},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2007.15474}
+}
+
+@inproceedings{dong2023mmt,
+  title     = {Multitrack Music Transformer},
+  author    = {Dong, Hao-Wen and Chen, Ke and Dubnov, Shlomo and McAuley, Julian and Berg-Kirkpatrick, Taylor},
+  booktitle = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year      = {2023},
+  eprint    = {2207.06983},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2207.06983}
+}
+
+@inproceedings{chen2024sympac,
+  title     = {SymPAC: Scalable Symbolic Music Generation with Prompts and Constraints},
+  author    = {Chen, Haonan and Smith, Jordan B. L. and Li, Bochen and Wang, Ju-Chiang and Spijkervet, Janne and Zou, Pei and Du, Xingjian and Kong, Qiuqiang},
+  booktitle = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2024},
+  eprint    = {2409.03055},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2409.03055}
+}
+
+@inproceedings{bhandari2025text2midi,
+  title     = {Text2midi: Generating Symbolic Music from Captions},
+  author    = {Bhandari, Keshav and Roy, Abhinaba and Wang, Kyra and Puri, Geeta and Colton, Simon and Herremans, Dorien},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year      = {2025},
+  eprint    = {2412.16526},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2412.16526}
+}
+
+@inproceedings{xu2025metascore,
+  title     = {Generating Symbolic Music from Natural Language Prompts using an LLM-Enhanced Dataset},
+  author    = {Xu, Weihan and McAuley, Julian and Dubnov, Shlomo and Berg-Kirkpatrick, Taylor and Dong, Hao-Wen},
+  booktitle = {Proceedings of the 26th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2025},
+  eprint    = {2410.02084},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2410.02084},
+  note      = {MetaScore dataset}
+}
+
+@inproceedings{wu2026midillm,
+  title     = {MIDI-LLM: Adapting Large Language Models for Text-to-MIDI Music Generation},
+  author    = {Wu, Shih-Lun and Carlton, Dave and Miyakawa, Ryan and Kim, Yoon and Donahue, Chris and Huang, Cheng-Zhi Anna},
+  booktitle = {Proceedings of the 27th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2026},
+  eprint    = {2511.03942},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2511.03942}
+}
+
+@inproceedings{huang2024scg,
+  title     = {Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion},
+  author    = {Huang, Yujia and Ghatare, Adishree and Liu, Yuanzhe and Hu, Ziniu and Zhang, Qinsheng and Sastry, Chandramouli S. and Gururani, Siddharth and Oore, Sageev and Yue, Yisong},
+  booktitle = {Proceedings of the 41st International Conference on Machine Learning (ICML), PMLR 235},
+  year      = {2024},
+  eprint    = {2402.14285},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2402.14285}
+}
+
+@inproceedings{petteno2025lcdiff,
+  title     = {Conditional Diffusion as Latent Constraints for Controllable Symbolic Music Generation},
+  author    = {Petten{\`o}, Matteo and Mezza, Alessandro Ilic and Bernardini, Alberto},
+  booktitle = {Proceedings of the 26th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2025},
+  eprint    = {2511.07156},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2511.07156}
+}
+
+@misc{lin2026diffsymbo,
+  title     = {Diff-Symbo: Text-Controlled Long-Duration Symbolic Music Generation Using Autoregressive Latent Diffusion Model},
+  author    = {Lin, Zhiwei and Chen, Jun and Tang, Boshi and Wu, Weihao and Jing, Yang and Ju, Yaolong and Fan, Fan and Wu, Zhiyong},
+  year      = {2026},
+  eprint    = {2608.05222},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2608.05222}
+}
+
+% ---------- D. Music LLMs on ABC and their evaluation ----------
+
+@inproceedings{yuan2024chatmusician,
+  title     = {ChatMusician: Understanding and Generating Music Intrinsically with LLM},
+  author    = {Yuan, Ruibin and Lin, Hanfeng and Wang, Yi and Tian, Zeyue and Wu, Shangda and Shen, Tianhao and Zhang, Ge and others},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2024},
+  year      = {2024},
+  eprint    = {2402.16153},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2402.16153}
+}
+
+@misc{qu2024mupt,
+  title     = {MuPT: A Generative Symbolic Music Pretrained Transformer},
+  author    = {Qu, Xingwei and Bai, Yuelin and Ma, Yinghao and Zhou, Ziya and Lo, Ka Man and Liu, Jiaheng and Yuan, Ruibin and Min, Lejun and others},
+  year      = {2024},
+  eprint    = {2404.06393},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2404.06393},
+  note      = {Reported as ICLR 2025; venue unverified}
+}
+
+@misc{wang2025notagen,
+  title     = {NotaGen: Advancing Musicality in Symbolic Music Generation with Large Language Model Training Paradigms},
+  author    = {Wang, Yashan and Wu, Shangda and Hu, Jianhuai and Du, Xingjian and Peng, Yueqi and Huang, Yongxin and Fan, Shuai and Li, Xiaobing and Yu, Feng and Sun, Maosong},
+  year      = {2025},
+  eprint    = {2502.18008},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2502.18008}
+}
+
+@inproceedings{wu2024melodyt5,
+  title     = {MelodyT5: A Unified Score-to-Score Transformer for Symbolic Music Processing},
+  author    = {Wu, Shangda and Wang, Yashan and Li, Xiaobing and Yu, Feng and Sun, Maosong},
+  booktitle = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2024},
+  eprint    = {2407.02277},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2407.02277}
+}
+
+@inproceedings{jiang2025functionalignment,
+  title     = {Versatile Symbolic Music-for-Music Modeling via Function Alignment},
+  author    = {Jiang, Junyan and Chin, Daniel and Lin, Liwei and Liu, Xuanjie and Xia, Gus},
+  booktitle = {Proceedings of the 26th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2025},
+  eprint    = {2506.15548},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2506.15548}
+}
+
+@inproceedings{kumar2026howfar,
+  title     = {How Far Can Pretrained LLMs Go in Symbolic Music? Controlled Comparisons of Supervised and Preference-based Adaptation},
+  author    = {Kumar, Deepak and Karystinaios, Emmanouil and Widmer, Gerhard and Schedl, Markus},
+  booktitle = {Proceedings of the Workshop on NLP for Music and Audio (NLP4MusA)},
+  year      = {2026},
+  eprint    = {2601.22764},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2601.22764}
+}
+
+@misc{li2024ziqieval,
+  title     = {The Music Maestro or The Musically Challenged, A Massive Music Evaluation Benchmark for Large Language Models},
+  author    = {Li, Jiajia and Yang, Lu and Tang, Mingni and Chen, Cong and Li, Zuchao and Wang, Ping and Zhao, Hai},
+  year      = {2024},
+  eprint    = {2406.15885},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2406.15885},
+  note      = {ZIQI-Eval; reported as Findings of ACL 2024, venue unverified}
+}
+
+@misc{zhao2025abceval,
+  title     = {ABC-Eval: Benchmarking Large Language Models on Symbolic Music Understanding and Instruction Following},
+  author    = {Zhao, Jiahao and Li, Yunjia and Li, Wei and Yoshii, Kazuyoshi},
+  year      = {2025},
+  eprint    = {2509.23350},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2509.23350}
+}
+
+@misc{mundada2025wildscore,
+  title     = {WildScore: Benchmarking MLLMs in-the-Wild Symbolic Music Reasoning},
+  author    = {Mundada, Gagan and Vishe, Yash and Namburi, Amit and Xu, Xin and Novack, Zachary and McAuley, Julian and Wu, Junda},
+  year      = {2025},
+  eprint    = {2509.04744},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2509.04744}
+}
+
+% ---------- E. Structure, harmonization, arrangement ----------
+
+@inproceedings{wang2024wholesong,
+  title     = {Whole-Song Hierarchical Generation of Symbolic Music Using Cascaded Diffusion Models},
+  author    = {Wang, Ziyu and Min, Lejun and Xia, Gus},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024},
+  eprint    = {2405.09901},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2405.09901}
+}
+
+@inproceedings{dai2021musicframeworks,
+  title     = {Controllable Deep Melody Generation via Hierarchical Music Structure Representation},
+  author    = {Dai, Shuqi and Jin, Zeyu and Gomes, Celso and Dannenberg, Roger B.},
+  booktitle = {Proceedings of the 22nd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2021},
+  eprint    = {2109.00663},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2109.00663}
+}
+
+@inproceedings{dai2022missing,
+  title     = {What is Missing in Deep Music Generation? A Study of Repetition and Structure in Popular Music},
+  author    = {Dai, Shuqi and Yu, Huiran and Dannenberg, Roger B.},
+  booktitle = {Proceedings of the 23rd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2022},
+  eprint    = {2209.00182},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2209.00182}
+}
+
+@inproceedings{tan2022melodyinfilling,
+  title     = {Melody Infilling with User-Provided Structural Context},
+  author    = {Tan, Chih-Pin and Su, Alvin W. Y. and Yang, Yi-Hsuan},
+  booktitle = {Proceedings of the 23rd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2022},
+  eprint    = {2210.02829},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2210.02829}
+}
+
+@inproceedings{zhao2021accomontage,
+  title     = {AccoMontage: Accompaniment Arrangement via Phrase Selection and Style Transfer},
+  author    = {Zhao, Jingwei and Xia, Gus},
+  booktitle = {Proceedings of the 22nd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2021},
+  eprint    = {2108.11213},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2108.11213}
+}
+
+@inproceedings{yi2022accomontage2,
+  title     = {AccoMontage2: A Complete Harmonization and Accompaniment Arrangement System},
+  author    = {Yi, Li and Hu, Haochen and Zhao, Jingwei and Xia, Gus},
+  booktitle = {Proceedings of the 23rd International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2022},
+  eprint    = {2209.00353},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2209.00353}
+}
+
+@inproceedings{zhao2023qa,
+  title     = {Q\&A: Query-Based Representation Learning for Multi-Track Symbolic Music re-Arrangement},
+  author    = {Zhao, Jingwei and Xia, Gus and Wang, Ye},
+  booktitle = {Proceedings of the 32nd International Joint Conference on Artificial Intelligence (IJCAI), AI, the Arts and Creativity track},
+  year      = {2023},
+  eprint    = {2306.01635},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2306.01635}
+}
+
+@inproceedings{zhao2024structured,
+  title     = {Structured Multi-Track Accompaniment Arrangement via Style Prior Modelling},
+  author    = {Zhao, Jingwei and Xia, Gus and Wang, Ziyu and Wang, Ye},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2024},
+  eprint    = {2310.16334},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2310.16334}
+}
+
+@misc{kaliakatsospapakostas2025harmonization,
+  title     = {Incorporating Structure and Chord Constraints in Symbolic Transformer-based Melodic Harmonization},
+  author    = {Kaliakatsos-Papakostas, Maximos and Soiledis, Konstantinos and Tsamis, Konstantinos-Theodoros and Makris, Dimos and Katsouros, Vassilis and Cambouropoulos, Emilios},
+  year      = {2025},
+  eprint    = {2512.07627},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2512.07627}
+}
+
+% ---------- F. Expressive performance rendering ----------
+
+@inproceedings{jeong2019virtuosonet,
+  title     = {VirtuosoNet: A Hierarchical RNN-based System for Modeling Expressive Piano Performance},
+  author    = {Jeong, Dasaem and Kwon, Taegyun and Kim, Yoojin and Nam, Juhan},
+  booktitle = {Proceedings of the 20th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2019},
+  url       = {https://archives.ismir.net/ismir2019/paper/000112.pdf}
+}
+
+@inproceedings{wu2022mididdsp,
+  title     = {MIDI-DDSP: Detailed Control of Musical Performance via Hierarchical Modeling},
+  author    = {Wu, Yusong and Manilow, Ethan and Deng, Yi and Swavely, Rigel and Kastner, Kyle and Cooijmans, Tim and Courville, Aaron and Huang, Cheng-Zhi Anna and Engel, Jesse},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  eprint    = {2112.09312},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2112.09312}
+}
+
+@inproceedings{borovik2023scoreperformer,
+  title     = {ScorePerformer: Expressive Piano Performance Rendering with Fine-Grained Control},
+  author    = {Borovik, Ilya and Viro, Vladimir},
+  booktitle = {Proceedings of the 24th International Society for Music Information Retrieval Conference (ISMIR)},
+  year      = {2023},
+  url       = {https://archives.ismir.net/ismir2023/paper/000069.pdf}
+}
+
+@inproceedings{borovik2025symupe,
+  title     = {SyMuPe: Affective and Controllable Symbolic Music Performance},
+  author    = {Borovik, Ilya and Gavrilev, Dmitrii and Viro, Vladimir},
+  booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia (MM '25)},
+  year      = {2025},
+  eprint    = {2511.03425},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2511.03425}
+}
+
+@article{zhang2024dexter,
+  title     = {DExter: Learning and Controlling Performance Expression with Diffusion Models},
+  author    = {Zhang, Huan and Chowdhury, Shreyan and Cancino-Chac{\'o}n, Carlos Eduardo and Liang, Jinhua and Dixon, Simon and Widmer, Gerhard},
+  journal   = {Applied Sciences},
+  volume    = {14},
+  number    = {15},
+  pages     = {6543},
+  year      = {2024},
+  doi       = {10.3390/app14156543},
+  eprint    = {2406.14850},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2406.14850}
+}
+
+@misc{zhang2025renderbox,
+  title     = {RenderBox: Expressive Performance Rendering with Text Control},
+  author    = {Zhang, Huan and Maezawa, Akira and Dixon, Simon},
+  year      = {2025},
+  eprint    = {2502.07711},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2502.07711}
+}

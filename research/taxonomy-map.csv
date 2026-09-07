@@ -1,0 +1,464 @@
+cluster,title,year,bibkey,node,how,verification,tags
+01,Chordripple — Chordripple: Recommending Chords to Help Novice Composers Go Beyond the Ordinary,2016,huang2016chordripple,S3.5,manual,partial,symbolic-generation controllability creativity-support HCI-study representation
+01,Coconet — Counterpoint by Convolution,2017,huang2017coconet,S3.2,manual,verified,symbolic-generation infilling editing notation controllability
+01,MusicTransformer — Music Transformer: Generating Music with Long-Term Structure,2018,huang2018musictransformer,S3.4,manual,verified,symbolic-generation structure accompaniment expression-performance
+01,InfillingPiano — Infilling Piano Performances,2018,ippolito2018infilling,S3.2,manual,partial,symbolic-generation infilling editing expression-performance
+01,MusicVAE — A Hierarchical Latent Vector Model for Learning Long-Term Structure in Music,2018,roberts2018musicvae,S3.3,manual,verified,symbolic-generation representation editing controllability structure
+01,PianoGenie — Piano Genie,2019,donahue2019pianogenie,S5.3,manual,verified,real-time controllability sketch symbolic-generation creativity-support
+01,BachDoodle — The Bach Doodle: Approachable Music Composition with Machine Learning at Scale,2019,huang2019bachdoodle,E3,manual,verified,symbolic-generation notation infilling dataset education product HCI-study
+01,MagentaStudio — Magenta Studio: Augmenting Creativity with Deep Learning in Ableton Live,2019,roberts2019magentastudio,B3,manual,verified,DAW-plugin product symbolic-generation editing toolkit
+01,MagentaJS — Magenta.js: A JavaScript Library for Music Generation (and the Magenta ecosystem),2018,roberts2018magentajs,B2,manual,partial,toolkit representation symbolic-generation
+01,Cococo — Novice-AI Music Co-Creation via AI-Steering Tools for Deep Generative Models,2020,louie2020cococo,E1,manual,verified,HCI-study co-creation-framework controllability infilling editing notation creativity-support mixed-initiative
+01,AISongContest — AI Song Contest: Human-AI Co-Creation in Songwriting,2010,huang2020aisongcontest,E2,manual,verified,HCI-study co-creation-framework controllability structure evaluation
+01,DDSP — DDSP: Differentiable Digital Signal Processing,2001,engel2020ddsp,S3.8,manual,verified,audio-generation controllability style-transfer toolkit expression-performance
+01,ToneTransfer — Tone Transfer (DDSP in the browser),2020,magenta2020tonetransfer,S1.2,manual,verified,humming multimodal-input audio-generation style-transfer product
+01,CompositionalSteering — Compositional Steering of Music Transformers,2021,young2021compositionalsteering,S2.3,manual,partial,controllability symbolic-generation annotation
+01,MIDIDDSP — MIDI-DDSP: Detailed Control of Musical Performance via Hierarchical Modeling,2021,wu2022mididdsp,S3.7,manual,verified,expression-performance audio-generation controllability editing representation notation
+01,ExpressiveCommunication — Expressive Communication: A Common Framework for Evaluating Developments in Generative Models and Steering Interfaces,2022,louie2022expressive,E1,manual,verified,evaluation HCI-study co-creation-framework controllability creativity-support
+01,DDSPVST — DDSP-VST (neural synth/effect plugin + web trainer),2022,magenta2022ddspvst,S3.8,manual,verified,DAW-plugin audio-generation style-transfer product multimodal-input
+01,ReaLchords — Adaptive Accompaniment with ReaLchords,2024,wu2024realchords,S5.3,manual,verified,real-time accompaniment symbolic-generation mixed-initiative evaluation
+01,ReaLJam — ReaLJam: Real-Time Human-AI Music Jamming with Reinforcement Learning-Tuned Transformers,2025,scarlatos2025realjam,S5.3,manual,verified,real-time accompaniment HCI-study mixed-initiative controllability
+01,"JamBot — The jam_bot, a Real-Time System for Collaborative Free Improvisation with Music Language Models",2025,blanchard2025jambot,S5.2,manual,verified,real-time accompaniment mixed-initiative expression-performance symbolic-generation
+01,LiveMusicModels — Live Music Models (Magenta RealTime & Lyria RealTime),2025,lyria2025livemusic,S3.8,manual,verified,audio-generation real-time text-conditioning controllability toolkit
+01,MagentaRT2 — Magenta RealTime 2,2026,lyria2025livemusic,S3.8,manual,verified,audio-generation real-time DAW-plugin controllability product
+01,GAPT — Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction,2026,wu2026gapt,S5.3,manual,verified,real-time accompaniment HCI-study evaluation symbolic-generation
+01,StreamAccomp — Streaming Generation for Music Accompaniment,2025,wu2026streaming,S5.3,manual,verified,audio-generation real-time accompaniment evaluation
+01,LiveAgentsDesignSpace — A Design Space for Live Music Agents,2026,kim2026designspace,F5,manual,verified,co-creation-framework real-time evaluation mixed-initiative
+01,AgentsInConcert — Agents in Concert: A Case-Study of Bringing AI to the Stage in Practice,2026,brade2026agentsinconcert,S5.4,manual,partial,real-time HCI-study mixed-initiative
+01,LMDM — Live Music Diffusion Models: Efficient Fine-Tuning and Post-Training of Interactive Diffusion Music Generators,2026,novack2026lmdm,S5.3,manual,verified,audio-generation real-time sketch controllability DAW-plugin text-conditioning
+01,Stemphonic — Stemphonic: All-at-once Flexible Multi-stem Music Generation,2026,wu2026stemphonic,S3.5,manual,verified,audio-generation accompaniment controllability text-conditioning structure
+01,LatentFT — Latent Fourier Transform,2026,wang2026latentft,S4.3,manual,verified,editing representation controllability audio-generation
+01,"HuangPhilosophy — Anna Huang's articulated philosophy of human-AI co-creation (talks, bios, course)",2024,huang2025creativityinteraction,F5,manual,verified,co-creation-framework creativity-support history
+01,MITMTC — MIT Music Technology and Computation Graduate Program & HAI-Res lab,2026,mit2026mtcshowcase,F5,manual,verified,education co-creation-framework real-time history
+01,music21 — music21: A Toolkit for Computer-Aided Musicology (Cuthbert),2026,cuthbert2010music21,B2,manual,verified,toolkit notation representation theory-analysis corpus music-as-code
+01,"OCW21M383 — MIT OCW 21M.383 Computational Music Theory and Analysis (Spring 2023) and ""Video 12b: Chorales as a Corpus""",2023,cuthbert2023ocw21m383,B5,manual,verified,education theory-analysis corpus notation music-as-code toolkit
+01,"Egozy21M385 — 21M.385 / 6.4550 Interactive Music Systems (Eran Egozy, MIT)",,egozy21m385,B5,manual,partial,education real-time game creativity-support
+01,ConcertCue — ConcertCue: live program-note streaming for classical concerts,2018,egozy2018concertcue,S2.1,manual,verified,annotation real-time product education
+01,Harmonix — Guitar Hero / Rock Band (Harmonix Music Systems) as music-making interfaces,2007,egozy2005harmonix,S5.4,manual,partial,game history creativity-support real-time
+01,Hyperscore — Hyperscore: a graphical sketchpad for novice composers,2022,farbood2004hyperscore,S1.3,manual,partial,sketch symbolic-generation notation creativity-support education history controllability
+01,Hyperinstruments — Hyperinstruments / Opera of the Future (Tod Machover),2012,machover1992hyperinstruments,F2,manual,partial,history expression-performance creativity-support real-time
+01,Vercoe — Barry Vercoe: Csound and the Synthetic Performer,1984,vercoe1984syntheticperformer,F2,manual,partial,history music-as-code accompaniment real-time toolkit
+02,G-CLef — Generative Creativity Lab (G-CLef) @ CMU,2023,gclef2026lab,F5,manual,verified,co-creation-framework symbolic-generation evaluation HCI-study history
+02,Amuse — Amuse: Human-AI Collaborative Songwriting with Multimodal Inspirations,2024,kim2025amuse,S1.4,manual,verified,multimodal-input image text-conditioning symbolic-generation HCI-study co-creation-framework creativity-support notation controllability annotation
+02,HookpadAria — Hookpad Aria: A Copilot for Songwriters,2024,donahue2024hookpadaria,E3,manual,verified,product symbolic-generation infilling notation co-creation-framework DAW-plugin
+02,AMT — Anticipatory Music Transformer,2024,thickstun2024anticipatory,S3.2,manual,verified,symbolic-generation infilling controllability accompaniment representation
+02,Decomposer — Decomposer: Learning to Decompile Symbolic Music to Programs,2026,kim2026decomposer,S3.6,manual,verified,music-as-code representation symbolic-generation editing structure LLM-agent
+02,MusicControlNet — Music ControlNet: Multiple Time-varying Controls for Music Generation,2024,wu2024musiccontrolnet,S3.8,manual,verified,audio-generation controllability sketch text-conditioning editing multimodal-input
+02,SingSong — SingSong: Generating Musical Accompaniments from Singing,2023,donahue2023singsong,S1.2,manual,verified,humming audio-generation accompaniment multimodal-input
+02,SheetSage — Melody Transcription via Generative Pre-training,2022,donahue2022sheetsage,S1.1,manual,verified,transcription notation dataset representation toolkit
+02,PianoGenie — Piano Genie,2019,donahue2019pianogenie,S5.3,manual,verified,real-time expression-performance symbolic-generation creativity-support history
+02,LiveMusicAgents — A Design Space for Live Music Agents,2026,kim2026designspace,F5,manual,verified,co-creation-framework real-time accompaniment evaluation
+02,MultiVerse — MultiVerse: A Creator-Centered Approach to Steering Context-Adaptive Lyrics,2026,wang2026multiverse,E1,manual,verified,co-creation-framework controllability HCI-study text-conditioning
+02,MusicArena — Music Arena: Live Evaluation for Text-to-Music,2025,kim2025musicarena,E4,manual,verified,evaluation audio-generation dataset
+02,MAD — Aligning Text-to-Music Evaluation with Human Preferences,2025,huang2025aligning,E4,manual,verified,evaluation audio-generation dataset
+02,JLTR — Just Label the Repeats for In-The-Wild Audio-to-Score Alignment,2024,bukey2024justlabel,S2.5,manual,verified,annotation notation transcription structure HCI-study
+02,SynTheory — Do Music Generation Models Encode Music Theory?,2024,wei2024musictheory,E6,manual,verified,theory-analysis evaluation dataset representation
+02,ReaLchords — Adaptive Accompaniment with ReaLchords,2024,wu2024realchords,S5.3,manual,verified,real-time accompaniment symbolic-generation mixed-initiative
+02,MagentaRT — Live Music Models (Magenta RealTime / Lyria RealTime; Magenta RealTime 2),2025,lyria2025livemusic,S3.8,manual,verified,audio-generation real-time DAW-plugin controllability product
+02,MIDInfinite — Local Deployment of Large-Scale Music AI Models on Commodity Hardware,2024,zhou2024midinfinite,B3,manual,verified,toolkit symbolic-generation real-time
+02,"UnifiedScoreTranslation — Unified Cross-modal Translation of Score Images, Symbolic Music, and Performance Audio",2025,jung2025unified,S1.1,manual,verified,representation transcription notation audio-generation dataset multimodal-input
+02,MusicAwareVA — Towards Music-Aware Virtual Assistants,2024,wang2024musicaware,S5.4,manual,verified,HCI-study audio-generation accompaniment
+02,RISE — RISE: Adaptive Music Playback for Realtime Intensity Synchronization with Exercise,2025,wang2025rise,S5.4,manual,verified,structure editing real-time HCI-study
+02,FM4Music — Foundation Models for Music: A Survey,2024,ma2024foundation,F4,manual,partial,representation evaluation ethics-legal
+02,"CMU-Udio-2026 — ""Generative AI and Musical Creativity"" (CMU news, Jan 30 2026: ""As AI-Generated Music Advances, Humans Still Lead in Creativity"")",2026,oros2026cmu,E1,manual,verified,HCI-study evaluation creativity-support ethics-legal
+02,Dannenberg1984 — An On-Line Algorithm for Real-Time Accompaniment,1984,dannenberg1984online,F2,manual,verified,history accompaniment real-time notation
+02,HCMP — Human-Computer Music Performance (HCMP) programme,2014,dannenberg2014hcmp,S5.1,manual,verified,history accompaniment real-time structure notation representation
+02,Nyquist-Audacity — Nyquist (composition/synthesis language) and Audacity (editor),2000,dannenberg1997nyquist,S3.6,manual,verified,music-as-code toolkit history editing product
+02,MusicFrameworks — Controllable Deep Melody Generation via Hierarchical Music Structure Representation,2021,dai2021controllable,S3.4,manual,verified,symbolic-generation structure controllability representation editing
+02,WhatIsMissing — What Is Missing in Deep Music Generation? A Study of Repetition and Structure in Popular Music,2022,dai2022missing,S2.2,manual,verified,theory-analysis structure evaluation corpus
+02,PersonalisedImitation — Personalised Popular Music Generation Using Imitation and Structure,2021,dai2023personalised,S3.4,manual,partial,symbolic-generation structure style-transfer controllability
+02,"StructureInterconnections — The Interconnections of Music Structure, Harmony, Melody, Rhythm, and Predictivity",2024,dai2024interconnections,S2.2,manual,verified,theory-analysis structure corpus representation
+02,ExpressEdit — ExpressEdit: Video Editing with Natural Language and Sketching,2024,tilekbay2024expressedit,S2.4,manual,verified,annotation sketch multimodal-input editing LLM-agent HCI-study video mixed-initiative
+02,REAL — REAL Pipeline (GitHub: This-Goober/REAL),2026,thisgoober2026real,S2.4,manual,verified,LLM-agent video editing toolkit co-creation-framework product
+02,DrawAndListen — Draw and Listen! A Sketch-Based System for Music Inpainting,2022,benetatos2022drawlisten,S1.3,manual,verified,sketch infilling symbolic-generation HCI-study annotation
+02,MuskitsESPnet — Muskits-ESPnet: A Comprehensive Toolkit for Singing Voice Synthesis in New Paradigm,2022,wu2024muskitsespnet,B2,manual,partial,toolkit audio-generation notation transcription
+02,JukeMIR — Codified Audio Language Modeling Learns Useful Representations for Music Information Retrieval,2021,castellon2021codified,S3.10,manual,partial,representation transcription evaluation
+02,CMU-Other — Other CMU music/creativity pointers (brief),2025,cmu2025musictech,F5,manual,partial,history toolkit theory-analysis
+03,MusicTransformer — Music Transformer: Generating Music with Long-Term Structure,2018,huang2018musictransformer,S3.4,manual,verified,symbolic-generation representation structure
+03,REMI / PopMusicTransformer — Pop Music Transformer: Beat-based Modeling and Generation of Expressive Pop Piano Compositions,2020,huang2020popmusictransformer,S3.1,manual,verified,representation symbolic-generation
+03,CPWord — Compound Word Transformer: Learning to Compose Full-Song Music over Dynamic Directed Hypergraphs,2021,hsiao2021compoundword,S3.1,manual,verified,representation symbolic-generation
+03,Octuple/MusicBERT + MidiBERT-Piano — MusicBERT: Symbolic Music Understanding with Large-Scale Pre-Training; BERT-like Pre-training for Symbolic Piano Music Classification Tasks,2024,zeng2021musicbert,S3.1,manual,verified,representation theory-analysis dataset
+03,folk-rnn — Music transcription modelling and composition using deep learning,2016,sturm2016folkrnn,F1,manual,verified,symbolic-generation representation notation creativity-support history
+03,MidiTok — MidiTok: A Python package for MIDI file tokenization,2025,fradet2021miditok,B2,manual,verified,toolkit representation
+03,Aria-MIDI + Aria — Aria-MIDI: A Dataset of Piano MIDI Files for Symbolic Music Modeling; Scaling Self-Supervised Representation Learning for Symbolic Piano Performance,2025,bradshaw2025ariamidi,B4,manual,verified,dataset symbolic-generation representation transcription expression-performance
+03,LeSurvey — Natural Language Processing Methods for Symbolic Music Generation and Information Retrieval: a Survey,2024,le2025nlpsurvey,F4,manual,verified,representation symbolic-generation evaluation
+03,"JiSurvey — A Survey on Deep Learning for Symbolic Music Generation: Representations, Algorithms, Evaluations, and Challenges",2011,ji2023survey,F4,manual,partial,symbolic-generation evaluation representation
+03,DeepBach — DeepBach: a Steerable Model for Bach Chorales Generation,2017,hadjeres2017deepbach,S3.2,manual,verified,symbolic-generation infilling editing notation controllability history
+03,Coconet — Counterpoint by Convolution,2017,huang2017coconet,S3.2,manual,verified,infilling editing symbolic-generation accompaniment
+03,InpaintNet — Learning to Traverse Latent Spaces for Musical Score Inpainting,2019,pati2019inpaintnet,S3.2,manual,verified,infilling editing symbolic-generation
+03,SketchNet — Music SketchNet: Controllable Music Generation via Factorized Representations of Pitch and Rhythm,2020,chen2020sketchnet,S1.3,manual,verified,sketch infilling controllability symbolic-generation
+03,MMM — MMM: Exploring Conditional Multi-Track Music Generation with the Transformer,2020,ens2020mmm,S3.2,manual,verified,infilling editing controllability symbolic-generation representation
+03,XLNetInfill — Variable-Length Music Score Infilling via XLNet and Musically Specialized Positional Encoding,2021,chang2021xlnet,S3.2,manual,verified,infilling editing symbolic-generation
+03,MusIAC — MusIAC: An extensible generative framework for Music Infilling Applications with multi-level Control,2022,guo2022musiac,S3.2,manual,verified,infilling controllability editing symbolic-generation
+03,AMT — Anticipatory Music Transformer,2023,thickstun2024anticipatory,S3.2,manual,verified,infilling accompaniment controllability symbolic-generation
+03,ComposersAssistant — Composer's Assistant: An Interactive Transformer for Multi-Track MIDI Infilling; Composer's Assistant 2: Interactive Multi-Track MIDI Infilling with Fine-Grained User Control,2024,malandro2023composersassistant,S3.2,manual,verified,infilling editing controllability DAW-plugin co-creation-framework symbolic-generation
+03,MIDI-GPT — MIDI-GPT: A Controllable Generative Model for Computer-Assisted Multitrack Music Composition,2025,pasquier2025midigpt,S3.2,manual,verified,infilling editing controllability DAW-plugin product symbolic-generation
+03,MIDI-RWKV — Adaptable Symbolic Music Infilling with MIDI-RWKV (a.k.a. Personalizable Long-Context Symbolic Music Infilling with MIDI-RWKV),2025,zhouzheng2025midirwkv,S3.2,manual,verified,infilling editing style-transfer controllability symbolic-generation
+03,Polyffusion — Polyffusion: A Diffusion Model for Polyphonic Score Generation with Internal and External Controls,2023,min2023polyffusion,S3.2,manual,verified,infilling controllability accompaniment symbolic-generation representation
+03,GETMusic — GETMusic: Generating Any Music Tracks with a Unified Representation and Diffusion Framework,2023,lv2023getmusic,S3.2,manual,verified,infilling accompaniment symbolic-generation representation
+03,NotThatGroove — Not that Groove: Zero-Shot Symbolic Music Editing (v2: Zero-Shot Symbolic Music Editing as a Reasoning Task for Large Language Models),2026,zhang2025groove,S4.2,manual,verified,editing LLM-agent text-conditioning evaluation symbolic-generation
+03,Museformer — Museformer: Transformer with Fine- and Coarse-Grained Attention for Music Generation,2022,yu2022museformer,S3.4,manual,verified,structure symbolic-generation
+03,FIGARO — FIGARO: Generating Symbolic Music with Fine-Grained Artistic Control,2022,vonrutte2023figaro,S2.3,manual,verified,controllability symbolic-generation style-transfer annotation representation
+03,MuseCoco — MuseCoco: Generating Symbolic Music from Text,2023,lu2023musecoco,S3.3,manual,verified,text-conditioning controllability symbolic-generation
+03,MuseMorphose — MuseMorphose: Full-Song and Fine-Grained Piano Music Style Transfer with One Transformer VAE,2021,wu2023musemorphose,S4.2,manual,verified,style-transfer editing controllability symbolic-generation
+03,FaderNets — Music FaderNets: Controllable Music Generation Based on High-Level Features via Low-Level Feature Modelling,2020,tan2020fadernets,S3.3,manual,verified,controllability style-transfer editing symbolic-generation
+03,MMT — Multitrack Music Transformer,2023,dong2023mmt,S3.1,manual,verified,symbolic-generation representation controllability real-time
+03,SymPAC — SymPAC: Scalable Symbolic Music Generation with Prompts and Constraints,2024,chen2024sympac,S3.4,manual,verified,controllability symbolic-generation structure transcription
+03,Text2midi — Text2midi: Generating Symbolic Music from Captions,2025,bhandari2025text2midi,S3.3,manual,verified,text-conditioning symbolic-generation dataset
+03,MetaScore — Generating Symbolic Music from Natural Language Prompts using an LLM-Enhanced Dataset,2024,xu2025metascore,B4,manual,verified,dataset text-conditioning notation symbolic-generation
+03,MIDI-LLM — MIDI-LLM: Adapting Large Language Models for Text-to-MIDI Music Generation,2025,wu2025midillm,S3.6,manual,verified,text-conditioning LLM-agent symbolic-generation HCI-study
+03,SCG — Symbolic Music Generation with Non-Differentiable Rule Guided Diffusion,2024,huang2024scg,S3.3,manual,verified,controllability editing symbolic-generation
+03,LC-Diff — Conditional Diffusion as Latent Constraints for Controllable Symbolic Music Generation,2025,petteno2025lcdiff,S3.3,manual,verified,controllability symbolic-generation
+03,Diff-Symbo — Diff-Symbo: Text-Controlled Long-Duration Symbolic Music Generation Using Autoregressive Latent Diffusion Model,2026,lin2026diffsymbo,S3.3,manual,verified,text-conditioning symbolic-generation
+03,ChatMusician — ChatMusician: Understanding and Generating Music Intrinsically with LLM,2024,yuan2024chatmusician,S3.6,manual,verified,symbolic-generation LLM-agent text-conditioning notation evaluation
+03,MuPT — MuPT: A Generative Symbolic Music Pretrained Transformer,2025,qu2024mupt,S3.6,manual,verified,symbolic-generation representation notation LLM-agent
+03,NotaGen — NotaGen: Advancing Musicality in Symbolic Music Generation with Large Language Model Training Paradigms,2025,wang2025notagen,S3.6,manual,verified,symbolic-generation notation controllability LLM-agent
+03,MelodyT5 — MelodyT5: A Unified Score-to-Score Transformer for Symbolic Music Processing,2024,wu2024melodyt5,S3.6,manual,verified,symbolic-generation accompaniment notation structure
+03,FunctionAlignment — Versatile Symbolic Music-for-Music Modeling via Function Alignment,2025,jiang2025functionalignment,S3.5,manual,verified,symbolic-generation accompaniment theory-analysis controllability
+03,HowFarLLMs — How Far Can Pretrained LLMs Go in Symbolic Music? Controlled Comparisons of Supervised and Preference-based Adaptation,2026,kumar2026howfar,E6,manual,verified,LLM-agent evaluation symbolic-generation notation
+03,SymbolicLLMBenchmarks — ZIQI-Eval; ABC-Eval; (WildScore),2025,li2024ziqieval,E6,manual,verified,evaluation LLM-agent notation theory-analysis
+03,WholeSong — Whole-Song Hierarchical Generation of Symbolic Music Using Cascaded Diffusion Models,2024,wang2024wholesong,S3.4,manual,verified,structure symbolic-generation controllability accompaniment co-creation-framework
+03,MusicFrameworks — Controllable Deep Melody Generation via Hierarchical Music Structure Representation; What is missing in deep music generation? A study of repetition and structure in popular music,2022,dai2021controllable,S3.4,manual,verified,structure controllability symbolic-generation editing
+03,StructuralMelodyInfilling — Melody Infilling with User-Provided Structural Context,2022,tan2022melodyinfilling,S2.3,manual,verified,infilling structure annotation symbolic-generation
+03,AccoMontage — AccoMontage: Accompaniment Arrangement via Phrase Selection and Style Transfer; AccoMontage2: A Complete Harmonization and Accompaniment Arrangement System,2022,zhao2021accomontage,S3.5,manual,verified,accompaniment style-transfer structure symbolic-generation controllability
+03,QandA — Q&A: Query-Based Representation Learning for Multi-Track Symbolic Music re-Arrangement,2023,zhao2023qa,S3.5,manual,verified,accompaniment style-transfer symbolic-generation controllability
+03,StructuredArrangement — Structured Multi-Track Accompaniment Arrangement via Style Prior Modelling,2023,zhao2024structured,S3.5,manual,verified,accompaniment structure symbolic-generation controllability style-transfer
+03,BstarHarmonization — Incorporating Structure and Chord Constraints in Symbolic Transformer-based Melodic Harmonization,2025,kaliakatsospapakostas2025harmonization,S3.5,manual,verified,accompaniment controllability editing symbolic-generation notation
+03,VirtuosoNet — VirtuosoNet: A Hierarchical RNN-based System for Modeling Expressive Piano Performance,2019,jeong2019virtuosonet,S3.7,manual,verified,expression-performance notation controllability
+03,MIDI-DDSP — MIDI-DDSP: Detailed Control of Musical Performance via Hierarchical Modeling,2022,wu2022mididdsp,S3.7,manual,verified,expression-performance audio-generation controllability editing
+03,ScorePerformer / PianoFlow — ScorePerformer: Expressive Piano Performance Rendering with Fine-Grained Control; SyMuPe: Affective and Controllable Symbolic Music Performance,2025,borovik2023scoreperformer,S3.7,manual,verified,expression-performance controllability annotation text-conditioning real-time
+03,DExter / RenderBox — DExter: Learning and Controlling Performance Expression with Diffusion Models; RenderBox: Expressive Performance Rendering with Text Control,2025,zhang2024dexter,S3.7,manual,verified,expression-performance controllability text-conditioning audio-generation
+04,Jukebox — Jukebox: A Generative Model for Music,2020,dhariwal2020jukebox,S3.9,manual,verified,audio-generation history text-conditioning
+04,MusicLM — MusicLM: Generating Music From Text,2023,agostinelli2023musiclm,S3.9,manual,verified,audio-generation text-conditioning humming multimodal-input dataset evaluation
+04,Noise2Music — Noise2Music: Text-conditioned Music Generation with Diffusion Models,2023,huang2023noise2music,S3.9,manual,verified,audio-generation text-conditioning dataset
+04,MusicGen — Simple and Controllable Music Generation,2023,copet2023musicgen,S3.9,manual,verified,audio-generation text-conditioning controllability humming toolkit
+04,AudioLDM — AudioLDM: Text-to-Audio Generation with Latent Diffusion Models,2023,liu2023audioldm,S3.9,manual,verified,audio-generation text-conditioning editing infilling
+04,AudioLDM 2 — AudioLDM 2: Learning Holistic Audio Generation with Self-supervised Pretraining,2023,liu2024audioldm2,S3.9,manual,verified,audio-generation text-conditioning representation
+04,StableAudio2 — Long-form Music Generation with Latent Diffusion (Stable Audio 2.0),2024,evans2024longform,S3.9,manual,verified,audio-generation text-conditioning structure style-transfer controllability
+04,StableAudioOpen — Stable Audio Open,2024,evans2024stableaudioopen,S3.9,manual,verified,audio-generation text-conditioning ethics-legal toolkit
+04,JEN-1 — JEN-1: Text-Guided Universal Music Generation with Omnidirectional Diffusion Models,2024,li2023jen1,S3.9,manual,verified,audio-generation infilling editing text-conditioning
+04,Mustango — Mustango: Toward Controllable Text-to-Music Generation,2024,melechovsky2024mustango,S3.8,manual,verified,audio-generation controllability text-conditioning dataset theory-analysis
+04,MusicFlow — MusicFlow: Cascaded Flow Matching for Text Guided Music Generation,2024,prajwal2024musicflow,S3.9,manual,verified,audio-generation infilling text-conditioning
+04,Riffusion → ProducerAI → Google Flow Music — Riffusion (spectrogram Stable Diffusion) and its 2025–2026 commercial afterlife,2026,forsgren2022riffusion,S3.9,manual,verified,audio-generation product editing history LLM-agent
+04,Suno — Suno (v3 → v3.5 → v4 → v4.5 → v5 → v5.5) and Suno Studio,2026,suno2026,C1,manual,verified,audio-generation product editing text-conditioning ethics-legal DAW-plugin
+04,Udio — Udio (v1 → v1.5 → v1.5 Allegro) and the 2025 UMG/WMG walled-garden pivot,2025,udio2025,C1,manual,verified,audio-generation product editing infilling ethics-legal
+04,Lyria2-Sandbox — Google DeepMind Lyria / Lyria 2 / Music AI Sandbox / MusicFX DJ,2025,google2025lyria2,C1,manual,verified,audio-generation product editing infilling real-time controllability
+04,"LyriaRT-Lyria3 — Lyria RealTime API, Lyria 3 / 3.5, Gemini integration (2025–2026)",2026,google2025lyriarealtime,C1,manual,verified,audio-generation real-time product controllability multimodal-input image
+04,AdobeMusicGenAIControl — Adobe Project Music GenAI Control,2024,adobe2024musicgenaicontrol,S4.3,manual,verified,audio-generation editing controllability product
+04,ElevenMusic — ElevenLabs Music (Eleven Music v1 Aug 2025; Music v2 2026),2026,elevenlabs2025music,C1,manual,verified,audio-generation product editing infilling ethics-legal
+04,Mureka — Mureka (Kunlun Tech / Skywork AI),2025,mureka2025,C1,manual,partial,audio-generation product
+04,StableAudio25 — Stable Audio 2.5 (enterprise; inpainting; ARC post-training),2025,novack2025arc,S4.3,manual,verified,audio-generation editing infilling product real-time
+04,SpliceLANDR — Splice and LANDR AI features (context only),2014,splice2025landr,C1,manual,unverified,product DAW-plugin
+04,MAGNeT — Masked Audio Generation using a Single Non-Autoregressive Transformer,2024,ziv2024magnet,S3.9,manual,verified,audio-generation infilling text-conditioning
+04,MusicGenStyle — Audio Conditioning for Music Generation via Discrete Bottleneck Features (MusicGen-Style),2024,rouard2024musicgenstyle,S1.5,manual,verified,audio-generation style-transfer multimodal-input controllability
+04,JASCO — Joint Audio and Symbolic Conditioning for Temporally Controlled Text-to-Music Generation,2024,tal2024jasco,S3.8,manual,verified,audio-generation controllability symbolic-generation accompaniment text-conditioning
+04,MelodyFlow — High Fidelity Text-Guided Music Editing via Single-Stage Flow Matching,2024,lelan2024melodyflow,S4.3,manual,verified,audio-generation editing style-transfer
+04,MusicGenStem — MusicGen-Stem: Multi-stem Music Generation and Edition through Autoregressive Modeling,2025,rouard2025musicgenstem,S3.9,manual,verified,audio-generation accompaniment editing mixed-initiative representation
+04,ACEStep1 — ACE-Step: A Step Towards Music Generation Foundation Model (v1.0),2025,gong2025acestep,S3.9,manual,verified,audio-generation editing infilling text-conditioning toolkit
+04,ACEStep15 — ACE-Step 1.5: Pushing the Boundaries of Open-Source Music Generation,2026,gong2026acestep15,S3.9,manual,verified,audio-generation editing infilling accompaniment LLM-agent toolkit DAW-plugin
+04,YuE — YuE: Scaling Open Foundation Models for Long-Form Music Generation,2025,yuan2025yue,S3.9,manual,verified,audio-generation text-conditioning accompaniment multimodal-input
+04,DiffRhythm — DiffRhythm: Blazingly Fast and Embarrassingly Simple End-to-End Full-Length Song Generation with Latent Diffusion,2025,ning2025diffrhythm,S3.9,manual,verified,audio-generation text-conditioning structure editing
+04,SongGen — SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation,2025,liu2025songgen,S3.9,manual,verified,audio-generation text-conditioning accompaniment toolkit
+04,"HeartMuLa — HeartMuLa family (HeartMuLa, HeartCodec, HeartTranscriptor, HeartCLAP)",2026,heartmula2026,S3.9,manual,verified,audio-generation text-conditioning toolkit transcription
+04,"MagentaRT — Magenta RealTime (v1, Jun 2025) / Magenta RealTime 2 (Jun 2026) and ""Live Music Models""",2026,lyria2025livemusic,S3.8,manual,verified,audio-generation real-time controllability symbolic-generation accompaniment toolkit
+04,MusicControlNet — Music ControlNet: Multiple Time-Varying Controls for Music Generation,2023,wu2024musiccontrolnet,S3.8,manual,verified,audio-generation controllability annotation expression-performance
+04,CocoMulla — Content-based Controls for Music Large Language Modeling (Coco-Mulla),2024,lin2023cocomulla,S3.8,manual,verified,audio-generation controllability symbolic-generation accompaniment
+04,DITTO — DITTO: Diffusion Inference-Time T-Optimization for Music Generation / DITTO-2,2024,novack2024ditto,S3.8,manual,verified,audio-generation controllability editing infilling structure annotation
+04,MusicMagus — MusicMagus: Zero-Shot Text-to-Music Editing via Diffusion Models,2024,zhang2024musicmagus,S4.3,manual,verified,audio-generation editing style-transfer
+04,ZETA-ZEUS — Zero-Shot Unsupervised and Text-Based Audio Editing Using DDPM Inversion,2024,manor2024zeta,S4.3,manual,verified,audio-generation editing style-transfer
+04,AUDIT — AUDIT: Audio Editing by Following Instructions with Latent Diffusion Models,2023,wang2023audit,S4.3,manual,verified,audio-generation editing infilling text-conditioning
+04,InstructME — InstructME: An Instruction Guided Music Edit Framework with Latent Diffusion Models,2023,han2023instructme,S4.3,manual,verified,audio-generation editing controllability symbolic-generation
+04,InstructMusicGen — Instruct-MusicGen: Unlocking Text-to-Music Editing for Music Language Models via Instruction Tuning,2024,zhang2025instructmusicgen,S4.3,manual,verified,audio-generation editing accompaniment text-conditioning
+04,MuseControlLite — MuseControlLite: Multifunctional Music Generation with Lightweight Conditioners,2025,tsai2025musecontrollite,S3.8,manual,verified,audio-generation controllability infilling editing toolkit
+04,MelodyTextControlNetDiT — Editing Music with Melody and Text: Using ControlNet for Diffusion Transformer,2024,hou2024melodycontrolnet,S3.8,manual,partial,audio-generation controllability editing style-transfer
+04,SongEditor — SongEditor: Adapting Zero-Shot Song Generation Language Model as a Multi-Task Editor,2024,yang2025songeditor,S4.3,manual,verified,audio-generation editing infilling accompaniment
+04,SingSong — SingSong: Generating Musical Accompaniments from Singing,2023,donahue2023singsong,S1.2,manual,verified,audio-generation accompaniment humming multimodal-input
+04,StemGen — StemGen: A Music Generation Model That Listens,2024,parker2024stemgen,S3.9,manual,verified,audio-generation accompaniment mixed-initiative
+04,MSDM — Multi-Source Diffusion Models for Simultaneous Music Generation and Separation,2024,mariani2024msdm,S3.9,manual,verified,audio-generation accompaniment infilling transcription
+04,DiffARiff — Diff-A-Riff: Musical Accompaniment Co-creation via Latent Diffusion Models,2025,nistal2024diffariff,S3.9,manual,verified,audio-generation accompaniment co-creation-framework multimodal-input
+04,Text2FX — Text2FX: Harnessing CLAP Embeddings for Text-Guided Audio Effects,2025,chu2025text2fx,S4.3,manual,verified,editing text-conditioning controllability expression-performance
+04,Sketch2Sound — Sketch2Sound: Controllable Audio Generation via Time-Varying Signals and Sonic Imitations,2024,floresgarcia2025sketch2sound,S1.2,manual,verified,audio-generation humming sketch controllability multimodal-input
+04,MIDIDDSP — MIDI-DDSP: Detailed Control of Musical Performance via Hierarchical Modeling,2020,wu2022mididdsp,S3.7,manual,verified,expression-performance symbolic-generation controllability audio-generation notation
+04,MusicHiFi — MusicHiFi: Fast High-Fidelity Stereo Vocoding,2024,zhu2024musichifi,S3.8,manual,partial,audio-generation toolkit
+04,TTMUserStudy — AI-Assisted Music Production: A User Study on Text-to-Music Models,2025,ronchini2025ttmuserstudy,E2,manual,verified,HCI-study audio-generation evaluation creativity-support
+04,MERT — MERT: Acoustic Music Understanding Model with Large-Scale Self-supervised Training,2024,li2024mert,S3.10,manual,verified,representation theory-analysis transcription toolkit
+04,MuQ — MuQ: Self-Supervised Music Representation Learning with Mel Residual Vector Quantization,2025,zhu2025muq,S3.10,manual,verified,representation text-conditioning evaluation toolkit
+04,LAION-CLAP — Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation,2023,wu2023clap,S3.10,manual,verified,representation text-conditioning evaluation dataset
+04,MULLaMA — Music Understanding LLaMA: Advancing Text-to-Music Generation with Question Answering and Captioning,2023,liu2023mullama,S3.10,manual,verified,LLM-agent annotation evaluation dataset
+04,LLark — LLark: A Multimodal Instruction-Following Language Model for Music,2024,gardner2024llark,S3.10,manual,verified,LLM-agent annotation theory-analysis
+04,MusiLingo — MusiLingo: Bridging Music and Text with Pre-trained Language Models for Music Captioning and Query Response,2023,deng2024musilingo,S3.10,manual,partial,LLM-agent annotation
+04,SALMONN — SALMONN: Towards Generic Hearing Abilities for Large Language Models,2024,tang2024salmonn,S3.10,manual,verified,LLM-agent multimodal-input annotation
+04,AudioLLMs — Qwen2-Audio (2024) / Qwen2.5-Omni (2025) / Gemini 2.5 audio (2025),2025,chu2024qwen2audio,S3.10,manual,partial,LLM-agent multimodal-input annotation
+04,OpenMU — OpenMU: Your Swiss Army Knife for Music Understanding,2024,zhao2024openmu,S3.10,manual,verified,LLM-agent evaluation dataset notation music-as-code
+04,MuChoMusic — MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models,2024,weck2024muchomusic,E6,manual,verified,evaluation dataset LLM-agent
+04,SongDescriber — The Song Describer Dataset: A Corpus of Audio Captions for Music-and-Language Evaluation,2023,manco2023songdescriber,E4,manual,verified,dataset evaluation
+05,CST2007 — Creativity Support Tools: Accelerating Discovery and Innovation,2007,shneiderman2007cst,F4,manual,verified,creativity-support co-creation-framework evaluation
+05,"HCAI — Human-Centered Artificial Intelligence: Reliable, Safe & Trustworthy (and the 2022 book)",2022,shneiderman2020hcai,F4,manual,verified,co-creation-framework creativity-support
+05,CSI — Quantifying the Creativity Support of Digital Tools through the Creativity Support Index,2014,cherry2014csi,E5,manual,partial,evaluation creativity-support
+05,Lubart2005 — How can computers be partners in the creative process: Classification and commentary on the Special Issue,2005,lubart2005partners,F4,manual,verified,co-creation-framework creativity-support
+05,MICI — Mixed-Initiative Creative Interfaces,2017,deterding2017mici,F4,manual,verified,mixed-initiative co-creation-framework creativity-support
+05,Kantosalo2016 — Modes for Creative Human-Computer Collaboration: Alternating and Task-Divided Co-Creativity,2016,kantosalo2016modes,F4,manual,verified,co-creation-framework mixed-initiative
+05,Karimi2018 — Evaluating Creativity in Computational Co-Creative Systems,2018,karimi2018evaluating,E5,manual,verified,evaluation co-creation-framework
+05,DrawingApprentice — Empirically Studying Participatory Sense-Making in Abstract Drawing with a Co-Creative Cognitive Agent,2017,davis2016drawingapprentice,F4,manual,partial,co-creation-framework HCI-study real-time evaluation
+05,"MoraiMaker — Friend, Collaborator, Student, Manager: How Design of an AI-Driven Game Level Editor Affects Creators",2019,guzdial2019friend,F4,manual,verified,mixed-initiative game HCI-study co-creation-framework
+05,COFI — Designing Creative AI Partners with COFI: A Framework for Modeling Interaction in Human-AI Co-Creative Systems,2022,rezwana2023cofi,F4,manual,verified,co-creation-framework mixed-initiative evaluation
+05,"CreativePenpal — Understanding User Perceptions, Collaborative Experience and User Engagement in Different Human-AI Interaction Designs for Co-Creative Systems",2022,rezwana2022perceptions,F4,manual,partial,HCI-study co-creation-framework mixed-initiative
+05,CCEval — Computational-creativity evaluation anchors (Boden; Colton & Wiggins; Jordanous),2012,jordanous2012standardised,E5,manual,partial,co-creation-framework evaluation theory-analysis
+05,"SecondMind — ""It Felt Like Having a Second Mind"": Investigating Human-AI Co-creativity in Prewriting with Large Language Models",2023,wan2024secondmind,F4,manual,verified,HCI-study co-creation-framework LLM-agent
+05,MLasTool — The Machine Learning Algorithm as Creative Musical Tool (and Wekinator),2009,fiebrink2018mlcreativetool,F4,manual,verified,co-creation-framework expression-performance real-time HCI-study
+05,ChordRipple — Recommending Chords to Help Novice Composers Go Beyond the Ordinary,2016,huang2016chordripple,S3.5,manual,verified,symbolic-generation editing HCI-study creativity-support notation
+05,"FlowComposer — Assisted Lead Sheet Composition using FlowComposer (Flow Machines / ""Daddy's Car"")",2016,papadopoulos2016flowcomposer,S3.2,manual,verified,symbolic-generation infilling editing controllability notation style-transfer history
+05,MagentaStudio — Magenta Studio: Augmenting Creativity with Deep Learning in Ableton Live,2019,roberts2019magentastudio,B3,manual,verified,DAW-plugin symbolic-generation toolkit product
+05,BachDoodle — The Bach Doodle: Approachable Music Composition with Machine Learning at Scale,2019,huang2019bachdoodle,E3,manual,verified,symbolic-generation infilling notation HCI-study dataset education
+05,MidiMe — Personalizing a MusicVAE model with user data,2019,dinculescu2019midime,S1.5,manual,verified,symbolic-generation controllability style-transfer toolkit
+05,PianoGenie — Piano Genie,2019,donahue2019pianogenie,S5.3,manual,verified,real-time expression-performance controllability humming
+05,Cococo — Novice-AI Music Co-Creation via AI-Steering Tools for Deep Generative Models,2020,louie2020cococo,E1,manual,verified,HCI-study infilling controllability symbolic-generation creativity-support mixed-initiative
+05,MusicByExample — Music Creation by Example,2020,frid2020example,E1,manual,verified,HCI-study multimodal-input audio-generation controllability
+05,AISongContest2020 — AI Song Contest: Human-AI Co-Creation in Songwriting,2020,huang2020aisongcontest,E2,manual,verified,HCI-study co-creation-framework controllability structure
+05,IKeepCounting — I Keep Counting: An Experiment in Human/AI Co-creative Songwriting,2021,micchi2021ikeepcounting,E2,manual,verified,HCI-study co-creation-framework symbolic-generation structure ethics-legal
+05,SocialGlue — AI as Social Glue: Uncovering the Roles of Deep Generative AI during Social Music Composition,2021,suh2021socialglue,E2,manual,partial,HCI-study co-creation-framework creativity-support
+05,COSMIC — A Conversational Interface for Human-AI Music Co-Creation,2021,zhang2021cosmic,S3.6,manual,partial,LLM-agent symbolic-generation co-creation-framework
+05,ExpressiveComm — Expressive Communication: Evaluating Developments in Generative Models and Steering Interfaces for Music Creation,2021,louie2022expressive,E1,manual,verified,HCI-study evaluation controllability symbolic-generation
+05,Calliope — Calliope: A Co-creative Interface for Multi-Track Music Generation (and Apollo),2019,tchemeube2022calliope,B3,manual,verified,symbolic-generation infilling controllability DAW-plugin toolkit
+05,"MMM-C — Evaluating Human-AI Interaction via Usability, User Experience and Acceptance Measures for MMM-C: A Creative AI System for Music Composition",2023,tchemeube2023mmmc,E1,manual,verified,HCI-study DAW-plugin controllability evaluation symbolic-generation
+05,MMM4Live — MMM4Live: Multi-Track Music Machine for Ableton Live,2024,metacreation2023mmm4live,B3,manual,verified,DAW-plugin symbolic-generation product
+05,Notochord — Notochord: A Flexible Probabilistic Model for Real-Time MIDI Performance,2024,shepardson2022notochord,S5.2,manual,verified,real-time symbolic-generation controllability accompaniment toolkit
+05,LoopCopilot — Loop Copilot: Conducting AI Ensembles for Music Generation and Iterative Editing,2023,zhang2023loopcopilot,E1,manual,verified,LLM-agent audio-generation editing HCI-study
+05,MusicAgent — MusicAgent: An AI Agent for Music Understanding and Generation with Large Language Models,2023,yu2023musicagent,S3.6,manual,partial,LLM-agent toolkit
+05,ComposerX — ComposerX: Multi-Agent Symbolic Music Composition with LLMs,2024,deng2024composerx,S3.6,manual,verified,LLM-agent symbolic-generation notation music-as-code evaluation
+05,RefinPaint — Music Proofreading with RefinPaint: Where and How to Modify Compositions Given Context,2024,ramoneda2024refinpaint,S4.4,manual,verified,infilling editing annotation notation symbolic-generation evaluation
+05,ComposersAssistant2 — Composer's Assistant 2: Interactive Multi-Track MIDI Infilling with Fine-Grained User Control,2024,malandro2024composersassistant2,S3.2,manual,verified,infilling DAW-plugin controllability symbolic-generation toolkit
+05,Amuse — Amuse: Human-AI Collaborative Songwriting with Multimodal Inspirations,2025,kim2025amuse,S1.4,manual,verified,multimodal-input image HCI-study symbolic-generation creativity-support product
+05,ReaLJam — ReaLJam: Real-Time Human-AI Music Jamming with Reinforcement Learning-Tuned Transformers,2025,scarlatos2025realjam,S5.3,manual,verified,real-time accompaniment HCI-study mixed-initiative
+05,MusicAISandbox — Music AI Sandbox (Google DeepMind × YouTube Music AI Incubator),2025,googledeepmind2025sandbox,C1,manual,verified,product audio-generation editing real-time co-creation-framework
+05,"JamBot — The Jam_bot, a Real-Time System for Collaborative Free Improvisation with Music Language Models",2025,blanchard2025jambot,S5.2,manual,partial,real-time accompaniment expression-performance HCI-study
+05,RhapsodyRefiner — Supporting Creative Ownership through Deep Learning-Based Music Variation,2025,krol2025ownership,E1,manual,verified,HCI-study editing symbolic-generation creativity-support evaluation
+05,MachineFolk — Machine learning research that matters for music creation: A case study (folk-rnn),2019,sturm2019machinefolk,E2,manual,verified,HCI-study symbolic-generation notation ethics-legal evaluation
+05,AIMusicOpenQuestions — Artificial Intelligence and Music: Open Questions of Copyright Law and Engineering Praxis,2019,sturm2019openquestions,C2,manual,verified,ethics-legal HCI-study symbolic-generation
+05,SonyCSLPractice — On the Development and Practice of AI Technology for Contemporary Popular Music Production,2022,deruty2022sonycsl,E2,manual,verified,HCI-study audio-generation DAW-plugin controllability evaluation
+05,Newman2023 — Human-AI Music Creation: Understanding the Perceptions and Experiences of Music Creators for Ethical and Productive Collaboration,2023,newman2023perceptions,E2,manual,verified,HCI-study ethics-legal co-creation-framework notation
+05,HAISP — HAISP: A Dataset of Human-AI Songwriting Processes from the AI Song Contest (and its 2025 expansion),2025,morris2024haisp,E2,manual,verified,dataset HCI-study co-creation-framework structure
+05,ReflectionAIMusic — Reflection Across AI-based Music Composition,2024,ford2024reflection,E2,manual,verified,HCI-study creativity-support evaluation
+05,NoviceProduction — Exploring the Collaborative Co-Creation Process with AI: A Case Study in Novice Music Production,2025,fu2025novice,E2,manual,verified,HCI-study education co-creation-framework
+05,TTMProducers — AI-Assisted Music Production: A User Study on Text-to-Music Models,2025,ronchini2025ttmuserstudy,E2,manual,verified,HCI-study text-conditioning audio-generation ethics-legal
+05,ArtistPositions — Artist-led positions: Holly Herndon's Holly+ and Spawning; Dadabots,2018,herndon2021hollyplus,C3,manual,partial,ethics-legal product audio-generation history
+05,YangLerch — On the evaluation of generative models in music,2018,yang2020evaluation,E4,manual,verified,evaluation symbolic-generation toolkit
+05,XAIArts — Exploring XAI for the Arts: Explaining Latent Space in Generative Music,2024,bryankinns2021xai,S4.4,manual,verified,controllability evaluation symbolic-generation co-creation-framework
+05,CoExplorer — Designing Deep Reinforcement Learning for Human Parameter Exploration,2019,scurto2021coexplorer,S5.3,manual,partial,HCI-study controllability mixed-initiative real-time
+05,"Alternatives — Alternatives, history and branching in creative tools (Side Views; Juxtapose; Subjunctive Interfaces)",2008,terry2002sideviews,S4.5,manual,partial,creativity-support history co-creation-framework
+05,HookpadAria — Hookpad Aria (Hooktheory),2023,donahue2024hookpadaria,E3,manual,partial,product symbolic-generation notation accompaniment
+06,QBH-1995 — Query By Humming: Musical Information Retrieval in an Audio Database,1995,ghias1995qbh,S1.2,manual,verified,humming transcription history multimodal-input
+06,HumToSearch — The Machine Learning Behind Hum to Search (Google),2020,frank2020humtosearch,S1.2,manual,verified,humming product multimodal-input
+06,OnsetsFrames — Onsets and Frames: Dual-Objective Piano Transcription,2017,hawthorne2018onsets,S1.1,manual,verified,transcription audio-generation toolkit
+06,MT3 — MT3: Multi-Task Multitrack Music Transcription,2021,gardner2022mt3,S1.1,manual,verified,transcription multimodal-input toolkit
+06,BasicPitch — A Lightweight Instrument-Agnostic Model for Polyphonic Note Transcription and Multipitch Estimation,2022,bittner2022basicpitch,S1.1,manual,verified,transcription humming toolkit DAW-plugin
+06,SheetSage — Melody Transcription via Generative Pre-training,2021,donahue2022sheetsage,S1.1,manual,verified,transcription notation symbolic-generation multimodal-input
+06,SingSong — SingSong: Generating Musical Accompaniments from Singing,2023,donahue2023singsong,S1.2,manual,verified,humming accompaniment audio-generation multimodal-input
+06,HumTrans — HumTrans: A Novel Open-Source Dataset for Humming Melody Transcription and Beyond,2024,liu2023humtrans,S1.2,manual,verified,humming dataset transcription evaluation
+06,DynHumTrans — Dynamic HumTrans: Humming Transcription Using CNNs and Dynamic Programming,2024,gupta2024dynhumtrans,S1.2,manual,verified,humming transcription
+06,VocalSketch — VocalSketch: Vocally Imitating Audio Concepts,2015,cartwright2015vocalsketch,S1.2,manual,verified,humming dataset HCI-study multimodal-input
+06,Dubler — Vochlea Dubler 2 (and Jam Origin MIDI Guitar) — real-time voice/instrument → MIDI controllers,2016,vochlea2021dubler,S1.2,manual,verified,humming product real-time DAW-plugin
+06,Sing2Notes — ScoreCloud (Doremir) and Sing2Notes (Klangio): sing → notation products,2021,doremir2014scorecloud,S1.2,manual,verified,humming transcription notation product
+06,"DAWZY — DAWZY: A New Addition to AI-powered ""Human in the Loop"" Music Co-creation",2025,elkins2025dawzy,S2.4,manual,verified,LLM-agent DAW-plugin HCI-study multimodal-input music-as-code
+06,"UPIC — UPIC (Xenakis, CEMAMu, 1977) and IanniX (open-source graphical sequencer)",2017,xenakis1977upic,S1.3,manual,verified,sketch history music-as-code toolkit
+06,Hyperscore — Hyperscore: A Graphical Sketchpad for Novice Composers,2004,farbood2004hyperscore,S1.3,manual,verified,sketch symbolic-generation creativity-support education history
+06,"CoughlanJohnson — Interaction in Creative Tasks: Ideation, Representation and Evaluation in Composition",2006,coughlan2006interaction,S1.3,manual,verified,HCI-study sketch creativity-support co-creation-framework
+06,"PaperSubstrates — Interactive Paper Substrates to Support Musical Creation (and PaperComposer, InkSplorer)",2011,garcia2012paper,S1.3,manual,partial,sketch HCI-study creativity-support music-as-code
+06,"StaffPad — StaffPad (pen-based handwriting-to-notation, product)",2020,hearn2015staffpad,S1.3,manual,verified,sketch notation product annotation
+06,CavezCHI24 — Challenges of Music Score Writing and the Potentials of Interactive Surfaces,2024,cavez2024challenges,S1.3,manual,verified,HCI-study notation sketch creativity-support
+06,EuterPen — EuterPen: Unleashing Creative Expression in Music Score Writing,2025,cavez2025euterpen,S1.3,manual,verified,sketch annotation notation multimodal-input HCI-study
+06,Tactus — Opportunities to Support Musicians' Score-based Practice with Context-Specific Annotations on Tablet,2026,fu2026tactus,S2.1,manual,verified,annotation HCI-study notation
+06,SketchNet — Music SketchNet: Controllable Music Generation via Factorized Representations of Pitch and Rhythm,2020,chen2020sketchnet,S1.3,manual,verified,sketch infilling controllability symbolic-generation
+06,MIDIDraw — MIDI-Draw: Sketching to Control Melody Generation,2023,namgyal2022mididraw,S1.3,manual,verified,sketch controllability symbolic-generation
+06,Drawlody — Drawlody: Sketch-Based Melody Creation with Enhanced Usability and Interpretability,2024,liang2024drawlody,S1.3,manual,verified,sketch symbolic-generation controllability HCI-study
+06,"SMT-OMR — Sheet Music Transformer (end-to-end polyphonic OMR), with oemer and Audiveris",2024,riosvila2024smt,S1.1,manual,verified,transcription notation sketch toolkit
+06,Vis2Mus — Vis2Mus: Exploring Multimodal Representation Mapping for Controllable Music Generation,2022,zhang2022vis2mus,S1.4,manual,verified,image symbolic-generation controllability accompaniment
+06,MeLFusion — MeLFusion: Synthesizing Music from Image and Language Cues using Diffusion Models,2024,chowdhury2024melfusion,S1.4,manual,verified,image audio-generation text-conditioning dataset
+06,Art2Mus — Art2Mus: Bridging Visual Arts and Music through Cross-Modal Generation (and 2026 extension),2026,rinaldi2024art2mus,S1.4,manual,verified,image audio-generation dataset evaluation
+06,Amuse — Amuse: Human-AI Collaborative Songwriting with Multimodal Inspirations,2025,kim2025amuse,S1.4,manual,verified,image multimodal-input symbolic-generation co-creation-framework HCI-study LLM-agent
+06,V2Meow — V2Meow: Meowing to the Visual Beat via Video-to-Music Generation,2023,su2024v2meow,S1.4,manual,verified,video audio-generation text-conditioning
+06,Video2Music — Video2Music: Suitable Music Generation from Videos using an Affective Multimodal Transformer Model,2023,kang2024video2music,S1.4,manual,verified,video symbolic-generation controllability dataset
+06,VidMuse — VidMuse: A Simple Video-to-Music Generation Framework with Long-Short-Term Modeling,2024,tian2025vidmuse,S1.4,manual,verified,video audio-generation dataset
+06,MuMuLLaMA — M²UGen / MuMu-LLaMA: Multi-modal Music Understanding and Generation via Large Language Models,2024,liu2024mumullama,S1.4,manual,verified,multimodal-input image video editing LLM-agent audio-generation
+06,MuVi — MuVi: Video-to-Music Generation with Semantic Alignment and Rhythmic Synchronization (and VidMusician),2024,li2024muvi,S1.4,manual,verified,video audio-generation controllability
+06,"SonicVisualiser — Sonic Visualiser: An Open Source Application for Viewing, Analysing, and Annotating Music Audio Files",2007,cannam2010sonicvisualiser,S2.1,manual,verified,annotation toolkit transcription theory-analysis
+06,Dezrann — Dezrann: a web framework to share music analysis (2018) / Interacting with Annotated and Synchronized Music Corpora on the Dezrann Web Platform (2025),2025,giraud2018dezrann,S2.1,manual,verified,annotation theory-analysis corpus toolkit notation
+06,MEI-Verovio — MEI (Music Encoding Initiative) and Verovio,2014,pugin2014verovio,B1,manual,verified,representation notation annotation toolkit
+06,meiFriend — mei-friend: browser-based MEI editor with GitHub integration,2023,goebl2023meifriend,S2.1,manual,partial,notation annotation toolkit editing
+06,MusicXML-MNX — MusicXML 4.0 and MNX (W3C Music Notation Community Group),2026,w3c2021musicxml40,S3.1,manual,verified,representation notation
+06,ABC-abcjs — ABC notation (standard 2.1) and abcjs,2026,walshaw2011abc,S3.1,manual,verified,representation music-as-code notation toolkit
+06,Humdrum — Humdrum and the **kern representation,1990,huron1995humdrum,S3.1,manual,verified,representation annotation toolkit theory-analysis
+06,"WebRenderers — OpenSheetMusicDisplay, VexFlow, alphaTab (browser notation rendering)",2024,cheppudira2010vexflow,B1,manual,verified,toolkit notation
+06,"ReaderApps — forScore, Newzik (and nkoda, Enote): rehearsal-annotation score readers",2010,newzik2026readers,S2.1,manual,verified,annotation product notation
+06,WhenInRome — When in Rome: A Meta-corpus of Functional Harmony (RomanText),2019,gotham2019wheninrome,B4,manual,verified,theory-analysis annotation corpus representation
+06,DCML-ABC — The Annotated Beethoven Corpus (ABC) and the DCML harmony annotation standard,2025,neuwirth2018abc,B4,manual,verified,theory-analysis annotation corpus representation
+06,DirectManipulation — Direct Manipulation: A Step Beyond Programming Languages,1983,shneiderman1983direct,S4.1,manual,partial,editing history HCI-study
+06,DirectGPT — DirectGPT: A Direct Manipulation Interface to Interact with Large Language Models,2023,masson2024directgpt,S4.1,manual,verified,editing LLM-agent HCI-study controllability
+06,ExpressEdit — ExpressEdit: Video Editing with Natural Language and Sketching,2024,tilekbay2024expressedit,S2.4,manual,verified,editing sketch multimodal-input HCI-study LLM-agent
+06,InstructPix2Pix — InstructPix2Pix: Learning to Follow Image Editing Instructions,2022,brooks2023instructpix2pix,S4.1,manual,verified,editing text-conditioning controllability
+06,Teddy — Teddy: A Sketching Interface for 3D Freeform Design,1999,igarashi1999teddy,S4.1,manual,verified,sketch editing history
+06,PBD — Watch What I Do: Programming by Demonstration,1993,cypher1993wwid,S4.1,manual,verified,editing history co-creation-framework
+06,"LiveProg — Live programming (Tanimoto 2013), Hazel typed holes (POPL 2019), and projectional editing (JetBrains MPS)",2019,omar2019hazel,S3.6,manual,verified,music-as-code editing representation
+06,ScoreDiff — A Diff Procedure for Music Score Files,2019,foscarin2019diff,S4.5,manual,verified,notation editing toolkit evaluation
+06,FlatHistory — Flat.io version history (and Splice Studio / Blend as DAW-project precedents),2013,flat2026history,S4.5,manual,partial,product editing notation
+06,"Chronicle — Chronicle: Capture, Exploration, and Playback of Document Workflow Histories",2010,grossman2010chronicle,S4.5,manual,verified,editing HCI-study creativity-support
+06,Luminate — Luminate: Structured Generation and Exploration of Design Space with LLMs for Human-AI Co-Creation (and Parallel Paths),2004,suh2024luminate,S4.5,manual,verified,creativity-support LLM-agent HCI-study co-creation-framework
+06,LilyPond — LilyPond: music engraving compiler,2003,nienhuys2003lilypond,S3.6,manual,verified,music-as-code notation toolkit
+06,"AudioLangs — Csound, SuperCollider, Max/Pure Data, ChucK, Faust: audio programming languages",2002,wang2015chuck,S3.6,manual,verified,music-as-code toolkit real-time history
+06,"LiveCoding — TidalCycles, Strudel, Sonic Pi, Gibber, FoxDot: live coding environments",2016,mclean2014tidal,S3.6,manual,verified,music-as-code real-time education toolkit
+06,"CAC — OpenMusic, bach, PWGL: computer-aided composition environments",2009,assayag1999openmusic,S3.6,manual,verified,music-as-code notation toolkit history
+06,"TextMusicLangs — Euterpea / Haskell School of Music, Alda, music21",2010,cuthbert2010music21,B2,manual,verified,music-as-code representation toolkit theory-analysis
+06,CompositionScholarship — Algorithmic composition & music-representation scholarship,2023,nierhaus2009algorithmic,F1,manual,partial,music-as-code representation history
+06,ChatMusician — ChatMusician: Understanding and Generating Music Intrinsically with LLM,2024,yuan2024chatmusician,S3.6,manual,verified,music-as-code symbolic-generation text-conditioning LLM-agent representation
+06,MIDILLM — MIDI-LLM: Adapting Large Language Models for Text-to-MIDI Music Generation,2025,wu2025midillm,S3.6,manual,verified,symbolic-generation text-conditioning music-as-code LLM-agent
+06,Libretto — Libretto: Giving LLM Agents a Sense of Musical Structure,2026,xu2026libretto,S3.6,manual,verified,music-as-code LLM-agent symbolic-generation structure evaluation infilling
+07,music21 — music21: A Toolkit for Computer-Aided Musical Analysis and Computational Musicology,2026,cuthbert2010music21,B2,manual,verified,toolkit theory-analysis notation representation corpus
+07,Verovio — Verovio: A library for engraving MEI music notation into SVG,2026,pugin2014verovio,B1,manual,verified,notation toolkit representation annotation
+07,OSMD — OpenSheetMusicDisplay,2026,osmd2026,B1,manual,verified,notation toolkit
+07,VexFlow — VexFlow music notation rendering library,2024,vexflow2024,B1,manual,verified,notation toolkit
+07,alphaTab — cross-platform notation/tablature rendering with built-in synth,2026,alphatab2026,B1,manual,verified,notation toolkit real-time
+07,abcjs — ABC notation renderer and player,2026,abcjs2026,B1,manual,verified,notation toolkit music-as-code
+07,LilyPond — LilyPond music engraving program,2026,lilypond2026,B1,manual,verified,notation music-as-code toolkit history
+07,MuseScore Studio 4.x — open-source notation editor (Muse Group),2025,musescore2026studio,B1,manual,verified,notation product toolkit DAW-plugin
+07,Finale sunset → Dorico / Sibelius — commercial notation landscape 2024–2026,2026,makemusic2024finale,F3,manual,verified,product notation history
+07,Soundslice — web notation + audio/video sync platform and API,2012,soundslice2026,B1,manual,verified,product notation education multimodal-input
+07,Hookpad + Aria — Hooktheory's chord/melody sketchpad with theory hints and an AI co-writer,2024,donahue2024hookpadaria,E3,manual,verified,product symbolic-generation infilling theory-analysis education controllability
+07,Flat.io / Noteflight — cloud notation editors with APIs,2008,flat2026,B1,manual,partial,product notation education
+07,Web MIDI + Web Audio + Tone.js — browser audio/MIDI substrate (status 2026),2014,w3c2026webmidi,B3,manual,verified,toolkit real-time
+07,"Browser synthesis: spessasynth, FluidSynth-WASM, alphaSynth, SoundFont/SFZ",2002,spessasynth2026,B3,manual,verified,toolkit real-time audio-generation
+07,symusic — a swift and unified toolkit for symbolic music processing,2025,liao2024symusic,B2,manual,verified,toolkit representation
+07,MidiTok — MIDI tokenization for deep learning,2025,fradet2021miditok,B2,manual,verified,toolkit representation symbolic-generation
+07,MusPy — a toolkit for symbolic music generation,2022,dong2020muspy,B2,manual,verified,toolkit dataset evaluation representation
+07,partitura — Python package for symbolic music processing (score–performance),2026,cancinochacon2022partitura,B2,manual,verified,toolkit representation expression-performance notation
+07,mido / pretty_midi / miditoolkit / note-seq — legacy Python MIDI stack,2020,raffel2014prettymidi,B2,manual,partial,toolkit representation
+07,Magenta.js / MIDI-DDSP — browser inference for Magenta models,2022,roberts2018magentajs,B2,manual,verified,toolkit symbolic-generation expression-performance history
+07,"DAW integration protocols — VST3, CLAP, AU, ReaScript, Ableton Link, Max for Live",2016,clap2022,B3,manual,partial,DAW-plugin toolkit real-time
+07,"Arranger keyboards — Korg i3 (1993) and the ""style"" paradigm (Yamaha Genos, Korg Pa)",2020,korg1993i3,F3,manual,verified,history accompaniment product real-time
+07,"Band-in-a-Box — chords + style → full arrangement (PG Music, 1990–2026)",2026,pgmusic2026biab,S3.5,manual,verified,accompaniment product history symbolic-generation
+07,Nord Stage (MIDI implementation basics),2026,clavia2023nordstage4,B3,manual,unverified,product real-time
+07,"Lakh MIDI Dataset (LMD) — 176,581 unique MIDI files",2016,raffel2016lakh,B4,manual,partial,dataset corpus ethics-legal
+07,MAESTRO — MIDI and Audio Edited for Synchronous TRacks and Organization,2021,hawthorne2019maestro,B4,manual,partial,dataset expression-performance transcription
+07,"GiantMIDI-Piano — 10,855 transcribed classical piano pieces",2022,kong2020giantmidi,B4,manual,verified,dataset transcription expression-performance
+07,ATEPP — Automatically Transcribed Expressive Piano Performance,2022,zhang2022atepp,B4,manual,verified,dataset expression-performance transcription
+07,Aria-MIDI — 1.19M transcribed solo-piano MIDI files (100k hours),2025,bradshaw2025ariamidi,B4,manual,verified,dataset transcription expression-performance ethics-legal
+07,PDMX — Public Domain MusicXML dataset (>250k scores),2024,long2024pdmx,B4,manual,verified,dataset notation ethics-legal
+07,Hooktheory / TheoryTab dataset (via Sheet Sage) — aligned melody + harmony annotations,2022,donahue2022sheetsage,S1.1,manual,verified,dataset theory-analysis transcription ethics-legal
+07,"Chordonomicon — 666,000 songs' chord progressions",2024,kantarelis2024chordonomicon,B4,manual,verified,dataset theory-analysis structure
+07,"MetaMIDI Dataset (MMD) — 436,631 MIDI files with audio/metadata matches",2021,ens2021metamidi,B4,manual,verified,dataset ethics-legal
+07,Los Angeles MIDI Dataset — ~405k deduplicated MIDIs,2024,lev2024lamidi,B4,manual,verified,dataset ethics-legal
+07,"JSB Chorales, Nottingham, POP909, Wikifonia — classic small symbolic sets",2013,wang2020pop909,B4,manual,partial,dataset corpus accompaniment
+07,OpenScore Lieder & OpenScore String Quartets — CC0 critical-quality encodings,2023,gotham2022openscore,B4,manual,verified,corpus dataset notation
+07,When in Rome — meta-corpus of Roman numeral analyses (RomanText),2019,gotham2019wheninrome,B4,manual,verified,corpus theory-analysis annotation representation
+07,DCML corpora — Distant Listening Corpus and the DCML harmony standard,2025,hentschel2021mozart,B4,manual,verified,corpus theory-analysis annotation
+07,Bach Doodle Dataset — 21.6M user melodies + Coconet harmonisations,2019,huang2019bachdoodle,E3,manual,verified,dataset co-creation-framework education HCI-study
+07,MidiCaps — 168k MIDI files with text captions,2024,melechovsky2024midicaps,B4,manual,verified,dataset text-conditioning annotation
+07,"Audio stems & captions — MusicNet, Slakh2100, MedleyDB, MUSDB18, MusicCaps, Song Describer",2023,manilow2019slakh,B4,manual,partial,dataset transcription audio-generation evaluation
+07,"MuseScore.com scraping — the ""musescore-dataset"" and its ethics",2024,xmader2021musescore,C3,manual,verified,ethics-legal dataset
+07,AugmentedNet — Roman numeral analysis network with synthetic training examples,2022,napoleslopez2021augmentednet,S2.2,manual,verified,theory-analysis annotation toolkit
+07,ChordGNN — Roman Numeral Analysis with Graph Neural Networks (onset-wise from note-wise),2023,karystinaios2023chordgnn,S2.2,manual,verified,theory-analysis representation
+07,RNBert — Fine-tuning a masked language model for Roman numeral analysis,2024,sailor2024rnbert,S2.2,manual,verified,theory-analysis representation
+07,"Chen & Su — Functional harmony recognition and ""Attend to Chords"" (Harmony Transformer)",2021,chen2021attend,S2.2,manual,verified,theory-analysis
+07,"Computational Schenkerian analysis — new dataset, notation software, graph representation",2015,nihahn2024schenker,S2.2,manual,verified,theory-analysis dataset structure notation
+07,Galant schema detection — computational Gjerdingen schemata,2017,finkensiep2018skipgrams,S2.2,manual,unverified,theory-analysis style-transfer
+07,MSAF — Music Structure Analysis Framework,2023,nieto2016msaf,S2.2,manual,verified,structure toolkit evaluation
+07,All-In-One — metrical and functional structure analysis on demixed audio,2023,kim2023allinone,S2.2,manual,verified,structure transcription
+07,"Dai & Dannenberg — hierarchical structure, repetition and personalised pop generation",2020,dai2022missing,S2.2,manual,partial,structure theory-analysis symbolic-generation controllability
+07,Key/chord estimation and phrase segmentation — the standard baselines,2018,bock2016madmom,S2.2,manual,partial,theory-analysis transcription toolkit
+07,Counterpoint / voice-leading rule checkers,2024,huang2005palestrinapal,S2.2,manual,partial,theory-analysis education toolkit
+07,"ChatMusician & MusicTheoryBench — LLMs with ABC notation, and how little theory they know",2024,yuan2024chatmusician,S3.6,manual,verified,LLM-agent symbolic-generation theory-analysis evaluation
+07,MuChoMusic — evaluating music understanding in audio-language models,2024,weck2024muchomusic,E6,manual,verified,evaluation LLM-agent multimodal-input
+07,MIT 21M.385 / 6.809 Interactive Music Systems (Egozy) — and 21M.383 (cross-ref),2016,egozy21m385,B5,manual,verified,education game real-time music-as-code
+07,Egozy — Approaches to Musical Expression in Harmonix Video Games; live score following; AI-augmented instruments,2024,egozy2016harmonix,S5.4,manual,verified,game HCI-study real-time education
+07,Kiri Miller — Guitar Hero/Rock Band as musical performance and learning,2012,miller2009schizophonic,S5.4,manual,verified,game education HCI-study
+07,Harmonix Fuser / DropMix — mashup games as arrangement interfaces,2022,harmonix2020fuser,S5.4,manual,partial,game product accompaniment
+07,TunePad — Python + music for CS learning (Northwestern TIDAL Lab),2021,horn2022tunepad,B5,manual,verified,education music-as-code HCI-study
+07,EarSketch — coding + music remixing for broadening participation (Georgia Tech),2019,freeman2019earsketch,B5,manual,verified,education music-as-code HCI-study
+07,Sonic Pi — live coding for schools,2016,aaron2016sonicpi,B5,manual,verified,education music-as-code real-time
+07,"Practice/learning apps — Yousician, Simply Piano, Flowkey, Melodics, Piano Marvel, SmartMusic, Chordify, Moises",2019,yousician2026,B5,manual,partial,education product transcription real-time
+07,Generative AI in composition teaching — early empirical papers (2024–2026),2024,oros2026helpthathurts,E2,manual,partial,education HCI-study creativity-support evaluation
+08,IlliacSuite — Illiac Suite (String Quartet No. 4) and *Experimental Music: Composition with an Electronic Computer*,1959,hiller1959experimental,F1,manual,verified,history symbolic-generation notation
+08,UPIC — Unité Polyagogique Informatique du CEMAMu (Xenakis),1992,xenakis1992formalized,F1,manual,verified,history sketch multimodal-input representation
+08,KoenigProject — Project 1 (1964) and Project 2 (1966),1966,koenig1970project,F1,manual,unverified,history symbolic-generation music-as-code
+08,"EMI — Experiments in Musical Intelligence (""Emmy"") and Emily Howell",2009,cope2001virtual,F1,manual,verified,history symbolic-generation style-transfer ethics-legal evaluation
+08,RoweIMS — *Interactive Music Systems: Machine Listening and Composing*,1993,rowe1993interactive,F2,manual,verified,history co-creation-framework real-time accompaniment
+08,Voyager — George Lewis's *Voyager*,2000,lewis2000toomanynotes,F2,manual,partial,history real-time mixed-initiative co-creation-framework
+08,Accompaniment1984 — Real-time computer accompaniment (Dannenberg) and the Synthetic Performer (Vercoe),1985,dannenberg1984online,F2,manual,verified,history accompaniment real-time transcription
+08,GenJam — Genetic Jammer,2000,biles1994genjam,F2,manual,partial,history accompaniment mixed-initiative annotation
+08,Continuator — The Continuator (Pachet) and Flow Machines,2018,pachet2003continuator,F2,manual,partial,history real-time symbolic-generation controllability accompaniment
+08,OMax — OMax / Somax2 (IRCAM),2020,assayag2006omax,F2,manual,partial,history real-time mixed-initiative accompaniment
+08,EckLSTM — Finding temporal structure in music: blues improvisation with LSTM,2002,eck2002blues,F1,manual,partial,history symbolic-generation structure
+08,RNNRBM — Modeling temporal dependencies in high-dimensional sequences: polyphonic music,2012,boulangerlewandowski2012modeling,F1,manual,partial,history symbolic-generation dataset
+08,folkRNN — Music transcription modelling and composition using deep learning (folk-rnn),2016,sturm2016folkrnn,F1,manual,verified,history symbolic-generation notation evaluation representation
+08,BandInABox — Band-in-a-Box and the arranger-keyboard lineage,2022,pgmusic1990bandinabox,F3,manual,verified,history product accompaniment symbolic-generation
+08,NotationSequencerHistory — Notation and MIDI-sequencer software lineage (brief),2002,makemusic2024finale,F3,manual,verified,history notation product
+08,"BachInABox — ""Bach in a Box"" and *Bach by Design*",1994,mcintyre1994bachinabox,F1,manual,unverified,history symbolic-generation theory-analysis
+08,"Suno — Suno (v4.5/v5 → licensed models), Suno Studio 1.0 (Sept 2025) and 2.0 (Aug 2026), download caps (Sept 2026)",2026,suno2026,C1,manual,verified,product audio-generation text-conditioning editing ethics-legal
+08,"Udio — Udio and the UMG/WMG licensed ""walled garden""",2025,udio2025,C1,manual,verified,product audio-generation ethics-legal
+08,"Lyria — Google DeepMind Lyria family, Music AI Sandbox, MusicFX, Lyria RealTime, Lyria 3/3 Pro/3.5, and Google Flow Music (ex-Producer.ai / Riffusion)",2026,google2025lyria2,C1,manual,verified,product audio-generation editing real-time text-conditioning image
+08,ElevenMusic — Eleven Music (ElevenLabs),2026,elevenlabs2025music,C1,manual,verified,product audio-generation ethics-legal
+08,StableAudio — Stable Audio 2.5 (enterprise) and Stable Audio Open (open weights),2024,evans2024stableaudioopen,S3.9,manual,verified,product audio-generation text-conditioning ethics-legal dataset
+08,"Mureka — Mureka (Kunlun Tech / Skywork AI), Mureka O1 ""music reasoning"" model",2025,kunlun2025mureka,C1,manual,partial,product audio-generation structure text-conditioning
+08,"LogicPro11 — Logic Pro 11 Session Players, Stem Splitter, ChromaGlow, Chord Track (Apple)",2025,apple2024logicpro11,C1,manual,verified,product accompaniment symbolic-generation editing DAW-plugin
+08,"Live12 — Ableton Live 12 ""Similar Sounds"", MIDI Generators/Transformations",2024,ableton2024live12,C1,manual,partial,product symbolic-generation DAW-plugin
+08,HookpadAria — Hookpad + Aria (Hooktheory),2025,donahue2024hookpadaria,E3,manual,verified,product symbolic-generation infilling notation editing theory-analysis
+08,Scaler3 — Scaler 3 (Scaler Music / Plugin Boutique),2025,scaler2025v3,C1,manual,partial,product symbolic-generation theory-analysis DAW-plugin
+08,OrbCaptain — Orb Producer Suite 3 (Hexachords) and Captain Chords Epic (Mixed In Key),2022,hexachords2022orb,C1,manual,partial,product symbolic-generation DAW-plugin accompaniment
+08,Dorico6 — Dorico 6 (Steinberg),2025,steinberg2025dorico6,B1,manual,verified,product notation
+08,MuseScore46 — MuseScore Studio 4.6 / 4.7 + Muse Hub (Muse Group),2026,musegroup2025musescore46,B1,manual,verified,product notation toolkit
+08,Sibelius2026 — Sibelius (Avid) 2025–2026 releases,2026,avid2026sibelius,B1,manual,verified,product notation
+08,MoisesStudio — Moises AI Studio (Moises / Music.AI),2025,moises2025aistudio,C1,manual,verified,product audio-generation accompaniment editing transcription
+08,"SpliceCreate — Splice ""Create"" (Stacks)",2024,splice2024create,C1,manual,partial,product audio-generation toolkit
+08,AbletonMCP — Ableton MCP (LLM → Ableton Live bridge) and the LLM-agent-in-DAW wave,2025,ahuja2025abletonmcp,B3,manual,verified,product LLM-agent DAW-plugin symbolic-generation toolkit
+08,ComposersAssistant2 — Composer's Assistant 2 (REAPER),2024,malandro2024composersassistant2,S3.2,manual,verified,symbolic-generation infilling DAW-plugin controllability editing
+08,MIDIGPT — MIDI-GPT (Metacreation Lab) with REAPER/Ableton (Calliope) front-ends,2025,pasquier2025midigpt,S3.2,manual,verified,symbolic-generation infilling controllability DAW-plugin
+08,"MagentaStudio — Magenta Studio 2.0 (Ableton) and Magenta RealTime / ""Live Music Models""",2025,lyria2025livemusic,S3.8,manual,verified,symbolic-generation audio-generation real-time DAW-plugin toolkit
+08,"WavTool — WavTool (browser DAW with GPT-4 ""Conductor"") → acquired by Suno",2025,suno2025wavtool,C1,manual,verified,product LLM-agent DAW-plugin
+08,"SynthV2 — Synthesizer V Studio 2 Pro (Dreamtonics) and the AI-singer category (ACE Studio, Vocaloid 6, Kits.ai)",2023,dreamtonics2025synthv2,C1,manual,partial,product expression-performance symbolic-generation notation ethics-legal
+08,NeutoneMorpho — Neutone Morpho / Neutone FX,2024,neutone2024morpho,S1.5,manual,partial,product audio-generation style-transfer real-time DAW-plugin
+08,FAD — Fréchet Audio Distance,2018,kilgour2019fad,E4,manual,partial,evaluation audio-generation
+08,FADadapt — Adapting Fréchet Audio Distance for Generative Music Evaluation (fadtk),2024,gui2024fad,E4,manual,verified,evaluation audio-generation toolkit
+08,KAD — KAD: No More FAD! Kernel Audio Distance,2025,chung2025kad,E4,manual,verified,evaluation audio-generation toolkit
+08,FMD — Fréchet Music Distance (symbolic),2025,retkowski2024fmd,E4,manual,verified,evaluation symbolic-generation toolkit
+08,YangLerch — On the evaluation of generative models in music,2020,yang2020evaluation,E4,manual,partial,evaluation symbolic-generation toolkit
+08,"CLAPscore — CLAP score, MusicCaps and Song Describer for text-to-music evaluation",2023,wu2023clap,S3.10,manual,partial,evaluation text-conditioning dataset
+08,MuChoMusic — MuChoMusic: Evaluating Music Understanding in Multimodal Audio-Language Models,2024,weck2024muchomusic,E6,manual,verified,evaluation multimodal-input dataset
+08,MusicEval — MusicEval: A Generative Music Dataset with Expert Ratings for Automatic Text-to-Music Evaluation,2025,liu2025musiceval,E4,manual,verified,evaluation dataset text-conditioning
+08,AudioMOS — AudioMOS Challenge 2025 and ICASSP 2026 Automatic Song Aesthetics Evaluation (ASAE) Challenge,2026,huang2025audiomos,E4,manual,verified,evaluation audio-generation
+08,HumanPrefBench — Benchmarking Music Generation Models and Metrics via Human Preference Studies,2025,grotschla2025benchmarking,E4,manual,verified,evaluation audio-generation dataset
+08,AestheticsVsPref — From Aesthetics to Human Preferences: Comparative Perspectives of Evaluating Text-to-Music Systems,2025,zhang2025aesthetics,E4,manual,verified,evaluation audio-generation
+08,EvalSurvey — A Survey on Evaluation Metrics for Music Generation,2025,kader2025survey,E4,manual,verified,evaluation
+08,Boden — Boden's P-/H-creativity and exploratory/combinational/transformational creativity,2004,boden2004creativemind,E5,manual,partial,evaluation co-creation-framework creativity-support
+08,Ritchie — Some empirical criteria for attributing creativity to a computer program,2001,ritchie2007criteria,E5,manual,partial,evaluation co-creation-framework
+08,"ColtonTripod — Creativity versus the perception of creativity in computational systems (the ""creative tripod"")",2008,colton2008tripod,E5,manual,partial,evaluation co-creation-framework
+08,SPECS — A Standardised Procedure for Evaluating Creative Systems (SPECS),2012,jordanous2012standardised,E5,manual,partial,evaluation co-creation-framework
+08,CSI — Quantifying the Creativity Support of Digital Tools through the Creativity Support Index,2009,cherry2014csi,E5,manual,partial,evaluation creativity-support HCI-study
+08,KarimiCoCreative — Evaluating Creativity in Computational Co-Creative Systems,2018,karimi2018evaluating,E5,manual,verified,evaluation co-creation-framework mixed-initiative
+08,KantosaloModes — Modes for creative human–computer collaboration: alternating and task-divided co-creativity,2019,kantosalo2016modes,F4,manual,partial,co-creation-framework mixed-initiative evaluation
+08,"CMUCreativity — CMU study: AI-assisted vs unassisted melody composition (Oros, Telang, Randall)",2026,oros2026cmu,E1,manual,verified,evaluation HCI-study creativity-support
+08,EchoesHumanity — Echoes of Humanity: Exploring the Perceived Humanness of AI Music,2025,figueiredo2025echoes,E4,manual,verified,evaluation HCI-study
+08,DeezerIpsos — Deezer/Ipsos survey: 97% cannot tell AI from human music,2025,deezer2025ipsos,C4,manual,verified,evaluation ethics-legal HCI-study
+08,MiRA — Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio (MiRA),2024,batlleroca2024mira,C3,manual,verified,evaluation ethics-legal audio-generation toolkit
+08,SunoUdioAnalysis — Data-Driven Analysis of Text-Conditioned AI-Generated Music: A Case Study with Suno and Udio,2025,casini2025sunoudio,E3,manual,verified,evaluation text-conditioning HCI-study
+08,TrainingWatermark — Watermarking Training Data of Music Generation Models,2025,epple2024watermarking,C3,manual,partial,ethics-legal evaluation audio-generation
+08,LabelsVSuno — UMG Recordings et al. v. Suno (D. Mass. 1:24-cv-11611) and UMG et al. v. Uncharted Labs/Udio (S.D.N.Y. 1:24-cv-04777),2025,umg2024vsuno,C2,manual,verified,ethics-legal audio-generation
+08,UMGUdio — UMG–Udio settlement and licensed platform (29 Oct 2025),2025,umg2025udio,C2,manual,verified,ethics-legal product
+08,"WMGDeals — Warner Music Group settlements: Udio (19 Nov 2025), Stability AI partnership (19 Nov 2025), Suno (25 Nov 2025)",2025,wmg2025suno,C2,manual,verified,ethics-legal product
+08,"GEMAvOpenAI — GEMA v. OpenAI (LG München I, 42 O 14139/24, 11 Nov 2025)",2025,lgmunich2025gemaopenai,C2,manual,verified,ethics-legal
+08,"GEMAvSuno — GEMA v. Suno (LG München I, 42 O 763/25, **31 July 2026**)",2026,lgmunich2026gemasuno,C2,manual,verified,ethics-legal audio-generation
+08,"USCOReports — U.S. Copyright Office, *Copyright and Artificial Intelligence* Parts 1–3; Perlmutter dismissal",2026,usco2025part2,C2,manual,partial,ethics-legal
+08,Thaler — Thaler v. Perlmutter (D.C. Cir. 2025; cert. denied 2 Mar 2026),2026,thaler2025perlmutter,C2,manual,verified,ethics-legal
+08,"EUAIAct — EU AI Act GPAI obligations (from 2 Aug 2025), GPAI Code of Practice (10 July 2025) and training-content summary template (24 July 2025)",2027,eu2024aiact,C2,manual,partial,ethics-legal
+08,"ELVISAct — Tennessee ELVIS Act (Ensuring Likeness Voice and Image Security), signed 21 Mar 2024, effective 1 July 2024",2024,tennessee2024elvis,C2,manual,partial,ethics-legal expression-performance
+08,FairlyTrained — Fairly Trained certification and Ed Newton-Rex's resignation from Stability AI,2025,newtonrex2024fairlytrained,C3,manual,partial,ethics-legal
+08,"StatementAITraining — ""Statement on AI training"" (22 Oct 2024)",,newtonrex2024statement,C3,manual,partial,ethics-legal
+08,"Spawning — Spawning / ""Have I Been Trained?"" (Holly Herndon & Mat Dryhurst)",2024,spawning2022haveibeentrained,C3,manual,partial,ethics-legal
+08,DeezerStats — Deezer AI-content statistics 2025–2026,2025,deezer2026aistats,C3,manual,verified,ethics-legal product
+08,SpotifyPolicy — Spotify AI policies (25 Sept 2025),2025,spotify2025aipolicy,C3,manual,verified,ethics-legal product
+08,SmithFraud — United States v. Michael Smith (S.D.N.Y.): AI-generated streaming fraud,2026,usdoj2024smith,C3,manual,verified,ethics-legal
+08,GEMASACEM — GEMA/SACEM × Goldmedia study *AI and Music* (30 Jan 2024),2024,goldmedia2024gemasacem,C4,manual,partial,ethics-legal
+08,CISACStudy — CISAC/PMP Strategy global economic study (4 Dec 2024),2024,cisac2024pmp,C4,manual,partial,ethics-legal
+08,APRAAMCOS — APRA AMCOS *AI and Music* report (19 Aug 2024),2024,apraamcos2024ai,C4,manual,verified,ethics-legal HCI-study
+08,PDMX — PDMX: A Large-Scale Public Domain MusicXML Dataset for Symbolic Music Processing,2024,long2024pdmx,B4,manual,verified,dataset notation ethics-legal symbolic-generation
+08,AriaMIDI — Aria-MIDI: A Dataset of Piano MIDI Files for Symbolic Music Modeling,2025,bradshaw2025ariamidi,B4,manual,partial,dataset symbolic-generation expression-performance ethics-legal
+08,ConcordAnthropic — Concord Music Group et al. v. Anthropic (lyrics),2025,concord2023anthropic,C2,manual,partial,ethics-legal LLM-agent
+08,"EthicalFooting — Why a symbolic-first, human-authored studio has a different ethical footing (synthesis note)",,,C3,auto,partial,ethics-legal notation symbolic-generation

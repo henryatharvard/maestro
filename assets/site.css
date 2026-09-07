@@ -1,0 +1,109 @@
+/* Maestro — shared identity
+   "red pencil on urtext paper": ink and staff-grey for the text, editor's red
+   reserved for the annotation layer (the project's own subject). */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap');
+
+:root {
+  /* light — the stock of a scholarly edition: cool, faintly green, never cream */
+  --paper:      #F2F3EF;
+  --paper-2:    #E9EBE5;
+  --ink:        #14161A;
+  --ink-2:      #545962;
+  --ink-3:      #838892;
+  --rule:       #D2D5CE;
+  --rule-soft:  #E1E3DD;
+  --annot:      #A5352B;   /* editor's red pencil — annotation layer only */
+  --annot-soft: #F0DFDC;
+  --blue:       #27497A;   /* engraving blue — links, magnitude bars */
+  --blue-soft:  #DDE3EC;
+
+  --f-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body:    "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --measure: 68ch;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:      #131519;
+    --paper-2:    #191C21;
+    --ink:        #E7E9E4;
+    --ink-2:      #A2A8B0;
+    --ink-3:      #767C86;
+    --rule:       #2B2F36;
+    --rule-soft:  #212429;
+    --annot:      #E28175;
+    --annot-soft: #37211E;
+    --blue:       #97B8EC;
+    --blue-soft:  #1B2432;
+  }
+}
+:root[data-theme="dark"] {
+  --paper:      #131519;
+  --paper-2:    #191C21;
+  --ink:        #E7E9E4;
+  --ink-2:      #A2A8B0;
+  --ink-3:      #767C86;
+  --rule:       #2B2F36;
+  --rule-soft:  #212429;
+  --annot:      #E28175;
+  --annot-soft: #37211E;
+  --blue:       #97B8EC;
+  --blue-soft:  #1B2432;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.62;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--annot); outline-offset: 3px; border-radius: 1px; }
+
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 500; text-wrap: balance; letter-spacing: -0.012em; }
+h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); line-height: 1.02; margin: 0; }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.15rem); line-height: 1.15; margin: 0 0 .55em; }
+h3 { font-size: 1.24rem; line-height: 1.28; margin: 0 0 .4em; }
+p  { margin: 0 0 1.05em; max-width: var(--measure); }
+ul, ol { max-width: var(--measure); padding-left: 1.15em; }
+li { margin-bottom: .45em; }
+strong { font-weight: 600; }
+em { font-style: italic; }
+code { font-family: var(--f-mono); font-size: .88em; background: var(--paper-2); padding: .1em .35em; border-radius: 2px; }
+pre { font-family: var(--f-mono); font-size: .82rem; line-height: 1.55; background: var(--paper-2);
+      padding: 1rem 1.1rem; overflow-x: auto; border-left: 2px solid var(--rule); }
+pre code { background: none; padding: 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
+
+blockquote { margin: 1.4rem 0; padding-left: 1.1rem; border-left: 2px solid var(--annot);
+             font-family: var(--f-display); font-style: italic; font-size: 1.08rem; color: var(--ink-2); max-width: var(--measure); }
+
+table { border-collapse: collapse; font-size: .93rem; width: 100%; }
+th, td { text-align: left; padding: .5rem .8rem .5rem 0; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+th { font-family: var(--f-body); font-weight: 600; font-size: .78rem; text-transform: uppercase;
+     letter-spacing: .07em; color: var(--ink-2); border-bottom-color: var(--rule); }
+td:last-child, th:last-child { padding-right: 0; }
+.tablewrap, .table-scroll { overflow-x: auto; }
+
+/* the mono utility voice: taxonomy codes, counts, data */
+.code, .mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.eyebrow { font-family: var(--f-mono); font-size: .72rem; text-transform: uppercase;
+           letter-spacing: .13em; color: var(--ink-3); margin: 0 0 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}

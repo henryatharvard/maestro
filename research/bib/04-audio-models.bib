@@ -1,0 +1,682 @@
+% ============================================================
+% Cluster 04 — Audio-domain music generation, controllable/editable
+% audio generation, and music-understanding models.
+% One entry per BibKey in notes/04-audio-models.md (64 entries).
+% arXiv eprints given where known; @misc for products/systems.
+% Compiled 2026-09-07.
+% ============================================================
+
+% ---------- A. Foundations ----------
+
+@article{dhariwal2020jukebox,
+  title         = {Jukebox: A Generative Model for Music},
+  author        = {Dhariwal, Prafulla and Jun, Heewoo and Payne, Christine and Kim, Jong Wook and Radford, Alec and Sutskever, Ilya},
+  journal       = {arXiv preprint arXiv:2005.00341},
+  year          = {2020},
+  eprint        = {2005.00341},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2005.00341},
+  note          = {Code: https://github.com/openai/jukebox}
+}
+
+@article{agostinelli2023musiclm,
+  title         = {{MusicLM}: Generating Music From Text},
+  author        = {Agostinelli, Andrea and Denk, Timo I. and Borsos, Zal{\'a}n and Engel, Jesse and Verzetti, Mauro and Caillon, Antoine and Huang, Qingqing and Jansen, Aren and Roberts, Adam and Tagliasacchi, Marco and Sharifi, Matt and Zeghidour, Neil and Frank, Christian},
+  journal       = {arXiv preprint arXiv:2301.11325},
+  year          = {2023},
+  eprint        = {2301.11325},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2301.11325}
+}
+
+@article{huang2023noise2music,
+  title         = {{Noise2Music}: Text-conditioned Music Generation with Diffusion Models},
+  author        = {Huang, Qingqing and Park, Daniel S. and Wang, Tao and Denk, Timo I. and Ly, Andy and Chen, Nanxin and Zhang, Zhengdong and Zhang, Zhishuai and Yu, Jiahui and Frank, Christian and Engel, Jesse and Le, Quoc V. and Chan, William and Chen, Zhifeng and Han, Wei},
+  journal       = {arXiv preprint arXiv:2302.03917},
+  year          = {2023},
+  eprint        = {2302.03917},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2302.03917}
+}
+
+@inproceedings{copet2023musicgen,
+  title         = {Simple and Controllable Music Generation},
+  author        = {Copet, Jade and Kreuk, Felix and Gat, Itai and Remez, Tal and Kant, David and Synnaeve, Gabriel and Adi, Yossi and D{\'e}fossez, Alexandre},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year          = {2023},
+  eprint        = {2306.05284},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2306.05284},
+  note          = {Code: https://github.com/facebookresearch/audiocraft}
+}
+
+@inproceedings{liu2023audioldm,
+  title         = {{AudioLDM}: Text-to-Audio Generation with Latent Diffusion Models},
+  author        = {Liu, Haohe and Chen, Zehua and Yuan, Yi and Mei, Xinhao and Liu, Xubo and Mandic, Danilo and Wang, Wenwu and Plumbley, Mark D.},
+  booktitle     = {Proceedings of the 40th International Conference on Machine Learning (ICML)},
+  year          = {2023},
+  eprint        = {2301.12503},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2301.12503}
+}
+
+@article{liu2024audioldm2,
+  title         = {{AudioLDM 2}: Learning Holistic Audio Generation with Self-supervised Pretraining},
+  author        = {Liu, Haohe and Yuan, Yi and Liu, Xubo and Mei, Xinhao and Kong, Qiuqiang and Tian, Qiao and Wang, Yuping and Wang, Wenwu and Wang, Yuxuan and Plumbley, Mark D.},
+  journal       = {IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+  year          = {2024},
+  eprint        = {2308.05734},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2308.05734}
+}
+
+@inproceedings{evans2024longform,
+  title         = {Long-form Music Generation with Latent Diffusion},
+  author        = {Evans, Zach and Parker, Julian D. and Carr, CJ and Zukowski, Zack and Taylor, Josiah and Pons, Jordi},
+  booktitle     = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year          = {2024},
+  eprint        = {2404.10301},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2404.10301},
+  note          = {Stable Audio 2.0. Predecessor: Fast Timing-Conditioned Latent Audio Diffusion, ICML 2024, arXiv:2402.04825}
+}
+
+@inproceedings{evans2024stableaudioopen,
+  title         = {Stable Audio Open},
+  author        = {Evans, Zach and Parker, Julian D. and Carr, CJ and Zukowski, Zack and Taylor, Josiah and Pons, Jordi},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2025},
+  eprint        = {2407.14358},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2407.14358},
+  note          = {Weights: https://huggingface.co/stabilityai/stable-audio-open-1.0}
+}
+
+@article{li2023jen1,
+  title         = {{JEN-1}: Text-Guided Universal Music Generation with Omnidirectional Diffusion Models},
+  author        = {Li, Peike and Chen, Boyu and Yao, Yao and Wang, Yikai and Wang, Allen and Wang, Alex},
+  journal       = {arXiv preprint arXiv:2308.04729},
+  year          = {2023},
+  eprint        = {2308.04729},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2308.04729}
+}
+
+@inproceedings{melechovsky2024mustango,
+  title         = {Mustango: Toward Controllable Text-to-Music Generation},
+  author        = {Melechovsky, Jan and Guo, Zixun and Ghosal, Deepanway and Majumder, Navonil and Herremans, Dorien and Poria, Soujanya},
+  booktitle     = {Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)},
+  year          = {2024},
+  eprint        = {2311.08355},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2311.08355},
+  note          = {Code: https://github.com/AMAAI-Lab/mustango}
+}
+
+@inproceedings{prajwal2024musicflow,
+  title         = {{MusicFlow}: Cascaded Flow Matching for Text Guided Music Generation},
+  author        = {Prajwal, K R and Shi, Bowen and Le, Matthew and Vyas, Apoorv and Tjandra, Andros and Luthra, Mahi and Guo, Baishan and Wang, Huiyu and Afouras, Triantafyllos and Kant, David and Hsu, Wei-Ning},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  year          = {2024},
+  eprint        = {2410.20478},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2410.20478}
+}
+
+@misc{forsgren2022riffusion,
+  title         = {Riffusion: Stable Diffusion for Real-time Music Generation (later ProducerAI, acquired by Google Feb 2026 and relaunched as Google Flow Music)},
+  author        = {Forsgren, Seth and Martiros, Hayk},
+  year          = {2022},
+  howpublished  = {\url{https://en.wikipedia.org/wiki/Riffusion}},
+  note          = {See also https://www.musicbusinessworldwide.com/google-acquires-ai-music-platform-and-suno-challenger-producerai/ and https://9to5google.com/2026/04/20/producerai-becomes-google-flow-music/. Accessed 2026-09}
+}
+
+% ---------- B. Commercial systems ----------
+
+@misc{suno2026,
+  title         = {Suno: Release Notes (v3--v5.5, Suno Studio, Stems, Covers, Personas, Replace Section, MIDI)},
+  author        = {{Suno Inc.}},
+  year          = {2026},
+  howpublished  = {\url{https://suno.com/release-notes}},
+  note          = {WMG settlement: https://www.musicbusinessworldwide.com/warner-music-group-settles-with-suno-strikes-first-of-its-kind-deal-with-ai-song-generator/. Accessed 2026-09}
+}
+
+@misc{udio2025,
+  title         = {Udio: AI Music Generation Platform (v1.5, inpainting, remix; UMG settlement and licensed-platform pivot)},
+  author        = {{Udio / Uncharted Labs}},
+  year          = {2025},
+  howpublished  = {\url{https://www.udio.com}},
+  note          = {Background: https://en.wikipedia.org/wiki/Udio ; UMG deal: https://www.musicbusinessworldwide.com/universal-music-settles-udio-lawsuit-strikes-deal-for-licensed-ai-music-platform/. Accessed 2026-09}
+}
+
+@misc{google2025lyria2,
+  title         = {Music {AI} Sandbox, Now with New Features and Broader Access (Lyria 2); New Generative {AI} Tools Open the Doors of Music Creation ({MusicFX DJ})},
+  author        = {{Google DeepMind}},
+  year          = {2025},
+  howpublished  = {\url{https://deepmind.google/blog/music-ai-sandbox-now-with-new-features-and-broader-access/}},
+  note          = {MusicFX DJ announcement (Oct 2024): https://deepmind.google/blog/new-generative-ai-tools-open-the-doors-of-music-creation/. Accessed 2026-09}
+}
+
+@misc{google2025lyriarealtime,
+  title         = {Introducing the Lyria RealTime {API}; Lyria 3 and Lyria 3.5 Music Generation Models},
+  author        = {{Google DeepMind}},
+  year          = {2025},
+  howpublished  = {\url{https://magenta.withgoogle.com/lyria-realtime}},
+  note          = {Model page: https://deepmind.google/models/lyria/. Accessed 2026-09}
+}
+
+@misc{adobe2024musicgenaicontrol,
+  title         = {Adobe Previews Project Music {GenAI} Control: Generative {AI} Music Creation and Editing},
+  author        = {{Adobe Research}},
+  year          = {2024},
+  howpublished  = {\url{https://blog.adobe.com/en/publish/2024/02/28/adobe-research-audio-creation-editing}},
+  note          = {Research prototype with UC San Diego and CMU. Accessed 2026-09}
+}
+
+@misc{elevenlabs2025music,
+  title         = {Eleven Music: {AI} Music Generation with Vocals, Section Editing, Stems and Inpainting},
+  author        = {{ElevenLabs}},
+  year          = {2025},
+  howpublished  = {\url{https://elevenlabs.io/music}},
+  note          = {Accessed 2026-09}
+}
+
+@misc{mureka2025,
+  title         = {Mureka: {AI} Music Generator},
+  author        = {{Kunlun Tech / Skywork AI}},
+  year          = {2025},
+  howpublished  = {\url{https://www.mureka.ai}},
+  note          = {Accessed 2026-09}
+}
+
+@article{novack2025arc,
+  title         = {Fast Text-to-Audio Generation with Adversarial Post-Training},
+  author        = {Novack, Zachary and Evans, Zach and Zukowski, Zack and Taylor, Josiah and Carr, CJ and Parker, Julian and Al-Sinan, Adnan and Iodice, Gian Marco and McAuley, Julian and Berg-Kirkpatrick, Taylor and Pons, Jordi},
+  journal       = {arXiv preprint arXiv:2505.08175},
+  year          = {2025},
+  eprint        = {2505.08175},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2505.08175},
+  note          = {ARC post-training; Stable Audio Open Small. Stable Audio 2.5 announcement: https://stability.ai/news-updates/stability-ai-introduces-stable-audio-25-the-first-audio-model-built-for-enterprise-sound-production-at-scale}
+}
+
+@misc{splice2025landr,
+  title         = {Splice and {LANDR}: {AI}-assisted Sample Assembly and Mastering Tools},
+  author        = {{Splice} and {LANDR}},
+  year          = {2025},
+  howpublished  = {\url{https://splice.com}},
+  note          = {See also https://www.landr.com. Context entry; unverified. Accessed 2026-09}
+}
+
+% ---------- C. Meta AudioCraft family ----------
+
+@inproceedings{ziv2024magnet,
+  title         = {Masked Audio Generation using a Single Non-Autoregressive Transformer},
+  author        = {Ziv, Alon and Gat, Itai and Le Lan, Gael and Remez, Tal and Kreuk, Felix and D{\'e}fossez, Alexandre and Copet, Jade and Synnaeve, Gabriel and Adi, Yossi},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2024},
+  eprint        = {2401.04577},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2401.04577}
+}
+
+@inproceedings{rouard2024musicgenstyle,
+  title         = {Audio Conditioning for Music Generation via Discrete Bottleneck Features},
+  author        = {Rouard, Simon and Adi, Yossi and Copet, Jade and Roebel, Axel and D{\'e}fossez, Alexandre},
+  booktitle     = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year          = {2024},
+  eprint        = {2407.12563},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2407.12563},
+  note          = {MusicGen-Style}
+}
+
+@inproceedings{tal2024jasco,
+  title         = {Joint Audio and Symbolic Conditioning for Temporally Controlled Text-to-Music Generation},
+  author        = {Tal, Or and Ziv, Alon and Gat, Itai and Kreuk, Felix and Adi, Yossi},
+  booktitle     = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year          = {2024},
+  eprint        = {2406.10970},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2406.10970},
+  note          = {JASCO. Project page: https://pages.cs.huji.ac.il/adiyoss-lab/JASCO}
+}
+
+@article{lelan2024melodyflow,
+  title         = {High Fidelity Text-Guided Music Editing via Single-Stage Flow Matching},
+  author        = {Le Lan, Gael and Shi, Bowen and Ni, Zhaoheng and Srinivasan, Sidd and Kumar, Anurag and Ellis, Brian and Kant, David and Nagaraja, Varun and Chang, Ernie and Hsu, Wei-Ning and Shi, Yangyang and Chandra, Vikas},
+  journal       = {arXiv preprint arXiv:2407.03648},
+  year          = {2024},
+  eprint        = {2407.03648},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2407.03648},
+  note          = {MelodyFlow. Demo: https://melodyflow.github.io}
+}
+
+@inproceedings{rouard2025musicgenstem,
+  title         = {{MusicGen-Stem}: Multi-stem Music Generation and Edition through Autoregressive Modeling},
+  author        = {Rouard, Simon and San Roman, Robin and Adi, Yossi and Roebel, Axel},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2025},
+  eprint        = {2501.01757},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2501.01757}
+}
+
+% ---------- D. Open-weights song and live models ----------
+
+@article{gong2025acestep,
+  title         = {{ACE-Step}: A Step Towards Music Generation Foundation Model},
+  author        = {Gong, Junmin and Zhao, Sean and Wang, Sen and Xu, Shengyuan and Guo, Jing},
+  journal       = {arXiv preprint arXiv:2506.00045},
+  year          = {2025},
+  eprint        = {2506.00045},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2506.00045},
+  note          = {ACE Studio and StepFun. Code: https://github.com/ace-step/ACE-Step}
+}
+
+@article{gong2026acestep15,
+  title         = {{ACE-Step 1.5}: Pushing the Boundaries of Open-Source Music Generation},
+  author        = {Gong, Junmin and Song, Yulin and Zhao, Wenxiao and Wang, Sen and Xu, Shengyuan and others},
+  journal       = {arXiv preprint arXiv:2602.00744},
+  year          = {2026},
+  eprint        = {2602.00744},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2602.00744},
+  note          = {ACE Studio and StepFun. Code (MIT): https://github.com/ace-step/ACE-Step-1.5}
+}
+
+@article{yuan2025yue,
+  title         = {{YuE}: Scaling Open Foundation Models for Long-Form Music Generation},
+  author        = {Yuan, Ruibin and Lin, Hanfeng and Guo, Shuyue and Zhang, Ge and Pan, Jiahao and others},
+  journal       = {arXiv preprint arXiv:2503.08638},
+  year          = {2025},
+  eprint        = {2503.08638},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2503.08638},
+  note          = {Code and weights (Apache-2.0): https://github.com/multimodal-art-projection/YuE}
+}
+
+@inproceedings{ning2025diffrhythm,
+  title         = {{DiffRhythm}: Blazingly Fast and Embarrassingly Simple End-to-End Full-Length Song Generation with Latent Diffusion},
+  author        = {Ning, Ziqian and Chen, Huakang and Jiang, Yuepeng and Hao, Chunbo and Ma, Guobin and Wang, Shuai and Yao, Jixun and Xie, Lei},
+  booktitle     = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL)},
+  year          = {2025},
+  eprint        = {2503.01183},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2503.01183},
+  note          = {Code and weights (Apache-2.0): https://github.com/ASLP-lab/DiffRhythm}
+}
+
+@inproceedings{liu2025songgen,
+  title         = {{SongGen}: A Single Stage Auto-regressive Transformer for Text-to-Song Generation},
+  author        = {Liu, Zihan and Ding, Shuangrui and Zhang, Zhixiong and Dong, Xiaoyi and Zhang, Pan and Zang, Yuhang and Cao, Yuhang and Lin, Dahua and Wang, Jiaqi},
+  booktitle     = {Proceedings of the 42nd International Conference on Machine Learning (ICML)},
+  year          = {2025},
+  eprint        = {2502.13128},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2502.13128},
+  note          = {Code and weights (Apache-2.0): https://github.com/LiuZH-19/SongGen}
+}
+
+@misc{heartmula2026,
+  title         = {{HeartMuLa}: A Family of Open-Sourced Music Foundation Models ({HeartMuLa}, {HeartCodec}, {HeartTranscriptor}, {HeartCLAP})},
+  author        = {{HeartMuLa Team}},
+  year          = {2026},
+  howpublished  = {\url{https://github.com/HeartMuLa/heartlib}},
+  note          = {Apache-2.0 code and weights; 3B open release Feb 2026. Accessed 2026-09}
+}
+
+@article{lyria2025livemusic,
+  title         = {Live Music Models},
+  author        = {{Lyria Team, Google DeepMind}},
+  journal       = {arXiv preprint arXiv:2508.04651},
+  year          = {2025},
+  eprint        = {2508.04651},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2508.04651},
+  note          = {Magenta RealTime (Jun 2025) and Magenta RealTime 2 (Jun 2026): https://github.com/magenta/magenta-realtime ; https://magenta.withgoogle.com/magenta-realtime-2}
+}
+
+% ---------- E. Controllable and editable audio generation ----------
+
+@article{wu2024musiccontrolnet,
+  title         = {Music {ControlNet}: Multiple Time-Varying Controls for Music Generation},
+  author        = {Wu, Shih-Lun and Donahue, Chris and Watanabe, Shinji and Bryan, Nicholas J.},
+  journal       = {IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+  year          = {2024},
+  eprint        = {2311.07069},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2311.07069},
+  note          = {Demo: https://MusicControlNet.github.io/web/}
+}
+
+@article{lin2023cocomulla,
+  title         = {Content-based Controls for Music Large Language Modeling},
+  author        = {Lin, Liwei and Xia, Gus and Jiang, Junyan and Zhang, Yixiao},
+  journal       = {arXiv preprint arXiv:2310.17162},
+  year          = {2023},
+  eprint        = {2310.17162},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2310.17162},
+  note          = {Coco-Mulla. Code: https://github.com/Kikyo-16/coco-mulla-repo}
+}
+
+@inproceedings{novack2024ditto,
+  title         = {{DITTO}: Diffusion Inference-Time {T}-Optimization for Music Generation},
+  author        = {Novack, Zachary and McAuley, Julian and Berg-Kirkpatrick, Taylor and Bryan, Nicholas J.},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  year          = {2024},
+  eprint        = {2401.12179},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2401.12179},
+  note          = {Oral. DITTO-2 (ISMIR 2024): arXiv:2405.20289, https://arxiv.org/abs/2405.20289}
+}
+
+@inproceedings{zhang2024musicmagus,
+  title         = {{MusicMagus}: Zero-Shot Text-to-Music Editing via Diffusion Models},
+  author        = {Zhang, Yixiao and Ikemiya, Yukara and Xia, Gus and Murata, Naoki and Mart{\'i}nez-Ram{\'i}rez, Marco A. and Liao, Wei-Hsiang and Mitsufuji, Yuki and Dixon, Simon},
+  booktitle     = {Proceedings of the 33rd International Joint Conference on Artificial Intelligence (IJCAI)},
+  year          = {2024},
+  eprint        = {2402.06178},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2402.06178}
+}
+
+@inproceedings{manor2024zeta,
+  title         = {Zero-Shot Unsupervised and Text-Based Audio Editing Using {DDPM} Inversion},
+  author        = {Manor, Hila and Michaeli, Tomer},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  year          = {2024},
+  eprint        = {2402.10009},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2402.10009},
+  note          = {ZETA / ZEUS. Code: https://github.com/HilaManor/AudioEditingCode}
+}
+
+@inproceedings{wang2023audit,
+  title         = {{AUDIT}: Audio Editing by Following Instructions with Latent Diffusion Models},
+  author        = {Wang, Yuancheng and Ju, Zeqian and Tan, Xu and He, Lei and Wu, Zhizheng and Bian, Jiang and Zhao, Sheng},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year          = {2023},
+  eprint        = {2304.00830},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2304.00830}
+}
+
+@inproceedings{han2023instructme,
+  title         = {{InstructME}: An Instruction Guided Music Edit Framework with Latent Diffusion Models},
+  author        = {Han, Bing and Dai, Junyu and Hao, Weituo and He, Xinyan and Guo, Dong and Chen, Jitong and Wang, Yuxuan and Qian, Yanmin},
+  booktitle     = {Proceedings of the 33rd International Joint Conference on Artificial Intelligence (IJCAI)},
+  year          = {2024},
+  eprint        = {2308.14360},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2308.14360},
+  note          = {arXiv Aug 2023. Demo: https://musicedit.github.io/}
+}
+
+@inproceedings{zhang2025instructmusicgen,
+  title         = {{Instruct-MusicGen}: Unlocking Text-to-Music Editing for Music Language Models via Instruction Tuning},
+  author        = {Zhang, Yixiao and Ikemiya, Yukara and Choi, Woosung and Murata, Naoki and Mart{\'i}nez-Ram{\'i}rez, Marco A. and Lin, Liwei and Xia, Gus and Liao, Wei-Hsiang and Mitsufuji, Yuki and Dixon, Simon},
+  booktitle     = {Proceedings of the 26th International Society for Music Information Retrieval Conference (ISMIR)},
+  year          = {2025},
+  eprint        = {2405.18386},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2405.18386},
+  note          = {Code: https://github.com/ldzhangyx/instruct-MusicGen}
+}
+
+@inproceedings{tsai2025musecontrollite,
+  title         = {{MuseControlLite}: Multifunctional Music Generation with Lightweight Conditioners},
+  author        = {Tsai, Fang-Duo and Wu, Shih-Lun and Lee, Weijaw and Yang, Sheng-Ping and Chen, Bo-Rui and Cheng, Hao-Chung and Yang, Yi-Hsuan},
+  booktitle     = {Proceedings of the 42nd International Conference on Machine Learning (ICML)},
+  year          = {2025},
+  eprint        = {2506.18729},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2506.18729},
+  note          = {Code and weights: https://github.com/fundwotsai2001/MuseControlLite}
+}
+
+@inproceedings{hou2024melodycontrolnet,
+  title         = {Editing Music with Melody and Text: Using {ControlNet} for Diffusion Transformer},
+  author        = {Hou, Siyuan and Liu, Shansong and Yuan, Ruibin and Xue, Wei and Shan, Ying and Zhao, Mangsuo and Zhang, Chao},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2025},
+  eprint        = {2410.05151},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2410.05151},
+  note          = {arXiv Oct 2024; author list partially verified}
+}
+
+@inproceedings{yang2025songeditor,
+  title         = {{SongEditor}: Adapting Zero-Shot Song Generation Language Model as a Multi-Task Editor},
+  author        = {Yang, Chenyu and Wang, Shuai and Chen, Hangting and Yu, Jianwei and Tan, Wei and Gu, Rongzhi and Xu, Yaoxun and Zhou, Yizhi and Zhu, Haina and Li, Haizhou},
+  booktitle     = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year          = {2025},
+  eprint        = {2412.13786},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2412.13786}
+}
+
+@article{donahue2023singsong,
+  title         = {{SingSong}: Generating Musical Accompaniments from Singing},
+  author        = {Donahue, Chris and Caillon, Antoine and Roberts, Adam and Manilow, Ethan and Esling, Philippe and Agostinelli, Andrea and Verzetti, Mauro and Simon, Ian and Pietquin, Olivier and Zeghidour, Neil and Engel, Jesse},
+  journal       = {arXiv preprint arXiv:2301.12662},
+  year          = {2023},
+  eprint        = {2301.12662},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2301.12662},
+  note          = {Examples: https://g.co/magenta/singsong}
+}
+
+@inproceedings{parker2024stemgen,
+  title         = {{StemGen}: A Music Generation Model That Listens},
+  author        = {Parker, Julian D. and Spijkervet, Janne and Kosta, Katerina and Yesiler, Furkan and Kuznetsov, Boris and Wang, Ju-Chiang and Avent, Matt and Chen, Jitong and Le, Duc},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2024},
+  eprint        = {2312.08723},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2312.08723},
+  note          = {Examples: https://julian-parker.github.io/stemgen/}
+}
+
+@inproceedings{mariani2024msdm,
+  title         = {Multi-Source Diffusion Models for Simultaneous Music Generation and Separation},
+  author        = {Mariani, Giorgio and Tallini, Irene and Postolache, Emilian and Mancusi, Michele and Cosmo, Luca and Rodol{\`a}, Emanuele},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2024},
+  eprint        = {2302.02257},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2302.02257},
+  note          = {Oral. Code: https://github.com/gladia-research-group/multi-source-diffusion-models}
+}
+
+@inproceedings{nistal2024diffariff,
+  title         = {{Diff-A-Riff}: Musical Accompaniment Co-creation via Latent Diffusion Models},
+  author        = {Nistal, Javier and Pasini, Marco and Aouameur, Cyran and Grachten, Maarten and Lattner, Stefan},
+  booktitle     = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year          = {2024},
+  eprint        = {2406.08384},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2406.08384},
+  note          = {Companion page: https://sonycslparis.github.io/diffariff-companion/}
+}
+
+@inproceedings{chu2025text2fx,
+  title         = {{Text2FX}: Harnessing {CLAP} Embeddings for Text-Guided Audio Effects},
+  author        = {Chu, Annie and O'Reilly, Patrick and Barnett, Julia and Pardo, Bryan},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2025},
+  eprint        = {2409.18847},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2409.18847},
+  note          = {Code: https://github.com/anniejchu/text2fx}
+}
+
+@inproceedings{floresgarcia2025sketch2sound,
+  title         = {{Sketch2Sound}: Controllable Audio Generation via Time-Varying Signals and Sonic Imitations},
+  author        = {Flores Garc{\'i}a, Hugo and Nieto, Oriol and Salamon, Justin and Pardo, Bryan and Seetharaman, Prem},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2025},
+  eprint        = {2412.08550},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2412.08550},
+  note          = {Demo: https://hugofloresgarcia.art/sketch2sound/}
+}
+
+@inproceedings{wu2022mididdsp,
+  title         = {{MIDI-DDSP}: Detailed Control of Musical Performance via Hierarchical Modeling},
+  author        = {Wu, Yusong and Manilow, Ethan and Deng, Yi and Swavely, Rigel and Kastner, Kyle and Cooijmans, Tim and Courville, Aaron and Huang, Cheng-Zhi Anna and Engel, Jesse},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2022},
+  eprint        = {2112.09312},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2112.09312},
+  note          = {Code: https://github.com/magenta/midi-ddsp. Builds on DDSP (Engel et al., ICLR 2020, arXiv:2001.04643)}
+}
+
+@article{zhu2024musichifi,
+  title         = {{MusicHiFi}: Fast High-Fidelity Stereo Vocoding},
+  author        = {Zhu, Ge and Caceres, Juan-Pablo and Duan, Zhiyao and Bryan, Nicholas J.},
+  journal       = {IEEE Signal Processing Letters},
+  year          = {2024},
+  eprint        = {2403.10493},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2403.10493},
+  note          = {Author list partially verified. Demo: https://MusicHiFi.github.io/web/}
+}
+
+@inproceedings{ronchini2025ttmuserstudy,
+  title         = {{AI}-Assisted Music Production: A User Study on Text-to-Music Models},
+  author        = {Ronchini, Francesca and Comanducci, Luca and Marcucci, Simone and Antonacci, Fabio},
+  booktitle     = {Proceedings of the 17th International Symposium on Computer Music Multidisciplinary Research (CMMR)},
+  year          = {2025},
+  address       = {London, UK},
+  eprint        = {2509.23364},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2509.23364}
+}
+
+% ---------- F. Music understanding ----------
+
+@inproceedings{li2024mert,
+  title         = {{MERT}: Acoustic Music Understanding Model with Large-Scale Self-supervised Training},
+  author        = {Li, Yizhi and Yuan, Ruibin and Zhang, Ge and Ma, Yinghao and Chen, Xingran and Yin, Hanzhi and Xiao, Chenghao and Lin, Chenghua and Ragni, Anton and Benetos, Emmanouil and Gyenge, Norbert and Dannenberg, Roger and Liu, Ruibo and Chen, Wenhu and Xia, Gus and Shi, Yemin and Huang, Wenhao and Wang, Zili and Guo, Yike and Fu, Jie},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2024},
+  eprint        = {2306.00107},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2306.00107},
+  note          = {Weights (CC-BY-SA 4.0): https://huggingface.co/m-a-p/MERT-v1-330M}
+}
+
+@article{zhu2025muq,
+  title         = {{MuQ}: Self-Supervised Music Representation Learning with Mel Residual Vector Quantization},
+  author        = {Zhu, Haina and Zhou, Yizhi and Chen, Hangting and Yu, Jianwei and Ma, Ziyang and Gu, Rongzhi and Luo, Yi and Tan, Wei and Chen, Xie},
+  journal       = {arXiv preprint arXiv:2501.01108},
+  year          = {2025},
+  eprint        = {2501.01108},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2501.01108},
+  note          = {Includes MuQ-MuLan. Code and weights: https://github.com/tencent-ailab/MuQ}
+}
+
+@inproceedings{wu2023clap,
+  title         = {Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation},
+  author        = {Wu, Yusong and Chen, Ke and Zhang, Tianyu and Hui, Yuchen and Nezhurina, Marianna and Berg-Kirkpatrick, Taylor and Dubnov, Shlomo},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2023},
+  eprint        = {2211.06687},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2211.06687},
+  note          = {LAION-CLAP; dataset LAION-Audio-630K. Code: https://github.com/LAION-AI/CLAP}
+}
+
+@inproceedings{liu2023mullama,
+  title         = {Music Understanding {LLaMA}: Advancing Text-to-Music Generation with Question Answering and Captioning},
+  author        = {Liu, Shansong and Hussain, Atin Sakkeer and Sun, Chenshuo and Shan, Ying},
+  booktitle     = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year          = {2024},
+  eprint        = {2308.11276},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2308.11276},
+  note          = {arXiv Aug 2023. Code: https://github.com/shansongliu/MU-LLaMA}
+}
+
+@inproceedings{gardner2024llark,
+  title         = {{LLark}: A Multimodal Instruction-Following Language Model for Music},
+  author        = {Gardner, Josh and Durand, Simon and Stoller, Daniel and Bittner, Rachel M.},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  year          = {2024},
+  eprint        = {2310.07160},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2310.07160},
+  note          = {Code: https://github.com/spotify-research/llark}
+}
+
+@inproceedings{deng2024musilingo,
+  title         = {{MusiLingo}: Bridging Music and Text with Pre-trained Language Models for Music Captioning and Query Response},
+  author        = {Deng, Zihao and Ma, Yinghao and Liu, Yudong and Guo, Rongchen and Zhang, Ge and Chen, Wenhu and Huang, Wenhao and Benetos, Emmanouil},
+  booktitle     = {Findings of the Association for Computational Linguistics: NAACL 2024},
+  year          = {2024},
+  eprint        = {2309.08730},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2309.08730},
+  note          = {Partially verified}
+}
+
+@inproceedings{tang2024salmonn,
+  title         = {{SALMONN}: Towards Generic Hearing Abilities for Large Language Models},
+  author        = {Tang, Changli and Yu, Wenyi and Sun, Guangzhi and Chen, Xianzhao and Tan, Tian and Li, Wei and Lu, Lu and Ma, Zejun and Zhang, Chao},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2024},
+  eprint        = {2310.13289},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2310.13289},
+  note          = {Code: https://github.com/bytedance/SALMONN}
+}
+
+@article{chu2024qwen2audio,
+  title         = {{Qwen2-Audio} Technical Report},
+  author        = {Chu, Yunfei and Xu, Jin and Yang, Qian and Wei, Haojie and Wei, Xipin and Guo, Zhifang and Leng, Yichong and Lv, Yuanjun and He, Jinzheng and Lin, Junyang and Zhou, Chang and Zhou, Jingren},
+  journal       = {arXiv preprint arXiv:2407.10759},
+  year          = {2024},
+  eprint        = {2407.10759},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2407.10759},
+  note          = {See also Qwen2.5-Omni Technical Report, arXiv:2503.20215 (2025), and Gemini 2.5 (Google DeepMind, 2025). Author list beyond first five partially verified}
+}
+
+@article{zhao2024openmu,
+  title         = {{OpenMU}: Your Swiss Army Knife for Music Understanding},
+  author        = {Zhao, Mengjie and Zhong, Zhi and Mao, Zhuoyuan and Yang, Shiqi and Liao, Wei-Hsiang and Takahashi, Shusuke and Wakaki, Hiromi and Mitsufuji, Yuki},
+  journal       = {arXiv preprint arXiv:2410.15573},
+  year          = {2024},
+  eprint        = {2410.15573},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2410.15573},
+  note          = {Code and OpenMU-Bench: https://github.com/mzhaojp22/openmu}
+}
+
+@inproceedings{weck2024muchomusic,
+  title         = {{MuChoMusic}: Evaluating Music Understanding in Multimodal Audio-Language Models},
+  author        = {Weck, Benno and Manco, Ilaria and Benetos, Emmanouil and Quinton, Elio and Fazekas, George and Bogdanov, Dmitry},
+  booktitle     = {Proceedings of the 25th International Society for Music Information Retrieval Conference (ISMIR)},
+  year          = {2024},
+  eprint        = {2408.01337},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2408.01337},
+  note          = {Data and code: https://github.com/mulab-mir/muchomusic}
+}
+
+@inproceedings{manco2023songdescriber,
+  title         = {The Song Describer Dataset: A Corpus of Audio Captions for Music-and-Language Evaluation},
+  author        = {Manco, Ilaria and Weck, Benno and Doh, SeungHeon and Won, Minz and Zhang, Yixiao and Bogdanov, Dmitry and Wu, Yusong and Chen, Ke and Tovstogan, Philip and Benetos, Emmanouil and Quinton, Elio and Fazekas, Gy{\"o}rgy and Nam, Juhan},
+  booktitle     = {NeurIPS 2023 Workshop on Machine Learning for Audio},
+  year          = {2023},
+  eprint        = {2311.10057},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2311.10057},
+  note          = {Data: https://zenodo.org/records/10072001}
+}

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "Maestro: Human-Centered AI for Composition — A Literature Review and Taxonomy"
+message: "If you use this survey or taxonomy, please cite it as below."
+type: dataset
+authors:
+  - family-names: Tan
+    given-names: Henry
+    affiliation: Harvard University
+abstract: >-
+  A survey of 463 works (1957–2026) on AI for music composition, organized not by model
+  architecture but by where each contribution sits in a composer's working loop —
+  compose, annotate, compile, edit, play. Comprises a 43,900-word literature review, a
+  taxonomy of 49 nodes and 10 coding dimensions, an annotated bibliography of 394 records
+  with per-entry verification levels, and twelve open research directions. Argues that
+  infilling under hard constraints, not text-to-song generation, is the primitive that
+  supports composer-centered work, and identifies the annotation layer as the field's
+  principal gap.
+keywords:
+  - music information retrieval
+  - symbolic music generation
+  - human-AI co-creation
+  - creativity support tools
+  - computational musicology
+  - music notation
+  - literature survey
+license: CC-BY-4.0
+repository-code: "https://github.com/henryatharvard/maestro"
+url: "https://henryatharvard.github.io/maestro/"
+version: "0.1"
+date-released: "2026-09-07"
