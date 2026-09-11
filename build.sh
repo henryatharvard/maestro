@@ -32,4 +32,5 @@ echo "Rendering:"
 render "$SRC/literature-review.md"      literature-review.html      --toc --toc-depth=2
 render "$SRC/taxonomy.md"               taxonomy.html               --toc --toc-depth=2
 render "$SRC/annotated-bibliography.md" annotated-bibliography.html --toc --toc-depth=1
+render "$SRC/POSITIONING.md"             positioning.html            --toc --toc-depth=1
 echo "Done. Open index.html."
