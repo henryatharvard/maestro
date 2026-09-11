@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Claude desktop app drops delivered files here; canonical copies live in research/
+Claude outputs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# experiment artefacts — keep code, not outputs
+experiments/out/
+experiments/checkpoints/
+experiments/data/
+*.mid.bak

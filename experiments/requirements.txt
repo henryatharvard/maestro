@@ -1,0 +1,8 @@
+# Pinned loosely — check against your CUDA build first.
+torch>=2.4
+transformers>=4.44
+mido
+pretty_midi
+numpy
+# the Anticipatory Music Transformer helpers (tokenizer, ops, sampling):
+#   git clone https://github.com/jthickstun/anticipation && cd anticipation && pip install .
