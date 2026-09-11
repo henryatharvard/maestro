@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music Kitchen — a little room to imagine</title>
+  <meta name="description" content="A playable Music Kitchen experiment. Select a musical phrase, draw a contour, tap a rhythm, and hear your arrangement change.">
+  <link rel="canonical" href="https://henryatharvard.github.io/maestro/studio/">
+  <meta property="og:title" content="Music Kitchen — shape music by showing">
+  <meta property="og:description" content="Select a phrase. Draw its movement. Tap a rhythm. A playable experiment from Maestro.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://henryatharvard.github.io/maestro/studio/">
+  <meta property="og:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#faf9f6">
+  <link rel="icon" href="../assets/favicon.ico">
+  <link rel="stylesheet" href="studio.css">
+  <script src="studio.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#workspace">Skip to studio</a>
+<header class="app-header">
+  <a class="brand" href="./" aria-label="Music Kitchen home"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 23V9m6 18V5m6 17V10m6 14V8m5 11v-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>Music Kitchen<span class="beta">EXPERIMENT 01</span></a>
+  <nav aria-label="Project navigation"><a href="../">Maestro</a><a href="../journal/2026-09-10.html">The journal ↗</a></nav>
+</header>
+<div class="app-shell">
+  <aside class="library" aria-label="Inspiration collection">
+    <div class="library-heading"><span>YOUR WORKSPACE</span><span>01</span></div>
+    <button id="reset" class="session-button"><span class="session-icon">♫</span><span>Evening sketch<small>8 bars · piano &amp; a small band</small></span></button>
+    <div class="library-heading references-heading"><span>INGREDIENTS</span><span>+</span></div>
+    <p class="small muted">A feeling, a gesture, a starting point.</p>
+    <button class="ingredient" data-preset="space"><span class="ingredient-art art-space"><i></i><i></i><i></i></span><strong>A little more space</strong><small>Fewer notes. Room to breathe.</small></button>
+    <button class="ingredient" data-preset="rise"><span class="ingredient-art art-rise"><i></i><i></i><i></i><i></i><i></i></span><strong>Somewhere to go</strong><small>A phrase that gently rises.</small></button>
+    <label class="image-upload" for="reference-image"><span>＋ Add an image reference</span><small>Keep an inspiration beside your music</small></label>
+    <input id="reference-image" type="file" accept="image/*" hidden>
+    <figure id="image-reference" hidden><img id="reference-preview" alt="Your visual music reference"><figcaption>Visual reference only. Image-to-music is a future experiment.</figcaption><button id="remove-image" class="text-button">Remove image</button></figure>
+    <div class="library-footer"><span class="tiny-dot"></span>Made with your ears.<br><a href="../artifacts/music-kitchen-product.html">Read the product idea ↗</a></div>
+  </aside>
+
+  <main id="workspace" class="workspace">
+    <div class="workspace-intro"><p class="overline">FROM AN IDEA TO SOMETHING YOU CAN HEAR</p><h1>A little room to imagine.</h1><p>You bring the melody. Find the rest along the way.</p></div>
+    <div class="project-bar"><div><label class="sr-only" for="project-name">Project name</label><input id="project-name" value="Evening sketch" maxlength="80"><span class="save-state" id="save-state">Saved on this device</span></div><div class="project-actions"><button id="undo" class="quiet-button" disabled>↶ Undo</button><button id="export-project" class="quiet-button">↓ Project</button><button id="export-audio" class="quiet-button">↓ Audio</button></div></div>
+
+    <section class="arrangement" aria-label="Arrangement timeline">
+      <div class="timeline-scroll"><div class="timeline-inner"><div class="bar-ruler"><span>YOUR ARRANGEMENT</span><div id="ruler"></div></div><div id="tracks"></div><div class="playhead" id="playhead" hidden></div></div></div>
+      <div class="arrangement-hint"><span class="selection-dot"></span><span>Click a phrase to shape it. The piano starts protected.</span><span class="key-hint">SPACE to play</span></div>
+    </section>
+
+    <div class="transport"><div class="playback-controls"><button id="play" class="play-button" aria-label="Play arrangement">▶</button><button id="stop" class="stop-button" aria-label="Stop and return to start">■</button><span id="position" class="position">01 <span>/ 08</span></span></div><div class="transport-middle"><span>C major</span><span class="separator"></span><label for="tempo">Tempo</label><input id="tempo" type="number" min="50" max="160" value="92" aria-label="Tempo in beats per minute"><span>BPM</span></div><div class="compare"><button id="before" disabled aria-pressed="false">Before</button><button id="after" aria-pressed="true">Now</button></div></div>
+
+    <section class="idea-input" aria-labelledby="idea-title"><div><span class="idea-mark" aria-hidden="true">✳</span><h2 id="idea-title">What if this phrase…</h2></div><form id="direction-form"><label class="sr-only" for="direction">Direction for the selected phrase</label><input id="direction" placeholder="Try “sparser, gently rising”…" autocomplete="off"><button type="submit" aria-label="Apply text direction">↑</button></form><p>Try <button class="text-example" data-direction="sparser">sparser</button>, <button class="text-example" data-direction="denser">denser</button>, <button class="text-example" data-direction="rising">rising</button>, or <button class="text-example" data-direction="falling">falling</button>. This experiment maps these words to the controls.</p></section>
+
+    <div class="session-note"><span class="note-icon">↗</span><div><strong>Your music, still yours.</strong><p>Change a bass phrase while the piano stays exactly where you left it. Every change can be heard, compared, and undone.</p></div></div>
+    <p class="prototype-note">Playable interface prototype · original procedural demo · browser synthesis.<br>Humming transcription and AI generation from prompts, images, or reference songs are planned, not connected.</p>
+    <p id="announcement" class="announcement" role="status" aria-live="polite">Select a phrase, then draw a shape or tap a rhythm.</p>
+  </main>
+
+  <aside class="inspector" aria-label="Selected phrase controls">
+    <div class="inspector-heading"><p class="overline">SHAPE A MOMENT</p><span class="live-label">Selected</span></div>
+    <h2 id="selected-name">Bass · bars 5–6</h2><p id="selected-description" class="small muted">Try giving this phrase somewhere to go.</p>
+    <div class="scope"><span class="scope-icon">⌖</span><span>Only this phrase changes</span></div>
+    <fieldset id="shape-controls"><legend>Draw its movement</legend><p class="small muted">Higher on the canvas, higher in the phrase.</p><div class="contour-surface"><svg id="contour" viewBox="0 0 280 130" role="img" aria-label="Draw a melodic contour. Keyboard alternative: use the Rise, Fall, or Level buttons below."><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r=".8" fill="#ddd9e7"/></pattern></defs><rect width="280" height="130" fill="url(#dots)"/><path id="contour-fill"/><path id="contour-line"/><g id="contour-points"></g></svg><span>low</span><span>high</span></div><div class="contour-presets"><button data-curve="rise">↗ Rise</button><button data-curve="fall">↘ Fall</button><button data-curve="level">→ Level</button></div><div class="density-label"><label for="density">Room to breathe</label><output id="density-value" for="density">45%</output></div><input id="density" type="range" min="15" max="100" value="45"><div class="range-labels"><span>Spacious</span><span>Full</span></div></fieldset>
+    <fieldset id="rhythm-controls"><legend>Show the rhythm</legend><p class="small muted">Tap a few beats. We’ll use their timing.</p><button id="tap" class="tap-pad"><span>Tap your rhythm</span><small>or press T</small></button><div id="rhythm-dots" class="rhythm-dots" aria-label="Tapped rhythm"></div><div class="rhythm-actions"><button id="use-rhythm" disabled>Use these taps</button><button id="clear-taps">Clear</button></div></fieldset>
+    <button id="apply" class="apply-button">Hear this change <span>↗</span></button>
+    <p id="change-description" class="change-description">A small change. Everything else stays.</p>
+    <details class="recipe-details"><summary>Under the surface: a recipe <span>{ }</span></summary><p class="small muted">A tiny experimental language for a musical intention. Edit values and run it on one phrase.</p><label class="sr-only" for="recipe">Musical recipe</label><textarea id="recipe" spellcheck="false" rows="9"></textarea><button id="run-recipe" class="quiet-button">Run recipe</button><p class="recipe-caption">Density + contour + rhythm → notes → sound.<br>Notation is one view; this recipe describes a transformation.</p></details>
+  </aside>
+</div>
+</body>
+</html>

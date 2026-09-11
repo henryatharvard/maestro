@@ -4,6 +4,12 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+# The journal and studio are static; this path needs Python, not pandoc.
+python3 scripts/build_journal.py
+if [[ "${1:-}" == "--journal" ]]; then
+  exit 0
+fi
+
 SRC=research
 OUT=survey
 TPL=assets/doc.template.html

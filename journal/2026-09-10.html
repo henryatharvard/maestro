@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From a research agenda to a product musicians can use — Maestro</title>
+<meta name="description" content="Music Kitchen takes shape as a personal arranging studio. The key question becomes how a musician directs the second and third revision through sound, examples, and gestures.">
+<meta name="author" content="Henry Tan">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://henryatharvard.github.io/maestro/journal/2026-09-10.html">
+<link rel="alternate" type="application/atom+xml" title="Maestro journal" href="../journal/feed.xml">
+<meta property="og:site_name" content="Maestro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="From a research agenda to a product musicians can use — Maestro">
+<meta property="og:description" content="Music Kitchen takes shape as a personal arranging studio. The key question becomes how a musician directs the second and third revision through sound, examples, and gestures.">
+<meta property="og:url" content="https://henryatharvard.github.io/maestro/journal/2026-09-10.html">
+<meta property="og:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From a research agenda to a product musicians can use — Maestro">
+<meta name="twitter:description" content="Music Kitchen takes shape as a personal arranging studio. The key question becomes how a musician directs the second and third revision through sound, examples, and gestures.">
+<meta name="twitter:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/journal.css">
+<script src="../assets/share.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="journal-wrap">
+  <header class="journal-top">
+    <a class="wordmark" href="../">Maestro</a>
+    <nav aria-label="Main navigation">
+      <a href="../#now">Now</a>
+      <a href="../journal/">Journal</a>
+      <a href="../#artifacts">Artifacts</a>
+      <a href="../survey/literature-review.html">Research</a>
+      <a href="https://github.com/henryatharvard/maestro">GitHub</a>
+    </nav>
+  </header>
+  <main id="content">
+    <header class="journal-head">
+      <p class="eyebrow">Weekly journal · week of September 7, 2026</p>
+      <h1>From a research agenda to a product musicians can use</h1>
+      <p class="journal-description">Music Kitchen takes shape as a personal arranging studio. The key question becomes how a musician directs the second and third revision through sound, examples, and gestures.</p>
+      <p class="journal-meta"><time datetime="2026-09-10">September 10, 2026</time> · Henry Tan · <a href="entries/2026-09-10.md">Entry source</a></p>
+      <div class="share-actions">
+        <a href="https://henryatharvard.github.io/maestro/journal/2026-09-10.html">Permalink</a>
+        <button type="button" class="share-button" data-share-url="https://henryatharvard.github.io/maestro/journal/2026-09-10.html" hidden>Copy link</button>
+        <span class="share-status" role="status" aria-live="polite"></span>
+      </div>
+    </header>
+    <dl class="state-grid"><div><dt>Stage</dt><dd>Playable browser interaction prototype. Product direction and research documented; no trained music model or user study yet.</dd></div><div><dt>Current focus</dt><dd>Select a musical phrase, draw its contour, tap a rhythm, and hear a scoped, reversible change.</dd></div><div><dt>Next experiment</dt><dd>Try the studio with pianist-songwriters, compare correction tasks with existing tools, then investigate humming and reference transfer.</dd></div></dl><div class="journal-prose"><p>This week’s work clarified what Maestro is for: building a music-making experience that helps a person develop ideas they can hear or play without requiring them to master every instrument and production tool. Music Kitchen is the current product concept within that broader effort.</p>
+<p>The motivating session is personal and concrete. I want to sit at a piano, write lyrics, and compose music in retirement. I want to develop my own voice with influences from recordings by Dave Grusin, David Foster, David Benoit, Lee Ritenour, and Kahitna. I can supply the piano and musical taste; the product should help me arrange and direct the rest of the band.</p>
+<h2 id="what-changed">What changed</h2>
+<p>The first write-up framed the work as a research proposal about executable musical intent, interpretability, and human agency. That literature remains useful, but the order of work changed: define a product a musician would benefit from, build toward the experience, and do research when a concrete obstacle requires it.</p>
+<p>A DSL is now a possible internal representation. The musician’s interface should be playing, humming, tapping, selecting passages, providing references, and comparing sounds. Staff notation and code are optional ways to inspect or refine the work.</p>
+<p>The earlier score-focused market positioning is retained as context. It is not the governing product roadmap. The current direction is the personal arranging studio described in the product brief linked below.</p>
+<h2 id="current-thinking">Current thinking</h2>
+<p>The product promise is: <strong>Play the part you know. Shape the rest by listening, demonstrating, and choosing.</strong></p>
+<p>The first generation is only the start. The important interaction is being able to say something musically precise through a demonstration: select the bass, hum a different movement, hear the revision, and keep the piano and drums I already like. If I cannot describe an intended mood, two short audible alternatives may help more than another text prompt.</p>
+<p>Musical references should contribute particular qualities. One passage may guide bass movement; another may guide the entrance of strings. The system needs to help identify what I mean, rather than treating an artist’s name as a precise or universal specification.</p>
+<h2 id="findings-and-evidence">Findings and evidence</h2>
+<ul>
+<li>Human control has substantial prior art. Cococo studied steering interfaces, while Amuse used multimodal inspiration and editable musical keywords. These are foundations to build on, not features to claim as new. <a href="https://ceur-ws.org/Vol-2848/HAI-GEN-Paper-1.pdf">Cococo</a>, <a href="https://arxiv.org/abs/2412.18940">Amuse</a>.</li>
+<li>The technical idea also has close precedents. DAWZY describes humming-to-MIDI and reversible workstation actions; Libretto describes an editable musical grammar with structural feedback. Both are relevant preprints. <a href="https://arxiv.org/abs/2512.03289">DAWZY</a>, <a href="https://arxiv.org/abs/2606.22708">Libretto</a>.</li>
+<li>The product baseline is stronger than simple text-to-song. Logic documents accompaniment players, Moises advertises generation around a musician’s material, and Suno Studio 2.0 includes MIDI and editing. These capabilities were checked in first-party documentation, not in hands-on comparisons. <a href="https://support.apple.com/en-gb/guide/logicpro/lgcpbf624405/mac">Logic</a>, <a href="https://moises.ai/features/stem-generation/">Moises</a>, <a href="https://suno.com/blog/studio-2">Suno</a>.</li>
+<li>The proposed opportunity is a coherent way to direct and revise accompaniment through musical demonstrations. Whether it is more useful than existing tools remains an open product hypothesis.</li>
+</ul>
+<h2 id="artifacts-completed">Artifacts completed</h2>
+<p>A product brief now defines the target customer, a composing session, multimodal corrections, a first prototype, and product validation. A supporting research proposal maps 27 sources and outlines possible technical and HCI questions. Earlier positioning and evidence notes remain available to show how the direction changed.</p>
+<p>The dated artifact snapshots below preserve these documents as they stood for this entry. The current versions can evolve independently.</p>
+<h2 id="a-first-studio-experiment">A first studio experiment</h2>
+<p>The next product idea made the interface more concrete: select a musical passage as an object, then reshape it through a gesture, much as selecting an object in an image can ground a reconstruction task. Meta’s SAM 3D provides the interaction analogy; Music Kitchen does not use SAM or implement musical source segmentation. <a href="https://ai.meta.com/blog/sam-3d/">SAM 3D</a>.</p>
+<p>A <a href="../studio">playable browser studio</a> now explores that idea with an original procedural arrangement. Select a phrase, draw a contour, tap a rhythm, apply the change, compare versions, and undo. The same musical events produce the visible notes and the synthesized sound. A small editable recipe offers another way to express the transformation, and the arrangement can be exported as audio or project data.</p>
+<p>This is an interface and execution experiment. General text-to-music, image-to-music, humming transcription, and learned style transfer are not connected. An uploaded image is a visual reference only. The studio documentation below distinguishes working interactions from the larger product hypothesis.</p>
+<h2 id="open-questions">Open questions</h2>
+<ul>
+<li>Can a musician correct a generated bass or drum part by demonstration with less effort than existing controls?</li>
+<li>How should the interface distinguish a hummed rhythm from a hummed melody without interrupting the session?</li>
+<li>Can a local correction preserve both the accepted material and the musical relationships between parts?</li>
+<li>Which qualities of a reference recording can be transferred independently and predictably?</li>
+<li>What makes the result feel sufficiently personal that someone returns to finish the song?</li>
+</ul>
+<h2 id="next-experiment">Next experiment</h2>
+<p>Build toward a 30–60 second piano passage with separate bass and drum accompaniment. The acceptance scenario is two targeted corrections—bass by humming, drums by tapping—followed by saving, reopening, and exporting the result. Compare the same musical task with existing products before deciding which components need new research.</p>
+<p>The full piano-input and humming workflow is still planned. The current studio uses an included procedural demo and supports drawing and tapping; it has not been evaluated with musicians. Progress this week is the literature synthesis, product definition, and a first playable test of the interaction. No listening evaluation or user-study result is claimed.</p>
+</div><section aria-labelledby="snapshots"><h2 id="snapshots">Artifacts at this point</h2><div class="artifact-list"><article class="artifact-item"><p class="artifact-status">Current direction · product concept</p><h3><a href="snapshots/2026-09-10/music-kitchen-product.html">Music Kitchen product brief</a></h3><p>A personal arranging studio: play piano, write lyrics, and direct the rest of the band through musical examples.</p></article><article class="artifact-item"><p class="artifact-status">Supporting research · proposal</p><h3><a href="snapshots/2026-09-10/music-kitchen-research.html">Research foundations</a></h3><p>A focused map of 27 sources, an editable musical representation, and research questions to revisit as the product develops.</p></article><article class="artifact-item"><p class="artifact-status">Working prototype · procedural synthesis</p><h3><a href="snapshots/2026-09-10/studio-experiment.html">Studio experiment 01</a></h3><p>The first playable canvas: phrase selection, drawn contours, tapped rhythm, reversible edits, and an executable musical recipe.</p></article><article class="artifact-item"><p class="artifact-status">Earlier position · retained for context</p><h3><a href="snapshots/2026-09-10/market-positioning.html">Earlier market positioning</a></h3><p>The earlier assessment of generation, editing, and score-based opportunities. Context for the shift toward the musician’s experience.</p></article><article class="artifact-item"><p class="artifact-status">Evidence notes · September 10, 2026</p><h3><a href="snapshots/2026-09-10/positioning-evidence.html">Positioning evidence</a></h3><p>Sources, evidence grades, and assumptions behind the market assessment. Product capabilities are dated vendor claims.</p></article></div></section><nav class="entry-navigation" aria-label="Journal entries"><a href="./">All entries</a></nav>
+  </main>
+  <footer class="journal-footer">
+    <p>Maestro · Henry Tan · <a href="../journal/">Weekly journal</a> ·
+      <a href="../journal/feed.xml">Subscribe via Atom</a></p>
+    <p>Writing licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      <a href="https://github.com/henryatharvard/maestro">Source and history</a>.</p>
+  </footer>
+</div>
+</body>
+</html>

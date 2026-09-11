@@ -1,0 +1,37 @@
+[
+  {
+    "id": "music-kitchen-product",
+    "title": "Music Kitchen product brief",
+    "source": "research/MUSIC-KITCHEN-PRODUCT.md",
+    "description": "A personal arranging studio: play piano, write lyrics, and direct the rest of the band through musical examples.",
+    "status": "Current direction · product concept"
+  },
+  {
+    "id": "music-kitchen-research",
+    "title": "Research foundations",
+    "source": "research/MUSIC-KITCHEN.md",
+    "description": "A focused map of 27 sources, an editable musical representation, and research questions to revisit as the product develops.",
+    "status": "Supporting research · proposal"
+  },
+  {
+    "id": "studio-experiment",
+    "title": "Studio experiment 01",
+    "source": "research/STUDIO-EXPERIMENT.md",
+    "description": "The first playable canvas: phrase selection, drawn contours, tapped rhythm, reversible edits, and an executable musical recipe.",
+    "status": "Working prototype · procedural synthesis"
+  },
+  {
+    "id": "market-positioning",
+    "title": "Earlier market positioning",
+    "source": "research/AI-MUSIC-POSITIONING.md",
+    "description": "The earlier assessment of generation, editing, and score-based opportunities. Context for the shift toward the musician’s experience.",
+    "status": "Earlier position · retained for context"
+  },
+  {
+    "id": "positioning-evidence",
+    "title": "Positioning evidence",
+    "source": "research/AI-MUSIC-POSITIONING-EVIDENCE.md",
+    "description": "Sources, evidence grades, and assumptions behind the market assessment. Product capabilities are dated vendor claims.",
+    "status": "Evidence notes · September 10, 2026"
+  }
+]

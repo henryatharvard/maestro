@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Maestro weekly journal</title>
+  <id>https://henryatharvard.github.io/maestro/journal/</id>
+  <link href="https://henryatharvard.github.io/maestro/journal/" rel="alternate" />
+  <link href="https://henryatharvard.github.io/maestro/journal/feed.xml" rel="self" type="application/atom+xml" />
+  <updated>2026-09-10T00:00:00-07:00</updated>
+  <author>
+    <name>Henry Tan</name>
+  </author>
+  <entry>
+    <title>From a research agenda to a product musicians can use</title>
+    <id>https://henryatharvard.github.io/maestro/journal/2026-09-10.html</id>
+    <link href="https://henryatharvard.github.io/maestro/journal/2026-09-10.html" />
+    <updated>2026-09-10T00:00:00-07:00</updated>
+    <published>2026-09-10T00:00:00-07:00</published>
+    <summary>Music Kitchen takes shape as a personal arranging studio. The key question becomes how a musician directs the second and third revision through sound, examples, and gestures.</summary>
+  </entry>
+</feed>

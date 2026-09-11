@@ -1,0 +1,59 @@
+/* Journal and current-state views share Maestro's existing typography and palette. */
+.journal-wrap { max-width: 1040px; padding: 0 var(--gutter); margin: auto; }
+.journal-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 1rem; padding: 1.5rem 0 3rem; }
+.journal-top nav, .topbar nav { display: flex; flex-wrap: wrap; gap: .7rem 1.3rem; }
+.journal-top nav { font-size: .85rem; }
+.journal-top nav a { color: var(--ink-2); text-decoration: none; }
+.journal-top nav a:hover { text-decoration: underline; }
+.journal-top .wordmark { font-family: var(--f-mono); font-size: .78rem;
+  letter-spacing: .18em; text-transform: uppercase; text-decoration: none; color: var(--ink); }
+.journal-head { padding: 1rem 0 2rem; border-bottom: 1px solid var(--rule); margin-bottom: 2rem; }
+.journal-head h1 { font-size: clamp(2.1rem, 5vw, 3.7rem); max-width: 26ch; margin-bottom: 1rem; }
+.journal-description { color: var(--ink-2); font-size: 1.07rem; }
+.journal-meta, .journal-date { font-family: var(--f-mono); font-size: .76rem; color: var(--ink-2); }
+.journal-prose { overflow-wrap: anywhere; }
+.journal-prose h2 { margin: 2.3rem 0 .8rem; }
+.journal-prose h3 { margin: 1.8rem 0 .6rem; }
+.journal-prose img { max-width: 100%; height: auto; }
+.journal-prose pre { overflow-wrap: normal; }
+.journal-prose .table-scroll { margin: 1.5rem 0; }
+.journal-prose table { min-width: 580px; }
+.journal-prose li > p { margin-bottom: .4rem; }
+.doc-body main { min-width: 0; overflow-wrap: anywhere; }
+.doc-body table { display: block; max-width: 100%; overflow-x: auto; }
+.doc-top nav { flex-wrap: wrap; }
+.journal-footer { border-top: 1px solid var(--rule); margin-top: 4rem; padding: 2rem 0 3rem;
+  color: var(--ink-2); font-size: .85rem; }
+.journal-footer p { margin-bottom: .5rem; }
+.share-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem 1rem; font-size: .85rem; }
+.share-button { font: inherit; color: var(--blue); border: 1px solid var(--rule); background: var(--paper);
+  padding: .4rem .75rem; cursor: pointer; }
+.share-button:hover { border-color: var(--blue); }
+.share-status { color: var(--ink-2); }
+.state-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 1.7rem 0; }
+@media (min-width: 760px) { .state-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+.state-grid dt { font-family: var(--f-mono); font-size: .73rem; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--ink-2); margin-bottom: .5rem; }
+.state-grid dd { margin: 0; font-size: .96rem; }
+.journal-list { list-style: none; padding: 0; max-width: none; border-top: 1px solid var(--rule); }
+.journal-list li { padding: 1.5rem 0; border-bottom: 1px solid var(--rule-soft); margin: 0; }
+.journal-list h3 { margin: .4rem 0 .6rem; font-size: 1.4rem; }
+.journal-list p { margin-bottom: .6rem; color: var(--ink-2); }
+.artifact-list { display: grid; grid-template-columns: 1fr; gap: 0 2.5rem; margin: 1.4rem 0; }
+@media (min-width: 760px) { .artifact-list { grid-template-columns: repeat(2, 1fr); } }
+.artifact-item { border-top: 1px solid var(--rule); padding: 1.3rem 0; min-width: 0; }
+.artifact-item p { font-size: .94rem; color: var(--ink-2); }
+.artifact-item .artifact-status { font-family: var(--f-mono); font-size: .73rem; color: var(--annot); }
+.snapshot-note { padding: 1rem 0; border-bottom: 1px solid var(--rule); margin-bottom: 2rem; }
+.entry-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+  margin-top: 2rem; border-top: 1px solid var(--rule); padding-top: 1.4rem; }
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 1rem; top: 1rem; padding: .6rem; background: var(--paper); z-index: 10; }
+.archive-notice { padding: 1rem 0; color: var(--ink-2); border-bottom: 1px solid var(--rule); }
+@media print {
+  .journal-top, .share-actions, .skip-link { display: none; }
+  .journal-wrap { max-width: none; padding: 0; }
+  .journal-prose .table-scroll { overflow: visible; }
+  .journal-prose table { min-width: 0; }
+}

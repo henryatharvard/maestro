@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title — Maestro</title>
+<meta name="description" content="$description">
+<meta name="author" content="Henry Tan">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="$canonical">
+<link rel="alternate" type="application/atom+xml" title="Maestro journal" href="$root/journal/feed.xml">
+<meta property="og:site_name" content="Maestro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$title — Maestro">
+<meta property="og:description" content="$description">
+<meta property="og:url" content="$canonical">
+<meta property="og:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="$title — Maestro">
+<meta name="twitter:description" content="$description">
+<meta name="twitter:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<link rel="icon" href="$root/assets/favicon.ico">
+<link rel="apple-touch-icon" href="$root/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="$root/assets/site.css">
+<link rel="stylesheet" href="$root/assets/journal.css">
+<script src="$root/assets/share.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="journal-wrap">
+  <header class="journal-top">
+    <a class="wordmark" href="$root/">Maestro</a>
+    <nav aria-label="Main navigation">
+      <a href="$root/#now">Now</a>
+      <a href="$root/journal/">Journal</a>
+      <a href="$root/#artifacts">Artifacts</a>
+      <a href="$root/survey/literature-review.html">Research</a>
+      <a href="https://github.com/henryatharvard/maestro">GitHub</a>
+    </nav>
+  </header>
+  <main id="content">
+    <header class="journal-head">
+      <p class="eyebrow">$eyebrow</p>
+      <h1>$title</h1>
+      <p class="journal-description">$description</p>
+      <p class="journal-meta">$meta</p>
+      <div class="share-actions">
+        <a href="$canonical">Permalink</a>
+        <button type="button" class="share-button" data-share-url="$canonical" hidden>Copy link</button>
+        <span class="share-status" role="status" aria-live="polite"></span>
+      </div>
+    </header>
+    $body
+  </main>
+  <footer class="journal-footer">
+    <p>Maestro · Henry Tan · <a href="$root/journal/">Weekly journal</a> ·
+      <a href="$root/journal/feed.xml">Subscribe via Atom</a></p>
+    <p>Writing licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      <a href="https://github.com/henryatharvard/maestro">Source and history</a>.</p>
+  </footer>
+</div>
+</body>
+</html>

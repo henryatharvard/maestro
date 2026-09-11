@@ -1,33 +1,46 @@
 # Maestro
 
-**An open research program on human-centered AI for music composition.**
+**Building Music Kitchen in public: a personal arranging studio for human-led music creation.**
 
-> The composer stays at the centre. The machine compiles.
+> Play the part you know. Shape the rest.
 
-Most music AI takes a sentence and returns a finished master. That is the wrong shape for
-someone who actually writes music: a prompt is a narrow channel for musical intent, and the
-output arrives as an opaque mixdown with nothing to grab hold of.
+Bring piano, lyrics, and musical ideas; direct the rest of the arrangement through sound,
+examples, and gestures. The product comes first. Research follows the problems encountered
+while making that experience work.
 
-Maestro studies the opposite arrangement. The composer authors and marks up the material, and
-the model **compiles** a fuller realization under those marks — then the composer edits,
-re-annotates, and recompiles, at the granularity of a bar or a part:
+- **[Try the studio](https://henryatharvard.github.io/maestro/studio/)** — a playable browser
+  experiment with phrase selection, contour drawing, rhythm tapping, an editable recipe,
+  before/after comparison, undo, and WAV/project export. It uses procedural synthesis;
+  trained multimodal generation and humming transcription are not connected.
+- **[Weekly journal](https://henryatharvard.github.io/maestro/journal/)** — dated decisions,
+  positioning, findings, open questions, experiments, and frozen artifact snapshots.
+- **[Current product brief](https://henryatharvard.github.io/maestro/artifacts/music-kitchen-product.html)**
+  — the intended experience and first product milestone.
+- **[Maestro landing page](https://henryatharvard.github.io/maestro/)** — current state and
+  the full set of working artifacts. **[Atom feed](https://henryatharvard.github.io/maestro/journal/feed.xml)**.
 
+To add the next week, follow **[the journal publishing guide](journal/README.md)**.
+Source entries live in `journal/entries/`; `journal/content.json` records their metadata
+and artifact links. Publishing an entry freezes its attached documents, renders readable
+pages, and updates the landing page and feed. It does not automatically write weekly entries.
+
+```bash
+python3 -m pip install -r requirements-site.txt
+./build.sh --journal        # journal, artifacts, snapshots, landing page; no pandoc needed
+python3 scripts/check_site.py
+python3 scripts/test_journal.py
 ```
-compose → annotate → compile → edit → annotate → compile → …
-```
 
-*Compile* is meant literally: a source the human owns, intermediate representations that can be
-inspected, a repeatable build, and a build log that says what the machine did with each
-instruction.
-
-**→ [maestro site](https://henryatharvard.github.io/maestro/)**
+The studio is plain HTML, CSS, and JavaScript. Serve the repository with
+`python3 -m http.server 8000` to try it locally. Generated web pages are committed for
+GitHub Pages; the older survey build still uses pandoc.
 
 ---
 
 ## What's here
 
-This repository begins with a survey of where the field actually stands, because the argument
-above is only worth making if it survives contact with the literature.
+The project began with the following literature survey. It remains a research foundation;
+the product brief and weekly journal carry the current direction.
 
 | | |
 |---|---|
@@ -53,7 +66,11 @@ September 2026.
 - `research/CHANGELOG.md` — exactly which of the 56 fixes were applied, and which were left.
 - `research/bib/` — per-cluster BibTeX before merging.
 
-## Five findings the survey establishes
+## Earlier survey findings
+
+These are historical survey conclusions, not the current product specification. Some broad
+claims below were challenged by later evidence; consult the [positioning evidence](research/AI-MUSIC-POSITIONING-EVIDENCE.md)
+and the [product brief](research/MUSIC-KITCHEN-PRODUCT.md) for the updated framing.
 
 1. **Infilling under hard constraints — not generation from scratch — is the primitive that
    implements the loop.** Mature since Coconet (2017), which framed it as modelling how

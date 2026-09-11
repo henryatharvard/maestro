@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maestro</title>
-<meta name="description" content="Human-centered AI for music composition. An open survey of 463 works (1957–2026), a taxonomy built around the composer's loop — compose, annotate, compile, edit — and twelve open research directions.">
+<meta name="description" content="Building Music Kitchen: a personal arranging studio for human-led music creation. Follow the weekly journal, current product direction, research findings, and working artifacts.">
 <link rel="canonical" href="https://henryatharvard.github.io/maestro/">
 
 <!-- Open Graph — iMessage, WhatsApp, Slack, Signal, Discord, LinkedIn, Facebook -->
 <meta property="og:site_name" content="Maestro">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://henryatharvard.github.io/maestro/">
-<meta property="og:title" content="Maestro — human-centered AI for composition">
-<meta property="og:description" content="Human-centered AI for music composition. An open survey of 463 works (1957–2026), a taxonomy built around the composer's loop — compose, annotate, compile, edit — and twelve open research directions.">
+<meta property="og:title" content="Maestro — Music Kitchen and the weekly journal">
+<meta property="og:description" content="Building Music Kitchen: a personal arranging studio for human-led music creation. Follow the weekly journal, current product direction, research findings, and working artifacts.">
 <meta property="og:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
 <meta property="og:image:secure_url" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
 <meta property="og:image:type" content="image/png">
@@ -23,8 +23,8 @@
 
 <!-- X / Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Maestro — human-centered AI for composition">
-<meta name="twitter:description" content="Human-centered AI for music composition. An open survey of 463 works (1957–2026), a taxonomy built around the composer's loop — compose, annotate, compile, edit — and twelve open research directions.">
+<meta name="twitter:title" content="Maestro — Music Kitchen and the weekly journal">
+<meta name="twitter:description" content="Building Music Kitchen: a personal arranging studio for human-led music creation. Follow the weekly journal, current product direction, research findings, and working artifacts.">
 <meta name="twitter:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
 <meta name="twitter:image:alt" content="The word Maestro over a musical staff, with the four stages Compose, Annotate, Compile and Edit drawn as notes and closed by a repeat sign.">
 
@@ -41,18 +41,20 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "Maestro: Human-Centered AI for Composition — A Literature Review and Taxonomy",
+  "@type": "WebSite",
+  "headline": "Maestro: Music Kitchen and an Open Development Journal",
   "author": { "@type": "Person", "name": "Henry Tan", "affiliation": { "@type": "Organization", "name": "Harvard University" } },
   "datePublished": "2026-09-07",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "url": "https://henryatharvard.github.io/maestro/",
   "image": "https://henryatharvard.github.io/maestro/assets/og-cover.png",
-  "description": "Human-centered AI for music composition. An open survey of 463 works (1957–2026), a taxonomy built around the composer's loop — compose, annotate, compile, edit — and twelve open research directions.",
+  "description": "Building Music Kitchen: a personal arranging studio for human-led music creation. Follow the weekly journal, current product direction, research findings, and working artifacts.",
   "keywords": "music information retrieval, symbolic music generation, human-AI co-creation, creativity support tools, computational musicology"
 }
 </script>
 <link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/journal.css">
+<link rel="alternate" type="application/atom+xml" title="Maestro weekly journal" href="journal/feed.xml">
 <style>
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
 
@@ -161,29 +163,28 @@
   <header class="top">
     <div class="topbar">
       <a class="wordmark" href="./">Maestro</a>
-      <nav>
-        <a href="#argument">Argument</a>
-        <a href="survey/positioning.html">Positioning</a>
-        <a href="#survey">Survey</a>
-        <a href="#map">Map</a>
-        <a href="#directions">Open directions</a>
+      <nav aria-label="Main navigation">
+        <a href="#now">Now</a>
+        <a href="studio/">Try the studio</a>
+        <a href="journal/">Journal</a>
+        <a href="#artifacts">Artifacts</a>
+        <a href="#survey">Research</a>
         <a href="https://github.com/henryatharvard/maestro">GitHub</a>
       </nav>
     </div>
   </header>
 
   <div class="hero">
-    <p class="eyebrow">Open research program · est. 2026</p>
+    <p class="eyebrow">Music, human imagination &amp; the tools between</p>
     <h1>Maestro</h1>
-    <p class="thesis">The composer stays at the centre. The machine compiles.</p>
+    <p class="thesis">Play the part you know. Shape the rest.</p>
     <p class="lede">
-      Most music AI now takes a sentence and returns a finished master. That is the wrong
-      shape for someone who actually writes music. Maestro studies the opposite arrangement —
-      the composer authors and marks up the material, and the model <em>compiles</em> a fuller
-      realization under those marks, over and over, at the granularity of a bar or a part.
-      This site publishes the research openly as it develops. It begins with a survey of
-      where the field actually stands.
+      Maestro is an open record of building <strong>Music Kitchen</strong>: a personal arranging
+      studio where you play piano, write lyrics, and direct the rest of the band through sound,
+      examples, and gestures. Follow the work from an idea to experiments, findings, and a product
+      musicians can use.
     </p>
+    <p><a href="studio/">Try the interactive studio →</a> &nbsp; <a href="journal/">Read the journal</a></p>
     <p class="byline">
       Henry Tan · Harvard University ·
       <a href="https://github.com/henryatharvard/maestro">github.com/henryatharvard/maestro</a>
@@ -192,7 +193,7 @@
     <figure class="loop">
       <svg viewBox="0 0 940 300" role="img" aria-labelledby="looptitle loopdesc">
         <title id="looptitle">The composer's loop</title>
-        <desc id="loopdesc">Four stages — compose, annotate, compile, edit — drawn as notes on a
+        <desc id="loopdesc">Four stages — imagine, shape, arrange, listen — drawn as notes on a
           musical staff, closed by a repeat sign that returns to the beginning.</desc>
         <g stroke="var(--rule)" stroke-width="1">
           <line x1="60" y1="96"  x2="880" y2="96"/>
@@ -215,7 +216,7 @@
           <ellipse cx="150" cy="138" rx="11" ry="8" transform="rotate(-18 150 138)" fill="var(--ink)"/>
           <line x1="160" y1="136" x2="160" y2="88" stroke="var(--ink)" stroke-width="2"/>
           <text x="150" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
-                font-size="20" fill="var(--ink)">Compose</text>
+                font-size="20" fill="var(--ink)">Imagine</text>
           <text x="150" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
                 fill="var(--ink-3)">play · hum · sketch</text>
         </g>
@@ -226,9 +227,9 @@
           <ellipse cx="370" cy="124" rx="11" ry="8" transform="rotate(-18 370 124)" fill="var(--annot)"/>
           <line x1="380" y1="122" x2="380" y2="74" stroke="var(--annot)" stroke-width="2"/>
           <text x="370" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
-                font-size="20" fill="var(--annot)">Annotate</text>
+                font-size="20" fill="var(--annot)">Shape</text>
           <text x="370" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
-                fill="var(--ink-3)">mark up the score</text>
+                fill="var(--ink-3)">select · draw · tap</text>
         </g>
         <!-- stage 3 · compile -->
         <g>
@@ -237,9 +238,9 @@
           <ellipse cx="590" cy="110" rx="11" ry="8" transform="rotate(-18 590 110)" fill="var(--ink)"/>
           <line x1="600" y1="108" x2="600" y2="62" stroke="var(--ink)" stroke-width="2"/>
           <text x="590" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
-                font-size="20" fill="var(--ink)">Compile</text>
+                font-size="20" fill="var(--ink)">Arrange</text>
           <text x="590" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
-                fill="var(--ink-3)">fill what is unwritten</text>
+                fill="var(--ink-3)">bring in the band</text>
         </g>
         <!-- stage 4 · edit -->
         <g>
@@ -249,9 +250,9 @@
                    stroke="var(--ink)" stroke-width="2.5"/>
           <line x1="810" y1="115" x2="810" y2="67" stroke="var(--ink)" stroke-width="2"/>
           <text x="800" y="198" text-anchor="middle" font-family="Newsreader, Georgia, serif"
-                font-size="20" fill="var(--ink)">Edit</text>
+                font-size="20" fill="var(--ink)">Listen</text>
           <text x="800" y="220" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12.5"
-                fill="var(--ink-3)">by hand, always</text>
+                fill="var(--ink-3)">compare · keep · revise</text>
         </g>
 
         <!-- repeat barline: the loop's return, in its own notation -->
@@ -267,9 +268,8 @@
               stroke-linejoin="round" stroke-linecap="round"/>
       </svg>
       <figcaption>
-        The loop the research is organized around. The return is drawn as it would be in a score —
-        a <em>repeat sign</em>. Each pass is small: a bar, a part, a phrase. Nothing here starts
-        from a blank prompt.
+        The interaction we are exploring. Ideas become musical material you can select, hear,
+        and reshape. Each pass can change the music, the intention, or both.
       </figcaption>
     </figure>
   </div>
@@ -277,293 +277,72 @@
 
 <div class="wrap">
 
-<section id="argument">
-  <div class="rail">
-    <div class="mark">§ 1</div>
-    <div>
-      <h2>Why not text-to-song</h2>
-      <p>
-        A prompt is a narrow channel for musical intent, and the output arrives as an opaque
-        mixdown with nothing to grab hold of. That is not a taste objection — it is what
-        professionals report when they are handed these tools, and it is what the market keeps
-        conceding by bolting editing features onto architectures that were never designed to
-        iterate.
-      </p>
+<!-- JOURNAL:START -->
+<section id="now"><p class="eyebrow">Current state · September 10, 2026</p><h2>Building toward Music Kitchen</h2><p>A personal arranging studio: play piano, write lyrics, and shape the rest of the band through sound, examples, and gestures.</p><dl class="state-grid"><div><dt>Stage</dt><dd>Playable browser interaction prototype. Product direction and research documented; no trained music model or user study yet.</dd></div><div><dt>Current focus</dt><dd>Select a musical phrase, draw its contour, tap a rhythm, and hear a scoped, reversible change.</dd></div><div><dt>Next experiment</dt><dd>Try the studio with pianist-songwriters, compare correction tasks with existing tools, then investigate humming and reference transfer.</dd></div></dl><p><a href="journal/2026-09-10.html">Read the latest update →</a></p></section><section id="journal"><h2>The weekly journal</h2><p>A dated record of the work: decisions, findings, open questions, experiments, and artifacts you can revisit and share.</p><ol class="journal-list"><li><time class="journal-date" datetime="2026-09-10">September 10, 2026</time><h3><a href="journal/2026-09-10.html">From a research agenda to a product musicians can use</a></h3><p>Music Kitchen takes shape as a personal arranging studio. The key question becomes how a musician directs the second and third revision through sound, examples, and gestures.</p><a href="journal/2026-09-10.html">Read this week’s entry →</a></li></ol><p><a href="journal/">All journal entries</a> · <a href="journal/feed.xml">Subscribe via Atom</a></p></section><section id="artifacts"><h2>Positioning and working artifacts</h2><p>Start with the product brief for the current direction. Earlier positions are kept visible so the reasoning can be followed. Weekly entries link to frozen versions.</p><div class="artifact-list"><article class="artifact-item"><p class="artifact-status">Current direction · product concept</p><h3><a href="artifacts/music-kitchen-product.html">Music Kitchen product brief</a></h3><p>A personal arranging studio: play piano, write lyrics, and direct the rest of the band through musical examples.</p></article><article class="artifact-item"><p class="artifact-status">Supporting research · proposal</p><h3><a href="artifacts/music-kitchen-research.html">Research foundations</a></h3><p>A focused map of 27 sources, an editable musical representation, and research questions to revisit as the product develops.</p></article><article class="artifact-item"><p class="artifact-status">Working prototype · procedural synthesis</p><h3><a href="artifacts/studio-experiment.html">Studio experiment 01</a></h3><p>The first playable canvas: phrase selection, drawn contours, tapped rhythm, reversible edits, and an executable musical recipe.</p></article><article class="artifact-item"><p class="artifact-status">Earlier position · retained for context</p><h3><a href="artifacts/market-positioning.html">Earlier market positioning</a></h3><p>The earlier assessment of generation, editing, and score-based opportunities. Context for the shift toward the musician’s experience.</p></article><article class="artifact-item"><p class="artifact-status">Evidence notes · September 10, 2026</p><h3><a href="artifacts/positioning-evidence.html">Positioning evidence</a></h3><p>Sources, evidence grades, and assumptions behind the market assessment. Product capabilities are dated vendor claims.</p></article></div></section>
+<!-- JOURNAL:END -->
 
-      <div class="findings">
-        <div class="finding">
-          <h3>Infilling, not generation, is the primitive</h3>
-          <p>
-            Filling a masked region while everything the composer wrote stays a hard constraint.
-            Nine years of work has made this mature, and the one deployment with public telemetry
-            shows musicians accepting span-level suggestions inside a notation editor at scale.
-          </p>
-          <span class="ev">318,000 suggestions · 74,000 accepted · ~23% · Hookpad Aria</span>
-        </div>
-        <div class="finding">
-          <h3>The interface moves control as much as the model does</h3>
-          <p>
-            In the two controlled studies that varied model and interface independently, steering
-            tools raised a composer's sense of control and ownership even with the model held
-            fixed. Better models and better interfaces turn out to be complementary, not
-            substitutes.
-          </p>
-          <span class="ev">controllability 5.9 vs 3.5 / 7 · N=21 · Cococo, CHI 2020</span>
-        </div>
-        <div class="finding">
-          <h3>Every input that works lands in notation</h3>
-          <p>
-            Humming becomes MIDI, a drawn contour becomes a melody, an image becomes chords. The
-            symbolic layer is what gives a human something to correct. Systems that map a loose
-            gesture straight to audio are impressive and uncorrectable.
-          </p>
-          <span class="ev">S1.1–S1.5 · 47 works surveyed</span>
-        </div>
-        <div class="finding">
-          <h3>The annotation layer is empty</h3>
-          <p>
-            Score annotation has standards. Analysis models can propose labels. Generators have
-            converged on a control vocabulary that reads like a list of things a composer would
-            write on a page. Nobody has connected them. This is the opening.
-          </p>
-          <span class="ev">S2.4 · 4 of 463 works · none of them music</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="argument">
+  <p class="eyebrow">First interaction experiment</p>
+  <h2>A musical idea you can reach into</h2>
+  <p>Select a phrase, draw its movement, tap a rhythm, and hear the arrangement change.
+    The first Music Kitchen studio explores a musical canvas with a small, inspectable recipe
+    underneath. It is a playable interaction prototype using browser synthesis, not a trained
+    text-to-music or image-to-music model.</p>
+  <p><a href="studio/">Open Music Kitchen →</a></p>
 </section>
 
 <section id="survey">
-  <div class="rail">
-    <div class="mark">§ 2</div>
-    <div>
-      <h2>The survey</h2>
-      <p>
-        A systematic read of the field as it stood in September 2026 — 463 annotated entries
-        spanning 1957 to 2026, gathered across eight research clusters and organized not by
-        model architecture but by where each contribution sits in a composer's working day.
-        Every entry carries a verification level; every figure quoted in the review traces back
-        to a primary source that was actually fetched.
-      </p>
-
-      <div class="docs">
-        <div class="doc">
-          <h3><a href="survey/positioning.html">Positioning</a></h3>
-          <p>One page on what the field has solved, what it is still arguing about, and which
-             openings fit a 6–12 month project. The short way in.</p>
-          <div class="meta">1,240 words · 91 works cited</div>
-        </div>
-        <div class="doc">
-          <h3><a href="survey/literature-review.html">Literature review</a></h3>
-          <p>Thirteen sections following the loop, from the algorithmic-composition lineage
-             through to law and economics, closing with the research agenda.</p>
-          <div class="meta">43,900 words · 398 works cited</div>
-        </div>
-        <div class="doc">
-          <h3><a href="survey/taxonomy.html">Taxonomy</a></h3>
-          <p>Forty-nine nodes and ten coding dimensions. Any system — paper or product — can be
-             placed on the same grid, which is what makes the gaps visible.</p>
-          <div class="meta">49 nodes · 10 dimensions</div>
-        </div>
-        <div class="doc">
-          <h3><a href="survey/annotated-bibliography.html">Annotated bibliography</a></h3>
-          <p>Every work with what it does, what evidence backs it, and how it was verified.
-             Organized by taxonomy node rather than alphabetically.</p>
-          <div class="meta">394 records</div>
-        </div>
-        <div class="doc">
-          <h3><a href="survey/references.bib">references.bib</a></h3>
-          <p>BibTeX for everything above. Every key resolves; the whole file renders through
-             pandoc citeproc without a warning.</p>
-          <div class="meta">398 entries · BibTeX</div>
-        </div>
-      </div>
-
-      <p style="margin-top:1.6rem; font-size:.9rem; color:var(--ink-3); max-width:58ch;">
-        Working material — the eight raw research clusters, the per-entry node assignments, and
-        the two quality-assurance passes that produced 56 corrections — is in the
-        <a href="https://github.com/henryatharvard/maestro">repository</a>.
-      </p>
-    </div>
+  <p class="eyebrow">Research foundation · September 2026</p>
+  <h2>The literature behind the work</h2>
+  <p>The project began with a broad literature review and taxonomy. These documents preserve
+    that foundation. The <a href="artifacts/music-kitchen-product.html">current product brief</a>
+    and <a href="journal/">journal</a> record how the direction develops beyond it.</p>
+  <div class="docs">
+    <div class="doc"><h3><a href="survey/literature-review.html">Literature review</a></h3>
+      <p>The lineage of musical computing, symbolic and audio generation, interaction,
+        and evaluation.</p><div class="meta">Research foundation</div></div>
+    <div class="doc"><h3><a href="survey/taxonomy.html">Taxonomy</a></h3>
+      <p>A map of the field organized around the composer’s working process.</p>
+      <div class="meta">49 nodes</div></div>
+    <div class="doc"><h3><a href="survey/annotated-bibliography.html">Annotated bibliography</a></h3>
+      <p>Source notes with evidence and verification levels.</p><div class="meta">Source collection</div></div>
+    <div class="doc"><h3><a href="survey/positioning.html">Earlier survey positioning</a></h3>
+      <p>The original research-led framing, retained as a record of where the project began.</p>
+      <div class="meta">Earlier position</div></div>
+    <div class="doc"><h3><a href="survey/references.bib">Bibliography download</a></h3>
+      <p>BibTeX references for the original survey.</p><div class="meta">BibTeX</div></div>
   </div>
 </section>
 
 <section id="map">
-  <div class="rail">
-    <div class="mark">§ 3</div>
-    <div>
-      <h2>Where the field has spent its effort</h2>
-      <p>
-        Sorting 463 works by stage shows the imbalance plainly. Compiling music is heavily
-        studied. Marking up music, and hearing back from the machine about what it did, are
-        barely studied at all — and those are the two stages a composer spends most of their
-        time in.
-      </p>
-
-      <div class="chart">
-        <div class="row"><div class="name"><span class="c">F</span>Foundations</div>
-          <div class="track"><div class="bar" style="width:35.2%"></div></div><div class="n">44</div></div>
-        <div class="row"><div class="name"><span class="c">S1</span>Compose</div>
-          <div class="track"><div class="bar" style="width:37.6%"></div></div><div class="n">47</div></div>
-        <div class="row is-thin"><div class="name"><span class="c">S2</span>Annotate</div>
-          <div class="track"><div class="bar" style="width:21.6%"></div></div><div class="n">27</div></div>
-        <div class="row"><div class="name"><span class="c">S3</span>Compile</div>
-          <div class="track"><div class="bar" style="width:100%"></div></div><div class="n">125</div></div>
-        <div class="row is-thin"><div class="name"><span class="c">S4</span>Edit</div>
-          <div class="track"><div class="bar" style="width:20%"></div></div><div class="n">25</div></div>
-        <div class="row"><div class="name"><span class="c">S5</span>Play</div>
-          <div class="track"><div class="bar" style="width:17.6%"></div></div><div class="n">22</div></div>
-        <div class="row"><div class="name"><span class="c">E</span>Evidence</div>
-          <div class="track"><div class="bar" style="width:49.6%"></div></div><div class="n">62</div></div>
-        <div class="row"><div class="name"><span class="c">B</span>Substrate</div>
-          <div class="track"><div class="bar" style="width:51.2%"></div></div><div class="n">64</div></div>
-        <div class="row"><div class="name"><span class="c">C</span>Context</div>
-          <div class="track"><div class="bar" style="width:37.6%"></div></div><div class="n">47</div></div>
-        <div class="chartkey">
-          <span><i class="swatch" style="background:var(--blue)"></i> works surveyed, by stage</span>
-          <span><i class="swatch" style="background:var(--annot)"></i> the two stages the loop depends on</span>
-        </div>
-      </div>
-
-      <p style="margin-top:1.8rem;">
-        Inside those stages the shortfall is sharper still. Multimodal annotation as instruction
-        has four entries and none of them is about music. Symbolic editing and proofreading has
-        two. Machine-to-human feedback — the model explaining what it just did — also has two,
-        across a corpus of 463.
-      </p>
-    </div>
-  </div>
+  <h2>How the thinking connects</h2>
+  <p>The <a href="survey/taxonomy.html">research map</a> organizes prior work. The
+    <a href="artifacts/positioning-evidence.html">evidence notes</a> distinguish reported
+    capabilities from hypotheses. The <a href="journal/">weekly journal</a> records decisions,
+    contradictions, and changes of direction instead of silently replacing the past.</p>
 </section>
 
 <section id="directions">
-  <div class="rail">
-    <div class="mark">§ 4</div>
-    <div>
-      <h2>Open directions</h2>
-      <p>
-        Twelve gaps were derived by intersecting the thin nodes of the taxonomy with what a
-        composer-centered system actually requires. Each names the nearest prior art, so none of
-        them starts from nothing. They are published here because they are worth more to the
-        field than to any one person — take them.
-      </p>
-
-      <div class="gaps">
-        <div class="gap">
-          <div class="hd"><span class="id">G1</span><h3>Annotations as a compilable instruction set</h3>
-            <span class="node">S2.4</span></div>
-          <p>Every part exists and none are assembled. MEI and Dezrann give typed, musical-time-anchored
-             annotation records. EuterPen lets composers put ink, images and audio on and between staves.
-             ExpressEdit shows how to parse “language plus a sketch on the artifact” into typed references
-             with per-modality resolvers — for video. Nobody has built the music equivalent.</p>
-          <span class="prior">Nearest prior art: ExpressEdit (IUI 2024) · Dezrann · MEI · DirectGPT · Libretto</span>
-        </div>
-        <div class="gap">
-          <div class="hd"><span class="id">G2</span><h3>A lossless bridge between a text IR and engraved notation</h3>
-            <span class="node">S3.1 · B1</span></div>
-          <p>No verified system generates MusicXML or MEI natively. Generation lives in MIDI tokens, ABC or
-             piano-roll tensors; MetaScore converts scores <em>out</em> rather than in. A round-trip that
-             loses nothing a composer cares about is both the first engineering task and an open problem.</p>
-          <span class="prior">Nearest prior art: MuPT's SMT-ABC · NotaGen · Verovio · MusicXML 4.0</span>
-        </div>
-        <div class="gap">
-          <div class="hd"><span class="id">G5</span><h3>A return channel: the compiler's build log</h3>
-            <span class="node">S4.4</span></div>
-          <p>A survey of 92 co-creative systems found machine-to-human communication almost entirely
-             absent. The compiler framing answers this directly: state which annotation produced which
-             material, which constraints bound, which were relaxed, and where the model was least sure.</p>
-          <span class="prior">Nearest prior art: RefinPaint's critic · ReaLJam's committed-vs-tentative display · Cococo</span>
-        </div>
-        <div class="gap">
-          <div class="hd"><span class="id">G6</span><h3>Versioning with musical semantics</h3>
-            <span class="node">S4.5</span></div>
-          <p>Score diffing exists and notation editors keep edit history, but branch and merge that
-             understand music do not. There is a second motive beyond convenience: a provenance log of
-             human authorship is exactly the record that current copyright doctrine makes valuable.</p>
-          <span class="prior">Nearest prior art: Foscarin et al.'s tree-edit-distance diff · Luminate · mei-friend</span>
-        </div>
-        <div class="gap">
-          <div class="hd"><span class="id">G7</span><h3>Composer-controllable audio rendering</h3>
-            <span class="node">S3.8</span></div>
-          <p>Rendering a compiled score to audio under human control is thin and research-grade. No
-             commercial full-song system accepts MIDI or chords as a generation condition. Inference-time
-             optimization looks like the general mechanism: it turns any differentiable musical feature
-             into a constraint on a frozen model without retraining.</p>
-          <span class="prior">Nearest prior art: JASCO · Music ControlNet · MuseControlLite · DITTO · MIDI-DDSP</span>
-        </div>
-        <div class="gap">
-          <div class="hd"><span class="id">G10</span><h3>Evaluating the loop, not the artefact</h3>
-            <span class="node">E1 · E4</span></div>
-          <p>Distributional audio metrics correlate weakly with human preference. The instruments that
-             suit a co-creative tool already exist — creativity support indices, ownership and control
-             items, paired listener tests, suggestion-acceptance telemetry — but longitudinal studies in
-             real practice remain rare.</p>
-          <span class="prior">Nearest prior art: Creativity Support Index · Karimi et al. · Hookpad Aria telemetry</span>
-        </div>
-      </div>
-
-      <details class="more">
-        <summary>The remaining six directions</summary>
-        <ol>
-          <li><strong>G3 — Notation-editor-native assistance.</strong> The DAW side is well served; the
-              notation side has two deployments in the entire corpus, and Dorico, Sibelius and MuseScore
-              ship nothing generative.</li>
-          <li><strong>G4 — Multimodal editing on a score.</strong> Sketch-conditioned generation exists in
-              isolation; language plus sketch plus hum plus example, applied to notation, does not.</li>
-          <li><strong>G8 — Interactive correction for loose input.</strong> Humming transcription leaves
-              roughly one note in three wrong at the state of the art, so disambiguation is a design
-              requirement, not a nicety.</li>
-          <li><strong>G9 — Editable structural skeletons.</strong> Deep generators still differ strikingly
-              from human music in repetition and hierarchy; explicit, human-editable form is the remedy.</li>
-          <li><strong>G11 — Orchestration without over-trusting the orchestrator.</strong> Every benchmark
-              probing musical reasoning in language models reports weakness. Use them as glue around
-              deterministic analysers, not as the analyser.</li>
-          <li><strong>G12 — Licence-clean symbolic training data at scale.</strong> The clean corpora are
-              real but small; the convenient ones are not shippable. Assembling and documenting one is
-              unglamorous work with outsized value to an open project.</li>
-        </ol>
-      </details>
-    </div>
-  </div>
+  <h2>Questions to build through</h2>
+  <p>How can a musician correct accompaniment by humming or tapping? What should remain fixed
+    when one phrase changes? Can examples convey a desired feel without forcing it into words?
+    Research follows these product questions. Planned experiments and their eventual results
+    belong in the journal.</p>
+  <p><a href="artifacts/music-kitchen-research.html">Read the research foundations →</a></p>
 </section>
 
 <section id="use">
-  <div class="rail">
-    <div class="mark">§ 5</div>
-    <div>
-      <h2>Use it, argue with it</h2>
-      <div class="cols">
-        <div>
-          <h3>What this is for</h3>
-          <p style="font-size:.95rem; color:var(--ink-2);">
-            The survey is meant to save other people the six months it took to assemble. Cite it,
-            fork it, lift the taxonomy, disagree with the gap list in public. Corrections are the
-            most valuable contribution — the repository has an issue template for one, and every
-            claim in the review is traceable to a source note so a correction can be checked.
-          </p>
-        </div>
-        <div>
-          <h3>What comes next</h3>
-          <p style="font-size:.95rem; color:var(--ink-2);">
-            The near work is unglamorous and blocks everything else: the notation round-trip
-            (G2), an annotation data model that reuses an existing standard rather than inventing
-            one, and a licence-clean corpus. After that, the annotation compiler itself — with
-            the build log as the thing that distinguishes it.
-          </p>
-        </div>
-      </div>
-      <p style="margin-top:1.6rem; font-size:.95rem;">
-        The writing is licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-        and the code Apache 2.0. Citation metadata is in
-        <a href="https://github.com/henryatharvard/maestro/blob/main/CITATION.cff"><code>CITATION.cff</code></a>.
-      </p>
-    </div>
-  </div>
+  <h2>Follow the work, or contribute</h2>
+  <p>Share a <a href="journal/">journal entry</a> to discuss a particular week’s thinking,
+    subscribe to the <a href="journal/feed.xml">Atom feed</a> for published updates, or
+    <a href="https://github.com/henryatharvard/maestro/issues">open an issue</a> with a correction,
+    musical use case, or finding. Each entry links to dated copies of its artifacts.</p>
 </section>
 
 <footer>
   <div class="fr">
     <div>Maestro · Henry Tan · Harvard University</div>
-    <div>Survey compiled September 2026 · <a href="https://github.com/henryatharvard/maestro">Repository</a></div>
+    <div>Building in public · <a href="https://github.com/henryatharvard/maestro">Repository</a></div>
   </div>
 </footer>
 
