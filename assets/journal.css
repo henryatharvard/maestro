@@ -36,6 +36,14 @@
 .state-grid dt { font-family: var(--f-mono); font-size: .73rem; text-transform: uppercase;
   letter-spacing: .06em; color: var(--ink-2); margin-bottom: .5rem; }
 .state-grid dd { margin: 0; font-size: .96rem; }
+.quick-links { margin: 1.3rem 0 2rem; }
+.quick-links-title { font-family: var(--f-mono); font-size: .75rem; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--ink-2); margin-bottom: .7rem; }
+.quick-links ul { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
+.quick-links li { margin: 0; }
+.quick-links a { display: inline-block; padding: .45rem .7rem; border: 1px solid var(--rule);
+  color: var(--ink); text-decoration: none; font-size: .83rem; }
+.quick-links a:hover, .quick-links a:focus-visible { border-color: var(--blue); color: var(--blue); }
 .journal-list { list-style: none; padding: 0; max-width: none; border-top: 1px solid var(--rule); }
 .journal-list li { padding: 1.5rem 0; border-bottom: 1px solid var(--rule-soft); margin: 0; }
 .journal-list h3 { margin: .4rem 0 .6rem; font-size: 1.4rem; }
@@ -45,6 +53,7 @@
 .artifact-item { border-top: 1px solid var(--rule); padding: 1.3rem 0; min-width: 0; }
 .artifact-item p { font-size: .94rem; color: var(--ink-2); }
 .artifact-item .artifact-status { font-family: var(--f-mono); font-size: .73rem; color: var(--annot); }
+.artifact-item .artifact-source { margin: .5rem 0 0; font-family: var(--f-mono); font-size: .75rem; }
 .snapshot-note { padding: 1rem 0; border-bottom: 1px solid var(--rule); margin-bottom: 2rem; }
 .entry-navigation { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
   margin-top: 2rem; border-top: 1px solid var(--rule); padding-top: 1.4rem; }

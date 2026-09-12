@@ -26,6 +26,17 @@ Update the current artifact Markdown files if the position has changed. New arti
 registered in the `artifacts` list in `journal/content.json`; use a stable ID and repository-relative
 source path. Choose which IDs to attach to the entry.
 
+Put a short “find the work” section near the top of technical entries with direct
+GitHub links to code, configuration, and a public results index. Artifact cards
+automatically link both to the rendered site page and its GitHub Markdown source;
+dated cards link to the frozen snapshot source. When audio is available, add
+rights-cleared listening links to the experiment's public results index and link
+that index from the entry. Mark missing recordings or results as pending rather
+than linking to ignored local `artifacts/` paths.
+The newest entry may also define a short `links` list (`label` and HTTPS `url`) in
+`journal/content.json`; those links appear immediately on the journal landing
+page and homepage. Refresh that list as the public experiment advances.
+
 Publish and freeze that week’s artifact versions:
 
 ```bash

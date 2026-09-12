@@ -24,6 +24,16 @@ class JournalPublishing(unittest.TestCase):
             snapshot = root / "journal/snapshots/2026-09-10/music-kitchen-product.md"
             original = snapshot.read_bytes()
             run("build")
+            home = (root / "index.html").read_text()
+            journal_index = (root / "journal/index.html").read_text()
+            entry_page = (root / "journal/2026-09-12.html").read_text()
+            self.assertIn("github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/README.md", home)
+            self.assertIn("Open the current work", journal_index)
+            self.assertIn("https://arxiv.org/abs/2602.00744", journal_index)
+            self.assertIn("https://huggingface.co/spaces/ACE-Step/Ace-Step-v1.5", journal_index)
+            self.assertIn("github.com/henryatharvard/maestro/blob/main/journal/snapshots/2026-09-12/ace-audio-personalization.md", entry_page)
+            self.assertIn("https://arxiv.org/abs/2602.00744", entry_page)
+            self.assertIn("https://huggingface.co/spaces/ACE-Step/Ace-Step-v1.5", entry_page)
             generated = [root / "index.html", root / "journal/feed.xml"] + list((root / "artifacts").glob("*.html"))
             hashes = {p: hashlib.sha256(p.read_bytes()).digest() for p in generated}
             run("build")

@@ -96,6 +96,28 @@
       "stage": "ACE audio-personalization code and synthetic CPU smoke complete; no real ACE checkpoint or GPU training run yet.",
       "focus": "Prepare original piano recordings and test whether ACE can learn expressive musical qualities while leaving the musician in control.",
       "next_step": "Run a real-ACE GPU smoke, record and annotate original piano takes, then begin a held-out SFT pilot with rights-cleared material.",
+      "links": [
+        {
+          "label": "Experiment code",
+          "url": "https://github.com/henryatharvard/maestro/tree/main/experiments/001_ace_audio_personalization"
+        },
+        {
+          "label": "Smoke result",
+          "url": "https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/results/smoke-2026-09-12.md"
+        },
+        {
+          "label": "Data and future audio",
+          "url": "https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/results/README.md"
+        },
+        {
+          "label": "ACE paper",
+          "url": "https://arxiv.org/abs/2602.00744"
+        },
+        {
+          "label": "ACE demo",
+          "url": "https://huggingface.co/spaces/ACE-Step/Ace-Step-v1.5"
+        }
+      ],
       "artifacts": [
         "ace-audio-personalization",
         "music-kitchen-product",

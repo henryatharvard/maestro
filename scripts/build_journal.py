@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 import re
 from string import Template
-from urllib.parse import unquote, urlsplit, urlunsplit
+from urllib.parse import quote, unquote, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 from zoneinfo import ZoneInfo
 
@@ -22,6 +22,7 @@ from markdown_it import MarkdownIt
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = ROOT / "journal/content.json"
 BASE = "https://henryatharvard.github.io/maestro/"
+GITHUB_BLOB = "https://github.com/henryatharvard/maestro/blob/main/"
 BEGIN = "<!-- JOURNAL:START -->"
 END = "<!-- JOURNAL:END -->"
 
@@ -42,6 +43,10 @@ def load():
             raise ValueError("Journal dates must use YYYY-MM-DD")
         if not set(entry["artifacts"]).issubset(ids):
             raise ValueError(f"Unknown artifact in {entry['date']}")
+        for link in entry.get("links", []):
+            url = urlsplit(link["url"])
+            if not link["label"].strip() or url.scheme != "https" or not url.netloc:
+                raise ValueError(f"Invalid quick link in {entry['date']}")
     return data
 
 
@@ -121,13 +126,29 @@ def entry_list(entries, output):
     return '<ol class="journal-list">' + "".join(items) + "</ol>"
 
 
+def quick_links(entry):
+    links = entry.get("links", [])
+    if not links:
+        return ""
+    items = "".join(
+        f'<li><a href="{escape(link["url"], quote=True)}">{escape(link["label"])}</a></li>'
+        for link in links
+    )
+    return ('<nav class="quick-links" aria-label="Open the current work">'
+            '<p class="quick-links-title">Open the work</p><ul>' + items + '</ul></nav>')
+
+
 def artifact_list(artifacts, output, snapshot=None):
     items = []
     for a in artifacts:
         target = f"journal/snapshots/{snapshot}/{a['id']}.html" if snapshot else f"artifacts/{a['id']}.html"
+        source = f"journal/snapshots/{snapshot}/{a['id']}.md" if snapshot else a["source"]
+        source_url = escape(GITHUB_BLOB + quote(source, safe="/"), quote=True)
+        source_label = "Frozen source on GitHub" if snapshot else "Source on GitHub"
         items.append(f'<article class="artifact-item"><p class="artifact-status">{escape(a["status"])}</p>'
-                     f'<h3><a href="{relative(output, target)}">{escape(a["title"])}</a></h3>'
-                     f'<p>{escape(a["description"])}</p></article>')
+                       f'<h3><a href="{relative(output, target)}">{escape(a["title"])}</a></h3>'
+                       f'<p>{escape(a["description"])}</p>'
+                       f'<p class="artifact-source"><a href="{source_url}">{source_label} ↗</a></p></article>')
     return '<div class="artifact-list">' + "".join(items) + "</div>"
 
 
@@ -176,7 +197,8 @@ def build():
                "Weekly notes on building Music Kitchen: the current state, changing positions, findings, experiments, and artifacts.",
                "Working in public", f'Latest entry: {label(latest["date"])} · <a href="feed.xml">Subscribe via Atom</a>',
                '<p>Each entry records what changed, what the evidence supports, what remains open, and what comes next. '
-               'Dated artifact snapshots preserve the thinking behind each update.</p>' + entry_list(entries, "journal/index.html"))
+               'Dated artifact snapshots preserve the thinking behind each update.</p>'
+               + quick_links(latest) + entry_list(entries, "journal/index.html"))
     homepage = ROOT / "index.html"
     html = homepage.read_text()
     if html.count(BEGIN) != 1 or html.count(END) != 1:
@@ -184,6 +206,7 @@ def build():
     generated = (f'<section id="now"><p class="eyebrow">Current state · {label(latest["date"])}</p>'
                  '<h2>Building toward Music Kitchen</h2><p>A personal arranging studio: play piano, write lyrics, '
                  'and shape the rest of the band through sound, examples, and gestures.</p>' + state(latest)
+                 + quick_links(latest)
                  + f'<p><a href="journal/{latest["date"]}.html">Read the latest update →</a></p></section>'
                  + '<section id="journal"><h2>The weekly journal</h2><p>A dated record of the work: decisions, '
                  'findings, open questions, experiments, and artifacts you can revisit and share.</p>'

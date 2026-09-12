@@ -11,6 +11,13 @@ an **experimental offline flow-DPO surrogate**, not PPO, GRPO, or a proven ACE r
 Human ranking is the primary feedback signal; CLAP ranking only tests prompt/audio
 match and is a weak RLAIF baseline. Do not infer “musical quality” from its score.
 
+## Open the work
+
+- **Run the experiment:** [CLI and training guide](https://github.com/henryatharvard/maestro/tree/main/experiments/001_ace_audio_personalization), [training loop](https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/src/maestro_ace/train.py), [frozen config](https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/configs/piano_violin.toml).
+- **Inspect the evidence:** [public results index](https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/results/README.md) and [September 12 synthetic smoke record](https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/results/smoke-2026-09-12.md).
+- **Prepare recordings:** [manifest example](https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/examples/recordings.jsonl) and the [recording intake guide](#recording-intake). No real piano audio is public yet.
+- **Understand ACE:** [ACE-Step 1.5 paper](https://arxiv.org/abs/2602.00744), [official interactive demo](https://huggingface.co/spaces/ACE-Step/Ace-Step-v1.5), and [upstream source](https://github.com/ace-step/ACE-Step-1.5).
+
 ## Layout
 
 ```text
