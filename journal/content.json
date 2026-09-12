@@ -106,6 +106,10 @@
           "url": "https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/results/smoke-2026-09-12.md"
         },
         {
+          "label": "Two baseline clips",
+          "url": "https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/results/ace-music-playground-2026-09-12.md"
+        },
+        {
           "label": "Data and future audio",
           "url": "https://github.com/henryatharvard/maestro/blob/main/experiments/001_ace_audio_personalization/results/README.md"
         },
