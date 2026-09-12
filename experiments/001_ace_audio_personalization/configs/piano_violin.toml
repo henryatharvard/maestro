@@ -1,0 +1,47 @@
+# Paths are relative to this experiment, not your shell's working directory.
+seed = 42
+
+[runtime]
+ace_revision = "ca1e85fe9430179831e6bc6be790c332190a3866"
+variant = "base"
+device = "cuda"
+precision = "bf16"
+
+[data]
+manifest = "data/recordings.jsonl"
+min_seconds = 10.0
+max_seconds = 180.0
+validation_fraction = 0.2
+
+[lora]
+rank = 16
+alpha = 32
+dropout = 0.0
+
+[sft]
+steps = 200
+learning_rate = 0.0001
+gradient_accumulation = 4
+save_every = 50
+validation_samples = 4
+cfg_dropout = 0.15
+
+[preference]
+steps = 100
+learning_rate = 0.00001
+gradient_accumulation = 2
+save_every = 25
+beta = 10.0
+sft_anchor = 0.1
+
+[generation]
+feedback_prompts = "prompts/feedback.jsonl"
+eval_prompts = "prompts/eval.jsonl"
+seeds = [101, 202]
+inference_steps = 50
+guidance_scale = 7.0
+
+[judge]
+model = "laion/clap-htsat-unfused"
+min_margin = 0.01
+window_seconds = 10.0

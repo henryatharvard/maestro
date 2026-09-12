@@ -1,5 +1,14 @@
 # Experiments
 
+The new [ACE audio personalization experiment](001_ace_audio_personalization/README.md)
+is experiment-scoped and uses `uv`. It prepares original piano/violin recordings,
+trains an ACE-Step LoRA, collects human or AI audio preferences, branches into
+an experimental offline preference update, and builds a matched-seed listening
+index. No ACE GPU run has been completed yet; see its README for exact setup.
+
+The files below are the older **symbolic AMT** experiment scaffold. They are
+independent of ACE-Step and are not part of the audio training pipeline.
+
 Scaffold for the first Maestro experiments. Order matters.
 
 | File | What it does | Tested? |

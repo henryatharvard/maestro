@@ -1,0 +1,23 @@
+[
+  {
+    "id": "music-kitchen-product",
+    "title": "Music Kitchen product brief",
+    "source": "research/MUSIC-KITCHEN-PRODUCT.md",
+    "description": "A personal arranging studio: play piano, write lyrics, and direct the rest of the band through musical examples.",
+    "status": "Current direction · product concept"
+  },
+  {
+    "id": "studio-experiment",
+    "title": "Studio experiment 01",
+    "source": "research/STUDIO-EXPERIMENT.md",
+    "description": "The first playable canvas: phrase selection, drawn contours, tapped rhythm, reversible edits, and an executable musical recipe.",
+    "status": "Working prototype · procedural synthesis"
+  },
+  {
+    "id": "ace-audio-personalization",
+    "title": "ACE audio-personalization experiment",
+    "source": "experiments/001_ace_audio_personalization/README.md",
+    "description": "An experiment-scoped ACE-Step 1.5 pipeline for original piano and violin audio, SFT, preference branches, and matched listening evaluation.",
+    "status": "Code · synthetic CPU end-to-end smoke passed; ACE GPU run pending"
+  }
+]

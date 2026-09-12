@@ -34,6 +34,27 @@
       "source": "research/AI-MUSIC-POSITIONING-EVIDENCE.md",
       "description": "Sources, evidence grades, and assumptions behind the market assessment. Product capabilities are dated vendor claims.",
       "status": "Evidence notes · September 10, 2026"
+    },
+    {
+      "id": "field-positioning",
+      "title": "Where AI music generation stands",
+      "source": "research/POSITIONING.md",
+      "description": "What the field has solved, what it is still arguing about, the four nearly-empty nodes, and three thesis-shaped projects for 6–12 months. 91 sources.",
+      "status": "Research positioning · September 11, 2026"
+    },
+    {
+      "id": "experiments-scaffold",
+      "title": "Experiment scaffold",
+      "source": "experiments/README.md",
+      "description": "Why not to start from Music Transformer's reference codebase, the Anticipatory Music Transformer checkpoints, and the annotation-compliance reward module.",
+      "status": "Code · AMT smoke unrun; reward module tested"
+    },
+    {
+      "id": "ace-audio-personalization",
+      "title": "ACE audio-personalization experiment",
+      "source": "experiments/001_ace_audio_personalization/README.md",
+      "description": "An experiment-scoped ACE-Step 1.5 pipeline for original piano and violin audio, SFT, preference branches, and matched listening evaluation.",
+      "status": "Code · synthetic CPU end-to-end smoke passed; ACE GPU run pending"
     }
   ],
   "entries": [
@@ -50,6 +71,35 @@
         "studio-experiment",
         "market-positioning",
         "positioning-evidence"
+      ],
+      "published": true
+    },
+    {
+      "date": "2026-09-11",
+      "title": "From survey to first experiment: what AI cannot learn from David Foster",
+      "summary": "The survey lands, the site goes live, and the build plan becomes a research question: can a composer's style be steered as separable layers? Imitation becomes the diagnostic, not the goal.",
+      "stage": "Survey published; positioning written; reward module tested. Architecture decision (autoregressive vs diffusion) open, pending the representation choice. No model trained yet.",
+      "focus": "Pin the composer's notes as a hard constraint; measure where imitation of Foster fails; let those failures define what annotations must carry.",
+      "next_step": "Build the data harness and relative-attention equivalence test; start Nord captures; choose event tokens or piano roll with real data in hand.",
+      "artifacts": [
+        "field-positioning",
+        "experiments-scaffold",
+        "music-kitchen-product",
+        "studio-experiment"
+      ],
+      "published": false
+    },
+    {
+      "date": "2026-09-12",
+      "title": "ACE moves from idea to runnable experiment",
+      "summary": "An ACE-Step 1.5 fine-tuning pipeline now passes a synthetic end-to-end CPU smoke. Real ACE weights, the RTX PRO 5000 run, and original piano data are next.",
+      "stage": "ACE audio-personalization code and synthetic CPU smoke complete; no real ACE checkpoint or GPU training run yet.",
+      "focus": "Prepare original piano recordings and test whether ACE can learn expressive musical qualities while leaving the musician in control.",
+      "next_step": "Run a real-ACE GPU smoke, record and annotate original piano takes, then begin a held-out SFT pilot with rights-cleared material.",
+      "artifacts": [
+        "ace-audio-personalization",
+        "music-kitchen-product",
+        "studio-experiment"
       ],
       "published": true
     }

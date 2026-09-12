@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACE audio-personalization experiment — Maestro</title>
+<meta name="description" content="An experiment-scoped ACE-Step 1.5 pipeline for original piano and violin audio, SFT, preference branches, and matched listening evaluation.">
+<meta name="author" content="Henry Tan">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://henryatharvard.github.io/maestro/journal/snapshots/2026-09-12/ace-audio-personalization.html">
+<link rel="alternate" type="application/atom+xml" title="Maestro journal" href="../../../journal/feed.xml">
+<meta property="og:site_name" content="Maestro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACE audio-personalization experiment — Maestro">
+<meta property="og:description" content="An experiment-scoped ACE-Step 1.5 pipeline for original piano and violin audio, SFT, preference branches, and matched listening evaluation.">
+<meta property="og:url" content="https://henryatharvard.github.io/maestro/journal/snapshots/2026-09-12/ace-audio-personalization.html">
+<meta property="og:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ACE audio-personalization experiment — Maestro">
+<meta name="twitter:description" content="An experiment-scoped ACE-Step 1.5 pipeline for original piano and violin audio, SFT, preference branches, and matched listening evaluation.">
+<meta name="twitter:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<link rel="icon" href="../../../assets/favicon.ico">
+<link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../../../assets/site.css">
+<link rel="stylesheet" href="../../../assets/journal.css">
+<script src="../../../assets/share.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="journal-wrap">
+  <header class="journal-top">
+    <a class="wordmark" href="../../../">Maestro</a>
+    <nav aria-label="Main navigation">
+      <a href="../../../#now">Now</a>
+      <a href="../../../journal/">Journal</a>
+      <a href="../../../#artifacts">Artifacts</a>
+      <a href="../../../survey/literature-review.html">Research</a>
+      <a href="https://github.com/henryatharvard/maestro">GitHub</a>
+    </nav>
+  </header>
+  <main id="content">
+    <header class="journal-head">
+      <p class="eyebrow">Dated artifact snapshot</p>
+      <h1>ACE audio-personalization experiment</h1>
+      <p class="journal-description">An experiment-scoped ACE-Step 1.5 pipeline for original piano and violin audio, SFT, preference branches, and matched listening evaluation.</p>
+      <p class="journal-meta">September 12, 2026 · Code · synthetic CPU end-to-end smoke passed; ACE GPU run pending · <a href="ace-audio-personalization.md">Snapshot source</a></p>
+      <div class="share-actions">
+        <a href="https://henryatharvard.github.io/maestro/journal/snapshots/2026-09-12/ace-audio-personalization.html">Permalink</a>
+        <button type="button" class="share-button" data-share-url="https://henryatharvard.github.io/maestro/journal/snapshots/2026-09-12/ace-audio-personalization.html" hidden>Copy link</button>
+        <span class="share-status" role="status" aria-live="polite"></span>
+      </div>
+    </header>
+    <aside class="snapshot-note"><strong>Snapshot from September 12, 2026.</strong> This preserves the artifact for <a href="../../2026-09-12.html">this journal entry</a>. <a href="../../../artifacts/ace-audio-personalization.html">Read the current version</a>.</aside><div class="journal-prose"><p>Question: Does adapting ACE-Step 1.5 to Henry's original piano, violin, and duet
+performances improve useful musical output over the unmodified model? Does offline
+human or AI preference training add value beyond SFT?</p>
+<p>This experiment follows AI Kitchen's scoped configs, separate checkpoints, held-out
+evaluation, and matched conditions. It uses ACE's audio/flow model, so the text-model
+<code>SFTTrainer</code> and <code>GRPOTrainer</code> from Gandalf are <strong>not</strong> reused. The feedback stage is
+an <strong>experimental offline flow-DPO surrogate</strong>, not PPO, GRPO, or a proven ACE recipe.
+Human ranking is the primary feedback signal; CLAP ranking only tests prompt/audio
+match and is a weak RLAIF baseline. Do not infer “musical quality” from its score.</p>
+<h2 id="layout">Layout</h2>
+<pre><code class="language-text">configs/piano_violin.toml       frozen experiment settings
+data/audio/                     your original WAV/FLAC recordings (ignored)
+data/recordings.jsonl           your annotated recording manifest (ignored)
+prompts/feedback.jsonl          prompts used to make preference candidates
+prompts/eval.jsonl              frozen, separate evaluation prompts
+artifacts/prepared/             validated split, staged audio, hashes (ignored)
+artifacts/tensors/              ACE preprocessed tensors (ignored)
+artifacts/checkpoints/          SFT, human, AI adapter branches (ignored)
+artifacts/generations/          seeded feedback and evaluation audio (ignored)
+artifacts/preferences/          ballots, pairs, AI scores (ignored)
+artifacts/reports/              matched-seed listening index (ignored)
+</code></pre>
+<h2 id="recording-intake">Recording intake</h2>
+<p>Record original music as lossless WAV or FLAC, ideally 48 kHz stereo for piano
+and duet, mono or stereo for violin. Keep aligned piano, violin, and duet exports
+under one <code>composition_id</code>; they must all be in the same train/validation split.
+Start with distinct 60–120 second pieces. The code accepts 10–180 seconds as
+configured, rejects near-silent or clipped files, hashes exact audio bytes, and
+does not quantize or normalize your recordings. Keep MIDI separately if captured;
+ACE LoRA consumes audio, not MIDI. Example rows are in
+<code>examples/recordings.jsonl</code>. Captions describe what is audible, not an artist name.
+Set <code>provenance</code> to document authorship and the right to train on each take.</p>
+<p>Copy the example rows into <code>data/recordings.jsonl</code>, update paths/captions, and
+put the matching files under <code>data/audio/</code>. The example is a schema, not a real
+dataset. At least two distinct compositions are required for a held-out split;
+20–30 is a sensible pilot before claiming any style improvement. Once prepared,
+the inputs and split are frozen under this experiment ID; changes require a new ID.</p>
+<h2 id="environment-and-checkpoints">Environment and checkpoints</h2>
+<p>Run from this directory. <code>uv</code> manages the experiment's own Python 3.12 environment.
+The light environment supports intake without ACE or a GPU:</p>
+<pre><code class="language-bash">uv sync
+uv run maestro-ace doctor
+uv run maestro-ace prepare
+</code></pre>
+<p>To check that the entire pipeline is wired up before recordings or checkpoints
+exist, run the synthetic CPU smoke test:</p>
+<pre><code class="language-bash">uv sync --extra smoke
+uv run --extra smoke maestro-ace smoke
+</code></pre>
+<p>It creates a unique ignored <code>artifacts/smoke/run-*/</code> directory with synthetic
+48 kHz audio, fake preprocessed tensors, a tiny trainable stand-in decoder,
+one SFT step, human and AI preference branches, candidate files, and a
+four-variant listening report. The AI smoke scorer uses audio energy, <strong>not
+CLAP</strong>. The command prints the artifact path and fails on a broken stage.
+This tests orchestration and real PyTorch loss/backprop/optimizer paths; it
+does <strong>not</strong> load ACE weights, run ACE's preprocessor or generator, validate
+adapter compatibility, or measure music quality.</p>
+<p>On the Linux CUDA machine, install a <strong>separate ACE checkout at the revision in
+<code>configs/piano_violin.toml</code></strong>, and install it into this experiment environment:</p>
+<pre><code class="language-bash">git clone https://github.com/ace-step/ACE-Step-1.5.git /path/to/ACE-Step-1.5
+git -C /path/to/ACE-Step-1.5 checkout ca1e85fe9430179831e6bc6be790c332190a3866
+uv pip install -e /path/to/ACE-Step-1.5
+ACE_ROOT=/path/to/ACE-Step-1.5
+ACE_CKPT=/path/to/ACE-Step-1.5/checkpoints
+</code></pre>
+<p>ACE's package includes CUDA-specific PyTorch and model dependencies. Use ACE's
+documented downloader to populate a checkpoint directory containing <code>vae/</code>,
+<code>Qwen3-Embedding-0.6B/</code>, and the selected <code>acestep-v15-base/</code> DiT checkpoint.
+After installation, download only the main bundle and base DiT:</p>
+<pre><code class="language-bash">.venv/bin/acestep-download --model main --dir &quot;$ACE_CKPT&quot;
+.venv/bin/acestep-download --model acestep-v15-base --dir &quot;$ACE_CKPT&quot;
+</code></pre>
+<p>The pinned <strong>base</strong> model supports subsequent layer/extract/complete tasks for
+Maestro Studio. To switch variants, edit the config and fetch the corresponding
+checkpoint. The adapter belongs to the exact base variant and revision.</p>
+<p>After <code>uv pip install -e</code>, call <code>.venv/bin/maestro-ace</code> directly so a fresh
+<code>uv sync</code> does not remove the editable ACE install. Keep the path variables in
+your shell for the commands below.</p>
+<h2 id="run-the-stages">Run the stages</h2>
+<pre><code class="language-bash">.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; preprocess
+.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; sft
+.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; generate --split feedback --model sft
+</code></pre>
+<p>SFT uses ACE's preprocessed tensors, DiT LoRA injection, continuous ACE timestep
+sampling, flow-matching velocity loss and CFG dropout. It trains <strong>exactly</strong>
+<code>sft.steps</code> optimizer steps, records metrics, saves interval/final adapters, and
+compares seeded held-out flow loss before and after. Training never touches the
+held-out composition's tensors.</p>
+<p>For human feedback, listen to each two-seed pair in
+<code>artifacts/generations/feedback/sft/</code>. Record a chosen and rejected ID, reviewer
+and concrete reason in a private JSONL file like <code>examples/human_ballots.jsonl</code>.
+The example ballot is illustrative; listen before using a real ballot.</p>
+<pre><code class="language-bash">.venv/bin/maestro-ace rank --source human --ballots /path/to/my-ballots.jsonl
+.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; preprocess-pairs --source human
+.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; preference --source human
+</code></pre>
+<p>For the separate AI-feedback branch, install the ML environment first and run
+<code>.venv/bin/maestro-ace rank --source ai</code>. It uses a frozen CLAP model to compare candidates under the
+same prompt; score margins below <code>judge.min_margin</code> are rejected. Then run
+<code>preprocess-pairs --source ai</code> and <code>preference --source ai</code>. Both branches reload
+the same SFT adapter and use a frozen copy of that adapter as reference.
+No cross-branch continuation occurs.</p>
+<p>For evaluation, generate the <strong>same prompts and seeds</strong> for the base model,
+SFT adapter, and available feedback adapters, then build the listening index:</p>
+<pre><code class="language-bash">.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; generate --split eval --model base
+.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; generate --split eval --model sft
+.venv/bin/maestro-ace --ace-root &quot;$ACE_ROOT&quot; --checkpoints &quot;$ACE_CKPT&quot; generate --split eval --model human
+.venv/bin/maestro-ace report
+</code></pre>
+<p>The report copies generated audio to anonymous take names and writes a separate
+<code>artifacts/reports/answer_key.json</code>; keep the key closed until ratings are done.
+Rate which take you would keep, phrasing, instrumentation, and artifacts.
+A lower flow loss or higher CLAP score alone is not evidence of
+better composition. Track copy/memorization concerns by comparing outputs with
+the training recordings before sharing a model.</p>
+<h2 id="current-verification-boundary">Current verification boundary</h2>
+<p>The synthetic CPU smoke has run through every pipeline stage, including one
+PyTorch optimizer step for SFT and for each preference branch. It passed in
+September 2026. <strong>No ACE weights, GPU training, CLAP inference, or listening
+study has been run for this experiment yet.</strong> Real model integration still
+requires the pinned upstream checkout and checkpoint bundle on your RTX PRO
+5000/C3 environment. The smoke command does not call a cloud API or upload
+recordings.</p>
+</div>
+  </main>
+  <footer class="journal-footer">
+    <p>Maestro · Henry Tan · <a href="../../../journal/">Weekly journal</a> ·
+      <a href="../../../journal/feed.xml">Subscribe via Atom</a></p>
+    <p>Writing licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      <a href="https://github.com/henryatharvard/maestro">Source and history</a>.</p>
+  </footer>
+</div>
+</body>
+</html>

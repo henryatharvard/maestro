@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACE moves from idea to runnable experiment — Maestro</title>
+<meta name="description" content="An ACE-Step 1.5 fine-tuning pipeline now passes a synthetic end-to-end CPU smoke. Real ACE weights, the RTX PRO 5000 run, and original piano data are next.">
+<meta name="author" content="Henry Tan">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://henryatharvard.github.io/maestro/journal/2026-09-12.html">
+<link rel="alternate" type="application/atom+xml" title="Maestro journal" href="../journal/feed.xml">
+<meta property="og:site_name" content="Maestro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACE moves from idea to runnable experiment — Maestro">
+<meta property="og:description" content="An ACE-Step 1.5 fine-tuning pipeline now passes a synthetic end-to-end CPU smoke. Real ACE weights, the RTX PRO 5000 run, and original piano data are next.">
+<meta property="og:url" content="https://henryatharvard.github.io/maestro/journal/2026-09-12.html">
+<meta property="og:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ACE moves from idea to runnable experiment — Maestro">
+<meta name="twitter:description" content="An ACE-Step 1.5 fine-tuning pipeline now passes a synthetic end-to-end CPU smoke. Real ACE weights, the RTX PRO 5000 run, and original piano data are next.">
+<meta name="twitter:image" content="https://henryatharvard.github.io/maestro/assets/og-cover.png">
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/journal.css">
+<script src="../assets/share.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="journal-wrap">
+  <header class="journal-top">
+    <a class="wordmark" href="../">Maestro</a>
+    <nav aria-label="Main navigation">
+      <a href="../#now">Now</a>
+      <a href="../journal/">Journal</a>
+      <a href="../#artifacts">Artifacts</a>
+      <a href="../survey/literature-review.html">Research</a>
+      <a href="https://github.com/henryatharvard/maestro">GitHub</a>
+    </nav>
+  </header>
+  <main id="content">
+    <header class="journal-head">
+      <p class="eyebrow">Weekly journal · week of September 7, 2026</p>
+      <h1>ACE moves from idea to runnable experiment</h1>
+      <p class="journal-description">An ACE-Step 1.5 fine-tuning pipeline now passes a synthetic end-to-end CPU smoke. Real ACE weights, the RTX PRO 5000 run, and original piano data are next.</p>
+      <p class="journal-meta"><time datetime="2026-09-12">September 12, 2026</time> · Henry Tan · <a href="entries/2026-09-12.md">Entry source</a></p>
+      <div class="share-actions">
+        <a href="https://henryatharvard.github.io/maestro/journal/2026-09-12.html">Permalink</a>
+        <button type="button" class="share-button" data-share-url="https://henryatharvard.github.io/maestro/journal/2026-09-12.html" hidden>Copy link</button>
+        <span class="share-status" role="status" aria-live="polite"></span>
+      </div>
+    </header>
+    <dl class="state-grid"><div><dt>Stage</dt><dd>ACE audio-personalization code and synthetic CPU smoke complete; no real ACE checkpoint or GPU training run yet.</dd></div><div><dt>Current focus</dt><dd>Prepare original piano recordings and test whether ACE can learn expressive musical qualities while leaving the musician in control.</dd></div><div><dt>Next experiment</dt><dd>Run a real-ACE GPU smoke, record and annotate original piano takes, then begin a held-out SFT pilot with rights-cleared material.</dd></div></dl><div class="journal-prose"><p>This week Maestro moved from asking which music model to start with to preparing a concrete ACE-Step 1.5 audio-personalization experiment. The goal is still a musician's studio: play a part, direct the arrangement, and revise what the machine makes. ACE is now the first audio model we will test for that workflow, not a claim that the studio or a personalized model is finished.</p>
+<h2 id="what-changed">What changed</h2>
+<p>I set up an experiment-scoped Python project with <code>uv</code> under <code>experiments/001_ace_audio_personalization/</code>. It has a recording manifest, audio validation, a composition-level train/validation split, ACE preprocessing and LoRA training hooks, seeded candidate generation, human and AI preference branches, and a matched-seed listening report. The order is deliberate: supervised fine-tuning first, then an experimental offline preference update if human listening gives us a useful signal. This is not yet an RLHF result.</p>
+<p>The immediate data plan also sharpened. The model consumes audio, not MIDI, so I can start by recording original piano performances directly; MIDI can be saved alongside them for analysis and editing. Violin and piano–violin duets can enter the same pipeline later. Each take needs a short caption describing what is audible, its instrument, and its provenance. The pilot target is distinct 60–120 second musical ideas rather than many cuts of one composition.</p>
+<h2 id="current-thinking">Current thinking</h2>
+<p>David Foster remains a musical reference point: expressive piano, broad melodic arcs, rich voicings, orchestral entrances, and harmonic lifts. I want to find out which of those qualities ACE can learn from audio and which require explicit musician control in the studio. A model that produces a plausible surface but cannot preserve my phrase or accept a local correction would not meet the product goal.</p>
+<p>Next week's comparison should distinguish <em>inspiration and evaluation</em> from <em>training data</em>. I can record and train on my own original piano music. If I use Foster compositions or commercial recordings as training material, I first need a clear right to do so; otherwise they remain listening references, and the training set stays with material I own or have permission to use.</p>
+<h2 id="findings-and-evidence">Findings and evidence</h2>
+<ul>
+<li>The synthetic end-to-end smoke passed on a local CPU. It prepared two 48 kHz audio examples with distinct composition IDs, made one train/validation split, ran one PyTorch SFT optimizer step, generated four feedback candidates, formed two human and two automated preference pairs, ran one optimizer step for each preference branch, and produced two matched evaluation cases with four variants each. The five automated tests and lint checks passed.</li>
+<li>The smoke uses a tiny stand-in decoder, synthetic audio and tensors, and an audio-energy scorer in place of CLAP. It verifies the orchestration, artifact files, loss/backpropagation, and optimizer paths. It does <strong>not</strong> verify ACE checkpoint loading, ACE preprocessing or generation, adapter compatibility, musical quality, or GPU performance.</li>
+<li>The training code targets the pinned ACE-Step 1.5 checkout and a base-model LoRA on the RTX PRO 5000/C3 environment. No ACE weights have been run on that GPU yet. The first GPU smoke remains a milestone, not a completed result.</li>
+</ul>
+<h2 id="artifacts-completed">Artifacts completed</h2>
+<p>The <a href="snapshots/2026-09-12/ace-audio-personalization.html">ACE audio-personalization experiment</a> documents the recording format, commands, branch structure, and verification boundary. The synthetic run saved its prepared manifest, checkpoints and metrics, preference pairs, generated clips, and blind-listening index under the experiment's ignored <code>artifacts/smoke/</code> directory. The studio prototype remains a separate interface experiment; it is not yet connected to ACE.</p>
+<h2 id="open-questions">Open questions</h2>
+<ul>
+<li>Will the pinned ACE model and preprocessing path run end to end with its real weights on the RTX PRO 5000, and what memory or throughput limits appear?</li>
+<li>How many distinct original piano pieces are needed before the adapter changes the music in a useful way rather than memorizing takes?</li>
+<li>Can captions specify phrasing, voicing, instrumentation, and section-level motion well enough to steer results?</li>
+<li>Which qualities associated with Foster are audible in piano-only material, and which require strings, production, or longer arrangements?</li>
+<li>Do human preferences improve results beyond SFT? The automated scorer only measures a weak prompt/audio proxy, not musical taste.</li>
+</ul>
+<h2 id="next-experiment">Next experiment</h2>
+<p>Run a minimal <strong>real-ACE GPU smoke</strong> with the pinned checkout and checkpoint bundle on the RTX PRO 5000 or C3, using synthetic or rights-cleared test audio. Then record the first original piano takes, keep any MIDI capture as a companion file, write audible captions and provenance, and start a held-out SFT pilot. Use Foster's music as a reference for the questions and evaluation; add it to training only where the rights are clear. Compare the unmodified ACE model and the first adapter on the same prompts and seeds before deciding whether a preference-training branch is warranted.</p>
+</div><section aria-labelledby="snapshots"><h2 id="snapshots">Artifacts at this point</h2><div class="artifact-list"><article class="artifact-item"><p class="artifact-status">Current direction · product concept</p><h3><a href="snapshots/2026-09-12/music-kitchen-product.html">Music Kitchen product brief</a></h3><p>A personal arranging studio: play piano, write lyrics, and direct the rest of the band through musical examples.</p></article><article class="artifact-item"><p class="artifact-status">Working prototype · procedural synthesis</p><h3><a href="snapshots/2026-09-12/studio-experiment.html">Studio experiment 01</a></h3><p>The first playable canvas: phrase selection, drawn contours, tapped rhythm, reversible edits, and an executable musical recipe.</p></article><article class="artifact-item"><p class="artifact-status">Code · synthetic CPU end-to-end smoke passed; ACE GPU run pending</p><h3><a href="snapshots/2026-09-12/ace-audio-personalization.html">ACE audio-personalization experiment</a></h3><p>An experiment-scoped ACE-Step 1.5 pipeline for original piano and violin audio, SFT, preference branches, and matched listening evaluation.</p></article></div></section><nav class="entry-navigation" aria-label="Journal entries"><a href="2026-09-10.html">← Earlier: From a research agenda to a product musicians can use</a><a href="./">All entries</a></nav>
+  </main>
+  <footer class="journal-footer">
+    <p>Maestro · Henry Tan · <a href="../journal/">Weekly journal</a> ·
+      <a href="../journal/feed.xml">Subscribe via Atom</a></p>
+    <p>Writing licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      <a href="https://github.com/henryatharvard/maestro">Source and history</a>.</p>
+  </footer>
+</div>
+</body>
+</html>

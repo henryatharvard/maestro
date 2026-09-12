@@ -4,10 +4,18 @@
   <id>https://henryatharvard.github.io/maestro/journal/</id>
   <link href="https://henryatharvard.github.io/maestro/journal/" rel="alternate" />
   <link href="https://henryatharvard.github.io/maestro/journal/feed.xml" rel="self" type="application/atom+xml" />
-  <updated>2026-09-10T00:00:00-07:00</updated>
+  <updated>2026-09-12T00:00:00-07:00</updated>
   <author>
     <name>Henry Tan</name>
   </author>
+  <entry>
+    <title>ACE moves from idea to runnable experiment</title>
+    <id>https://henryatharvard.github.io/maestro/journal/2026-09-12.html</id>
+    <link href="https://henryatharvard.github.io/maestro/journal/2026-09-12.html" />
+    <updated>2026-09-12T00:00:00-07:00</updated>
+    <published>2026-09-12T00:00:00-07:00</published>
+    <summary>An ACE-Step 1.5 fine-tuning pipeline now passes a synthetic end-to-end CPU smoke. Real ACE weights, the RTX PRO 5000 run, and original piano data are next.</summary>
+  </entry>
   <entry>
     <title>From a research agenda to a product musicians can use</title>
     <id>https://henryatharvard.github.io/maestro/journal/2026-09-10.html</id>
